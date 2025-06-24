@@ -57,15 +57,17 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None):
             node_id = normalize_id(entry_rel_path)
             is_external, external_url = is_external_doc(full_path)
 
-            label = f'{title} 🔗' if is_external else title
-            lines.append(f'{node_id}["{label}"]')
-            lines.append(f"{current_id} --> {node_id}")
-
             if is_external and external_url:
-                clicks.append(f'click {node_id} "{external_url}" _blank')
+                safe_title = title.replace('"', "'")  # avoid breaking Mermaid syntax
+                html_label = f"<a href='{external_url}' target='_blank' rel='noopener noreferrer'>{safe_title} 🔗</a>"
+                lines.append(f'{node_id}["{html_label}"]')
+                # No click needed — HTML link handles it
             else:
+                lines.append(f'{node_id}["{title}"]')
                 clean_entry_path = "/docs/" + "/".join(strip_order_prefix(p) for p in entry_rel_path.replace(".md", "").split(os.sep))
                 clicks.append(f'click {node_id} "{clean_entry_path}"')
+
+            lines.append(f"{current_id} --> {node_id}")
 
             classes[node_id] = depth + 1
 

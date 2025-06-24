@@ -18,9 +18,9 @@ n_20_agent_frameworks_adk_agent_charts_md["agent-charts"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_agent_charts_md
 n_20_agent_frameworks_adk_agent_init_md["agent-init"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_agent_init_md
-n_20_agent_frameworks_adk_external_link_agent_sdk_md["external-link-agent-sdk 🔗"]
+n_20_agent_frameworks_adk_external_link_agent_sdk_md["<a href='https://google.github.io/adk-docs/' target='_blank' rel='noopener noreferrer'>external-link-agent-sdk 🔗</a>"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_external_link_agent_sdk_md
-n_20_agent_frameworks_adk_external_tutorial_dev_to_md["external-tutorial-dev-to 🔗"]
+n_20_agent_frameworks_adk_external_tutorial_dev_to_md["<a href='https://www.datacamp.com/tutorial/agent-development-kit-adk' target='_blank' rel='noopener noreferrer'>external-tutorial-dev-to 🔗</a>"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_external_tutorial_dev_to_md
 n_20_agent_frameworks_adk_intro_md["Agent Dev Kit (ADK) Introduction"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_intro_md
@@ -29,8 +29,6 @@ click n_20_agent_frameworks_adk_adk_fsm_overview_md "/docs/agent-frameworks/adk/
 click n_20_agent_frameworks_adk_agent_benchmarking_md "/docs/agent-frameworks/adk/agent-benchmarking"
 click n_20_agent_frameworks_adk_agent_charts_md "/docs/agent-frameworks/adk/agent-charts"
 click n_20_agent_frameworks_adk_agent_init_md "/docs/agent-frameworks/adk/agent-init"
-click n_20_agent_frameworks_adk_external_link_agent_sdk_md "https://google.github.io/adk-docs/" _blank
-click n_20_agent_frameworks_adk_external_tutorial_dev_to_md "https://www.datacamp.com/tutorial/agent-development-kit-adk" _blank
 click n_20_agent_frameworks_adk_intro_md "/docs/agent-frameworks/adk/intro"
 classDef col0 fill:#b3d9ff,stroke:none;
 classDef col1 fill:#d5b3ff,stroke:none;
