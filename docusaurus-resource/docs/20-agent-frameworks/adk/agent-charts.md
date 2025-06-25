@@ -3,7 +3,7 @@ title: Agent Lifecycle Charts
 type: tutorial
 level: intermediate
 topics: [agents, lifecycle, visualization]
-status: published
+status: review-needed
 visibility: public
 author: Jane Doe (@janedoe)
 ---

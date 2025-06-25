@@ -2,6 +2,7 @@
 import os
 import re
 import json
+import datetime
 
 STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.getcwd(), "flatmap-tools", "flatmap-style.config.json"))
 
@@ -89,3 +90,113 @@ def get_file_modification_date(path):
         return os.path.getmtime(path)
     except:
         return 0
+
+
+def get_section_title(folder_path):
+    """Extract the title from a folder's index.md file, or fallback to folder name."""
+    index_path = os.path.join(folder_path, "index.md")
+    if os.path.exists(index_path):
+        frontmatter = parse_frontmatter(index_path)
+        return frontmatter.get("title", os.path.basename(folder_path).replace("-", " ").title())
+    else:
+        return os.path.basename(folder_path).replace("-", " ").title()
+
+
+def build_url_path(parts):
+    """Join folder parts, stripping numeric prefixes, to form a correct URL path."""
+    return "/".join(strip_order_prefix(part) for part in parts)
+
+
+def parse_ymd_date(date_str):
+    """Parse a YYYY-MM-DD string to a datetime.date, or None if invalid."""
+    try:
+        return datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+    except Exception:
+        return None
+
+
+def get_file_modification_date_as_date(path):
+    try:
+        ts = os.path.getmtime(path)
+        return datetime.date.fromtimestamp(ts)
+    except Exception:
+        return None
+
+
+def make_breadcrumb_to_article(rel_path, article_title=None, root_dir=None):
+    if root_dir is None:
+        raise ValueError('root_dir must be provided')
+    parts = rel_path.split(os.sep)
+    if parts[-1].endswith('.md'):
+        parts[-1] = parts[-1][:-3]
+    crumbs = []
+    for i, part in enumerate(parts[:-1]):
+        folder_path = os.path.join(root_dir, *parts[:i+1])
+        title = get_section_title(folder_path)
+        url_path = build_url_path(parts[:i+1])
+        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+    art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
+    url_path = build_url_path(parts)
+    crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    return " > ".join(crumbs)
+
+
+def make_breadcrumb_to_contribute_page(rel_path, article_title=None, root_dir=None):
+    if root_dir is None:
+        raise ValueError('root_dir must be provided')
+    parts = rel_path.split(os.sep)
+    if parts[-1].endswith('.md'):
+        parts[-1] = parts[-1][:-3]
+    crumbs = []
+    for i, part in enumerate(parts[:-1]):
+        folder_path = os.path.join(root_dir, *parts[:i+1])
+        title = get_section_title(folder_path)
+        url_path = build_url_path(parts[:i+1])
+        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+    art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
+    id = normalize_id(rel_path)
+    crumbs.append(f'<a href="/docs/contribute/{id}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    return " > ".join(crumbs)
+
+
+def make_dashboard_breadcrumb_link(rel_path, article_title=None, to_contribute_page=False, root_dir=None):
+    if root_dir is None:
+        raise ValueError('root_dir must be provided')
+    parts = rel_path.split(os.sep)
+    # Remove .md from last part
+    if parts[-1].endswith('.md'):
+        parts[-1] = parts[-1][:-3]
+    # Max 2 upstreams
+    upstreams = parts[:-1][-2:]
+    crumb_text = []
+    for i, part in enumerate(upstreams):
+        folder_path = os.path.join(root_dir, *parts[:-(len(upstreams)-i)])
+        title = get_section_title(folder_path)
+        crumb_text.append(title)
+    art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
+    crumb_text.append(art_title)
+    text = " > ".join(crumb_text)
+    if to_contribute_page:
+        id = normalize_id(rel_path)
+        url = f"/docs/contribute/{id}"
+    else:
+        url = f"/docs/{build_url_path(parts)}"
+    return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{text}</a>'
+
+
+def make_full_breadcrumb(rel_path, article_title=None, root_dir=None):
+    if root_dir is None:
+        raise ValueError('root_dir must be provided')
+    parts = rel_path.split(os.sep)
+    if parts[-1].endswith('.md'):
+        parts[-1] = parts[-1][:-3]
+    crumbs = []
+    for i, part in enumerate(parts[:-1]):
+        folder_path = os.path.join(root_dir, *parts[:i+1])
+        title = get_section_title(folder_path)
+        url_path = build_url_path(parts[:i+1])
+        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+    art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
+    url_path = build_url_path(parts)
+    crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    return " > ".join(crumbs)
