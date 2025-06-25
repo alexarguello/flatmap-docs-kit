@@ -3,7 +3,7 @@ title: Initializing an ADK Agent
 type: how-to
 level: beginner
 topics: [agents, initialization, setup]
-status: published
+status: missing
 visibility: public
 author:
   - John Smith (@johnsmith)

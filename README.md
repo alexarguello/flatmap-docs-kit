@@ -54,9 +54,8 @@ Clicking it takes you directly to the external site
 ## 🧪 Run It (Local Setup)
 
 ```bash
-# 1. Clone
-git clone https://github.com/your-username/java-ai-docs.git
-cd java-ai-docs
+# 1. Go to docusaurus root
+cd docusaurus-resource
 
 # 2. Install
 npm install

@@ -23,3 +23,5 @@ class n_50_framework_integrations_mcp_java_mcp_sdk_md col1;
 class n_50_framework_integrations_mcp col0;
 linkStyle default interpolate basis
 ```
+
+<small><strong>Legend:</strong> **💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert | **bg:⬤** status:draft | **bg:⬤** status:wip | **bg:⬤** status:review-needed | **bg:⬤** status:planned | **•** visibility:internal | **•** visibility:archived</small>

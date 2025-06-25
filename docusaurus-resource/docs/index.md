@@ -4,6 +4,54 @@ hide_title: true
 ---
 <!-- AUTO-GENERATED FILE — DO NOT EDIT. Regenerated on merge -->
 
+---
+sidebar_position: 1
+---
+
+# Tutorial Intro
+
+Let's discover **Docusaurus in less than 5 minutes**.
+
+## Getting Started
+
+Get started by **creating a new site**.
+
+Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+
+### What you'll need
+
+- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
+  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+
+## Generate a new site
+
+Generate a new Docusaurus site using the **classic template**.
+
+The classic template will automatically be added to your project after you run the command:
+
+```bash
+npm init docusaurus@latest my-website classic
+```
+
+You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+
+The command also installs all necessary dependencies you need to run Docusaurus.
+
+## Start your site
+
+Run the development server:
+
+```bash
+cd my-website
+npm run start
+```
+
+The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+
+The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+
+Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+
 ### Docs
 <p class="margin-top-negative"><em>Click any block below to navigate directly to that section.</em></p>
 
@@ -50,7 +98,7 @@ n_20_agent_frameworks_adk_adk_fsm_overview_md["adk-fsm-overview"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_adk_fsm_overview_md
 n_20_agent_frameworks_adk_agent_benchmarking_md["agent-benchmarking"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_agent_benchmarking_md
-n_20_agent_frameworks_adk_agent_charts_md["agent-charts"]
+n_20_agent_frameworks_adk_agent_charts_md["🙌 agent-charts"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_agent_charts_md
 n_20_agent_frameworks_adk_agent_init_md["agent-init"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_agent_init_md
@@ -58,7 +106,7 @@ n_20_agent_frameworks_adk_external_link_agent_sdk_md["<a href='https://google.gi
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_external_link_agent_sdk_md
 n_20_agent_frameworks_adk_external_tutorial_dev_to_md["<a href='https://www.datacamp.com/tutorial/agent-development-kit-adk' target='_blank' rel='noopener noreferrer'>external-tutorial-dev-to 🔗</a>"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_external_tutorial_dev_to_md
-n_20_agent_frameworks_adk_intro_md["Agent Dev Kit (ADK) Introduction"]
+n_20_agent_frameworks_adk_intro_md["intro"]
 n_20_agent_frameworks_adk --> n_20_agent_frameworks_adk_intro_md
 n_20_agent_frameworks_langchain4j["Langchain4J"]
 n_20_agent_frameworks --> n_20_agent_frameworks_langchain4j
@@ -203,12 +251,7 @@ class n_10_foundations_machine_learning_nlp col3;
 class n_10_foundations_machine_learning_overview_md col3;
 class n_10_foundations_machine_learning col2;
 class n_10_foundations col1;
-class n_20_agent_frameworks_adk_adk_fsm_overview_md col3;
-class n_20_agent_frameworks_adk_agent_benchmarking_md col3;
-class n_20_agent_frameworks_adk_agent_charts_md col3;
-class n_20_agent_frameworks_adk_agent_init_md col3;
 class n_20_agent_frameworks_adk_external_link_agent_sdk_md col3;
-class n_20_agent_frameworks_adk_external_tutorial_dev_to_md col3;
 class n_20_agent_frameworks_adk_intro_md col3;
 class n_20_agent_frameworks_adk col2;
 class n_20_agent_frameworks_langchain4j col2;
@@ -246,5 +289,17 @@ class tutorial_extras_manage_docs_versions_md col2;
 class tutorial_extras_translate_your_site_md col2;
 class tutorial_extras col1;
 class root col0;
+classDef custom0 stroke:yellow,stroke-width:2px,stroke-dasharray:0;
+class n_20_agent_frameworks_adk_adk_fsm_overview_md custom0;
+classDef custom1 fill:lightgrey,stroke:orange,stroke-width:2px,stroke-dasharray:0;
+class n_20_agent_frameworks_adk_agent_benchmarking_md custom1;
+classDef custom2 stroke:yellow,stroke-width:2px,stroke-dasharray:0;
+class n_20_agent_frameworks_adk_agent_charts_md custom2;
+classDef custom3 stroke:green,stroke-width:2px,stroke-dasharray:0;
+class n_20_agent_frameworks_adk_agent_init_md custom3;
+classDef custom4 stroke:green,stroke-width:2px,stroke-dasharray:0;
+class n_20_agent_frameworks_adk_external_tutorial_dev_to_md custom4;
 linkStyle default interpolate basis
 ```
+
+<small><strong>Legend:</strong> **💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert | **bg:⬤** status:draft | **bg:⬤** status:wip | **bg:⬤** status:review-needed | **bg:⬤** status:planned | **•** visibility:internal | **•** visibility:archived</small>
