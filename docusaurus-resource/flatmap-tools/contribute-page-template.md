@@ -11,7 +11,7 @@ hide_title: true
 
 ### 🧩 Context
 
-This article is part of {section_links} > {article_link}
+Find this article here: {section_links} > {article_link}
 
 #### Sibling articles in the same section, so you know what's already been written:
 {sibling_articles}

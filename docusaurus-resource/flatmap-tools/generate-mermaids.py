@@ -3,7 +3,6 @@ import re
 import json
 
 ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs"))
-MAX_DEPTH = 4
 DO_NOT_EDIT = "<!-- AUTO-GENERATED FILE — DO NOT EDIT. Regenerated on merge -->"
 STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.getcwd(), "flatmap-tools", "flatmap-style.config.json"))
 
@@ -14,7 +13,12 @@ def load_style_config():
             return json.load(f)
     except Exception as e:
         print(f"⚠️  Warning: Could not load style config: {e}")
-        return {"tags": {}}
+        return {"tags": {}, "flatmap_depth": 4}
+
+def get_max_depth():
+    """Get the maximum depth from style config."""
+    style_config = load_style_config()
+    return style_config.get("flatmap_depth", 4)
 
 def parse_frontmatter(file_path):
     """Parse frontmatter from a markdown file and extract tags."""
@@ -174,7 +178,7 @@ def extract_title(path):
     except:
         return "Untitled"
 
-def build_mermaid(folder_path, rel_path, depth, parent_id=None):
+def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_override=None):
     # Load style configuration once
     style_config = load_style_config()
     
@@ -194,7 +198,9 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None):
     if parent_id:
         lines.append(f"{parent_id} --> {current_id}")
 
-    if depth >= MAX_DEPTH:
+    # Use override depth if provided, otherwise use MAX_DEPTH
+    effective_max_depth = max_depth_override if max_depth_override is not None else get_max_depth()
+    if depth >= effective_max_depth:
         return lines, clicks, {current_id: depth}, style_classes
 
     entries = sorted(os.listdir(folder_path))
@@ -203,7 +209,7 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None):
         entry_rel_path = os.path.join(rel_path, entry) if rel_path else entry
 
         if os.path.isdir(full_path):
-            sub_lines, sub_clicks, sub_classes, sub_style_classes = build_mermaid(full_path, entry_rel_path, depth + 1, current_id)
+            sub_lines, sub_clicks, sub_classes, sub_style_classes = build_mermaid(full_path, entry_rel_path, depth + 1, current_id, max_depth_override)
             lines.extend(sub_lines)
             clicks.extend(sub_clicks)
             classes.update(sub_classes)
@@ -270,7 +276,7 @@ def generate_index_md(folder_path, rel_path):
     class_lines = []
     
     # Create depth-based color classes (fallback styling)
-    for d in range(MAX_DEPTH + 1):
+    for d in range(get_max_depth() + 1):
         color = ["#b3d9ff", "#d5b3ff", "#ffcccc", "#ffd699", "#d0f0c0"][d % 5]
         class_lines.append(f"classDef col{d} fill:{color},stroke:none;")
     
@@ -317,6 +323,106 @@ def generate_index_md(folder_path, rel_path):
 
     print(f"✔️  Wrote: {index_md_path}")
 
+def generate_root_index_md():
+    # Custom frontmatter for the root index.md
+    frontmatter = (
+        '---\n'
+        'sidebar_position: 1\n'
+        'title: Site Overview\n'
+        'hide_title: true\n'
+        '---'
+    )
+    custom_intro = [
+        '### Welcome',
+        '<small>Here\'s an overview of the first layers of this resource. Simply click on the boxes to get directly to your article of choice, or use the sidebar to navigate.</small>',
+        ''
+    ]
+    lines, clicks, classes, style_classes = build_mermaid(ROOT_DIR, '', depth=0)
+    class_lines = []
+    for d in range(get_max_depth() + 1):
+        color = ["#b3d9ff", "#d5b3ff", "#ffcccc", "#ffd699", "#d0f0c0"][d % 5]
+        class_lines.append(f"classDef col{d} fill:{color},stroke:none;")
+    for node_id, col in classes.items():
+        if node_id not in style_classes:
+            class_lines.append(f"class {node_id} col{col};")
+    style_counter = 0
+    for node_id, style in style_classes.items():
+        style_class_name = f"custom{style_counter}"
+        class_lines.append(f"classDef {style_class_name} {style};")
+        class_lines.append(f"class {node_id} {style_class_name};")
+        style_counter += 1
+    output = [
+        frontmatter,
+        DO_NOT_EDIT,
+        ''
+    ]
+    output += custom_intro + [
+        '```mermaid',
+        'graph LR',
+    ] + lines + clicks + class_lines + [
+        'linkStyle default interpolate basis',
+        '```'
+    ]
+    style_config = load_style_config()
+    legend_items = create_compact_legend(style_classes, style_config)
+    if legend_items:
+        output.extend(legend_items)
+    index_md_path = os.path.join(ROOT_DIR, "index.md")
+    with open(index_md_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(output))
+    print(f"✔️  Wrote root flatmap: {index_md_path}")
+
+def generate_full_sitemap():
+    # Custom frontmatter for the full sitemap
+    frontmatter = (
+        '---\n'
+        'title: Full Site Map\n'
+        'sidebar_label: Full Site Map\n'
+        'sidebar_position: 2\n'
+        'hide_title: true\n'
+        '---'
+    )
+    custom_intro = [
+        '### Full Site Map',
+        '<small>Complete overview of all content in this resource. This map shows everything at maximum depth - it\'s quite detailed!</small>',
+        ''
+    ]
+    # Use a much deeper depth for the full sitemap
+    lines, clicks, classes, style_classes = build_mermaid(ROOT_DIR, '', depth=0, max_depth_override=10)
+    class_lines = []
+    for d in range(11):  # Support up to depth 10
+        color = ["#b3d9ff", "#d5b3ff", "#ffcccc", "#ffd699", "#d0f0c0", "#ffe6cc", "#e6f3ff", "#f0e6ff", "#ffe6e6", "#e6ffe6", "#fff2e6"][d % 11]
+        class_lines.append(f"classDef col{d} fill:{color},stroke:none;")
+    for node_id, col in classes.items():
+        if node_id not in style_classes:
+            class_lines.append(f"class {node_id} col{col};")
+    style_counter = 0
+    for node_id, style in style_classes.items():
+        style_class_name = f"custom{style_counter}"
+        class_lines.append(f"classDef {style_class_name} {style};")
+        class_lines.append(f"class {node_id} {style_class_name};")
+        style_counter += 1
+    output = [
+        frontmatter,
+        DO_NOT_EDIT,
+        ''
+    ]
+    output += custom_intro + [
+        '```mermaid',
+        'graph LR',
+    ] + lines + clicks + class_lines + [
+        'linkStyle default interpolate basis',
+        '```'
+    ]
+    style_config = load_style_config()
+    legend_items = create_compact_legend(style_classes, style_config)
+    if legend_items:
+        output.extend(legend_items)
+    sitemap_path = os.path.join(ROOT_DIR, "full-sitemap.md")
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(output))
+    print(f"✔️  Wrote full sitemap: {sitemap_path}")
+
 def walk_folders():
     for root, dirs, files in os.walk(ROOT_DIR):
         md_files = [f for f in files if f.endswith(".md")]
@@ -325,6 +431,9 @@ def walk_folders():
             if rel_path == ".":
                 rel_path = ""
             generate_index_md(root, rel_path)
+    # After all, generate the root-level flatmap and full sitemap
+    generate_root_index_md()
+    generate_full_sitemap()
 
 def is_external_doc(path):
     try:

@@ -11,11 +11,11 @@ hide_title: true
 
 ### 🧩 Context
 
-This article is part of <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/get-started" target="_blank" rel="noopener noreferrer">Get Started with LangGraph4j</a>
+Find this article here: <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/get-started" target="_blank" rel="noopener noreferrer">Get Started with LangGraph4j</a>
 
 #### Sibling articles in the same section, so you know what's already been written:
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/awesome-langgraph4j" target="_blank" rel="noopener noreferrer">awesome-langgraph4j</a> - missing ❌
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/status-todo" target="_blank" rel="noopener noreferrer">status-todo</a> - published ✅
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/awesome-langgraph4j" target="_blank" rel="noopener noreferrer">Awesome LangGraph4j</a> - missing ❌
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/status-todo" target="_blank" rel="noopener noreferrer">Intro to LangGraph4j</a> - published ✅
 
 ---
 

@@ -11,14 +11,14 @@ hide_title: true
 
 ### 🧩 Context
 
-This article is part of <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-init" target="_blank" rel="noopener noreferrer">Initializing an ADK Agent</a>
+Find this article here: <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-init" target="_blank" rel="noopener noreferrer">Initializing an ADK Agent</a>
 
 #### Sibling articles in the same section, so you know what's already been written:
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/adk-fsm-overview" target="_blank" rel="noopener noreferrer">adk-fsm-overview</a> - published ✅
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-benchmarking" target="_blank" rel="noopener noreferrer">agent-benchmarking</a>
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-charts" target="_blank" rel="noopener noreferrer">agent-charts</a> - review needed 🕵️
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/external-link-agent-sdk" target="_blank" rel="noopener noreferrer">external-link-agent-sdk</a> - published ✅
-- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/external-tutorial-dev-to" target="_blank" rel="noopener noreferrer">external-tutorial-dev-to</a> - published ✅
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/adk-fsm-overview" target="_blank" rel="noopener noreferrer">Finite State Machines in ADK</a> - published ✅
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-benchmarking" target="_blank" rel="noopener noreferrer">Agent Benchmarking Guide</a>
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/agent-charts" target="_blank" rel="noopener noreferrer">Agent Lifecycle Charts</a> - review needed 🕵️
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/external-link-agent-sdk" target="_blank" rel="noopener noreferrer">Official ADK Documentation</a> - published ✅
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/adk" target="_blank" rel="noopener noreferrer">Adk</a> > <a href="/docs/agent-frameworks/adk/external-tutorial-dev-to" target="_blank" rel="noopener noreferrer">Building Your First ADK Agent (Dev.to)</a> - published ✅
 
 ---
 

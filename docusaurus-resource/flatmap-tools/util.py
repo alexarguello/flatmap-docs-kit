@@ -4,7 +4,7 @@ import re
 import json
 import datetime
 
-STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.getcwd(), "flatmap-tools", "flatmap-style.config.json"))
+STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "flatmap-style.config.json"))
 
 
 def load_style_config():

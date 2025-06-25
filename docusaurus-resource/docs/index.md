@@ -1,12 +1,9 @@
 ---
-title: Docs
+sidebar_position: 1
+title: Site Overview
 hide_title: true
 ---
 <!-- AUTO-GENERATED FILE — DO NOT EDIT. Regenerated on merge -->
-
----
-sidebar_position: 1
----
 
 # Tutorial Intro
 

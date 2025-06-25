@@ -1,4 +1,6 @@
 {
+  "repository_link": "https://github.com/YOUR_ORG/YOUR_REPO",
+  "flatmap_depth": 4,
   "tags": {
     "type:code": { "icon": "💻" },
     "type:tutorial": { "icon": "🙌" },

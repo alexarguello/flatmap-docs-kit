@@ -1,7 +1,7 @@
 import os
 import re
 import datetime
-from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb
+from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config
 
 ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs"))
 OUTPUT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs", "99-contribute"))
@@ -18,6 +18,11 @@ def load_template():
 def load_dashboard_template():
     with open(DASHBOARD_TEMPLATE_PATH, "r", encoding="utf-8") as f:
         return f.read()
+
+def get_repository_link():
+    """Get the repository link from style config."""
+    style_config = load_style_config()
+    return style_config.get("repository_link", "https://github.com/YOUR_ORG/YOUR_REPO")
 
 def clean_contribute_folder():
     if not os.path.exists(OUTPUT_DIR):
@@ -122,9 +127,10 @@ def create_contribution_page(md_path, rel_path, frontmatter):
         if not fname.endswith(".md") or fname == filename or fname in ("intro.md", "index.md"):
             continue
         fpath = os.path.join(abs_folder_path, fname)
-        sib_title = extract_title(fpath)
-        fm = parse_frontmatter(fpath)
-        status = fm.get("status", "?")
+        sib_fm = parse_frontmatter(fpath)
+        # Use frontmatter title first, then fall back to extracted title
+        sib_title = sib_fm.get("title", extract_title(fpath))
+        status = sib_fm.get("status", "?")
         sib_rel_path = os.path.relpath(fpath, ROOT_DIR)
         link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
         status_desc = {
@@ -143,7 +149,7 @@ def create_contribution_page(md_path, rel_path, frontmatter):
         sibling_articles.append(f"- {link}{status_text}")
     sibling_articles_md = "\n".join(sibling_articles) or "_No other articles in this folder yet._"
 
-    file_edit_link = f"https://github.com/YOUR_ORG/YOUR_REPO/edit/main/docs/{rel_path_folder}/{filename}"
+    file_edit_link = f"{get_repository_link()}/edit/main/docs/{rel_path_folder}/{filename}"
 
     template = load_template()
     content = template.format(
@@ -190,13 +196,18 @@ def generate_dashboard(all_articles):
     high_impact_gaps_table = '\n'.join(gap_rows) if gap_rows else '| _No high-impact gaps!_ |  |'
 
     collabs = []
-    for art in all_articles:
+    # Use collaboration_articles if provided, otherwise fall back to scanning all_articles
+    articles_to_check = collaboration_articles if collaboration_articles is not None else all_articles
+    for art in articles_to_check:
         if art.get('collaboration', '') == 'open':
             link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
             author = art.get('author', '')
             eta = art.get('eta', '')
-            collabs.append(f'| {link} | {author} | {eta} |')
-    open_to_collaboration_table = '\n'.join(collabs) if collabs else '| _No open collaborations!_ |  |  |'
+            # Create collaboration page link - point to the collaboration page, not the original
+            collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
+            collab_link = f'<a href="/docs/99-contribute/{collab_id}" target="_blank" rel="noopener noreferrer">🤝 Collaborate</a>'
+            collabs.append(f'| {link} | {author} | {eta} | {collab_link} |')
+    open_to_collaboration_table = '\n'.join(collabs) if collabs else '| _No open collaborations!_ |  |  |  |'
 
     reviews = []
     for art in all_articles:
@@ -259,7 +270,25 @@ def extract_contrib_guide():
 def walk_docs():
     clean_contribute_folder()
     extract_contrib_guide()
-    all_articles = []
+    
+    # Import collaboration page creation function
+    try:
+        import sys
+        import os
+        sys.path.append(os.path.dirname(__file__))
+        from generate_collaborate_pages import create_collaboration_page, get_author_info, create_location_breadcrumb, create_discussion_link, get_suggested_contributions, load_style_config
+    except ImportError as e:
+        print(f"⚠️  Collaboration page generator not available: {e}")
+        create_collaboration_page = None
+    
+    # Dashboard data collection
+    today = datetime.date.today()
+    priority_map = {"high": "🔥", "medium": "❤️", "": "🤲"}
+    gaps_by_priority = {"high": [], "medium": [], "": []}
+    collaboration_articles = []
+    review_articles = []
+    recent_articles = []
+    
     for root, _, files in os.walk(ROOT_DIR):
         for f in files:
             if f.endswith(".md") and f != "index.md":
@@ -269,26 +298,113 @@ def walk_docs():
                 # Normalize all frontmatter keys to lowercase
                 frontmatter = {k.lower(): v for k, v in frontmatter.items()}
                 status = frontmatter.get("status", None)
+                collaboration = frontmatter.get("collaboration", "")
+                author = frontmatter.get("author", "")
+                
                 article = {
                     'abs_path': abs_path,
                     'rel_path': rel_path,
                     'title': frontmatter.get('title', extract_title(abs_path)),
                     'status': status,
-                    'author': frontmatter.get('author', ''),
+                    'author': author,
                     'priority': frontmatter.get('priority', ''),
                     'article-priority': frontmatter.get('article-priority', ''),
-                    'collaboration': frontmatter.get('collaboration', ''),
+                    'collaboration': collaboration,
                     'eta': frontmatter.get('eta', ''),
                     'modified': frontmatter.get('modified', None)
                 }
-                all_articles.append(article)
+                
+                # Page generation and dashboard data collection in one loop
                 if status == "missing":
-                    create_contribution_page(abs_path, rel_path, frontmatter)
-                elif status == "draft" and frontmatter.get("collaboration", "") == "open":
-                    pass  # TODO: handle open collaboration articles
-                elif status == "review-needed":
-                    pass  # TODO: handle review-needed ones
-    generate_dashboard(all_articles)
+                    if not author:
+                        # Create contribute page for unclaimed articles
+                        create_contribution_page(abs_path, rel_path, frontmatter)
+                        # Collect for high impact gaps (same logic as before)
+                        prio = frontmatter.get('article-priority', '')
+                        prio = prio.strip().lower() if isinstance(prio, str) else ""
+                        print(f"DEBUG: {rel_path} article-priority='{repr(prio)}'")
+                        if prio not in gaps_by_priority:
+                            prio = ""
+                        gaps_by_priority[prio].append(article)
+                    elif collaboration == "open" and author:
+                        # Create collaboration page for claimed articles open for collaboration
+                        if create_collaboration_page:
+                            style_config = load_style_config()
+                            create_collaboration_page(abs_path, rel_path, frontmatter, style_config)
+                            collaboration_articles.append(article)
+                        else:
+                            print(f"⚠️  Cannot create collaboration page for {rel_path} - collaboration generator not available")
+                elif status in ["draft", "wip", "review-needed"] and collaboration == "open" and author:
+                    # Create collaboration page for in-progress articles open for collaboration
+                    if create_collaboration_page:
+                        style_config = load_style_config()
+                        create_collaboration_page(abs_path, rel_path, frontmatter, style_config)
+                        collaboration_articles.append(article)
+                    else:
+                        print(f"⚠️  Cannot create collaboration page for {rel_path} - collaboration generator not available")
+                
+                # Collect other dashboard data (same logic as before)
+                if status == "review-needed":
+                    review_articles.append(article)
+                elif status == "published":
+                    mod_date = None
+                    if 'modified' in article and article['modified']:
+                        mod_date = parse_ymd_date(article['modified'])
+                    if not mod_date:
+                        mod_date = get_file_modification_date_as_date(article['abs_path'])
+                    if mod_date and (today - mod_date).days <= 14:
+                        recent_articles.append(article)
+    
+    print(f"📊 Found {len(collaboration_articles)} articles open for collaboration")
+    
+    # Generate dashboard tables (exact same logic as before)
+    gap_rows = []
+    for prio in ["high", "medium", ""]:
+        prio_icon = priority_map[prio]
+        grouped = {}
+        for art in gaps_by_priority[prio]:
+            parts = art['rel_path'].split(os.sep)
+            subfolder = "/".join(parts[:-1][-2:]) if len(parts) > 2 else "/".join(parts[:-1])
+            grouped.setdefault(subfolder, []).append(art)
+        for subfolder in sorted(grouped):
+            for art in grouped[subfolder]:
+                link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=True, root_dir=ROOT_DIR)
+                gap_rows.append(f'| {prio_icon} | {link} |')
+    high_impact_gaps_table = '\n'.join(gap_rows) if gap_rows else '| _No high-impact gaps!_ |  |'
+
+    collabs = []
+    for art in collaboration_articles:
+        link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
+        author = art.get('author', '')
+        eta = art.get('eta', '')
+        collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
+        collab_link = f'<a href="/docs/99-contribute/{collab_id}" target="_blank" rel="noopener noreferrer">🤝 Collaborate</a>'
+        collabs.append(f'| {link} | {author} | {eta} | {collab_link} |')
+    open_to_collaboration_table = '\n'.join(collabs) if collabs else '| _No open collaborations!_ |  |  |  |'
+
+    reviews = []
+    for art in review_articles:
+        link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
+        reviews.append(f'| {link} |')
+    needs_review_table = '\n'.join(reviews) if reviews else '| _No articles need review!_ |'
+
+    recents = []
+    for art in recent_articles:
+        link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
+        recents.append(f'| {link} |')
+    recently_published_table = '\n'.join(recents) if recents else '| _No recent articles!_ |'
+
+    # Generate dashboard (same as before)
+    dashboard_template = load_dashboard_template()
+    dashboard_content = dashboard_template.format(
+        high_impact_gaps_table=high_impact_gaps_table,
+        open_to_collaboration_table=open_to_collaboration_table,
+        needs_review_table=needs_review_table,
+        recently_published_table=recently_published_table
+    )
+    with open(DASHBOARD_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        f.write(dashboard_content)
+    print(f"✅ Dashboard written: {DASHBOARD_OUTPUT_PATH}")
 
 if __name__ == "__main__":
     clean_contribute_folder()
