@@ -29,7 +29,7 @@ _(It will pre-fill your message and tag the author.)_
 You can say something like:
 
 ```markdown
-Hi {author_handle}, I'd love to help with the "{title}" article.  
+Hi @{author_handle}, I'd love to help with the "{title}" article.  
 Let me know how best to team up — I can contribute examples or {suggested_contributions}.
 ```
 

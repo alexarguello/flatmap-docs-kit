@@ -15,6 +15,7 @@ Find this article here: <a href="/docs/agent-frameworks" target="_blank" rel="no
 
 #### Sibling articles in the same section, so you know what's already been written:
 - <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/awesome-langgraph4j" target="_blank" rel="noopener noreferrer">Awesome LangGraph4j</a> - missing ❌
+- <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/langgraph4j-assistants" target="_blank" rel="noopener noreferrer">Build a Personal Assistant with LangGraph4j</a> - missing ❌
 - <a href="/docs/agent-frameworks" target="_blank" rel="noopener noreferrer">Agent Frameworks</a> > <a href="/docs/agent-frameworks/langgraph4j" target="_blank" rel="noopener noreferrer">Langgraph4J</a> > <a href="/docs/agent-frameworks/langgraph4j/status-todo" target="_blank" rel="noopener noreferrer">Intro to LangGraph4j</a> - published ✅
 
 ---

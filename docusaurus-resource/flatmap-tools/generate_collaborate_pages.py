@@ -31,15 +31,18 @@ def get_author_info(author_field):
     handle_match = re.search(r'@(\w+)', author)
     handle = handle_match.group(1) if handle_match else "unknown"
     
-    # Clean up author name
+    # Clean up author name - remove the @handle part and any parentheses
     author_name = re.sub(r'@\w+', '', author).strip()
+    author_name = re.sub(r'\([^)]*\)', '', author_name).strip()  # Remove any existing parentheses
+    
+    # If no name left after removing handle and parentheses, return just the handle
     if not author_name:
-        author_name = f"@{handle}"
+        return f"@{handle}", handle
     
     return author_name, handle
 
-def create_location_breadcrumb(rel_path):
-    """Create a breadcrumb showing the article's location."""
+def create_location_breadcrumb(rel_path, article_title):
+    """Create a breadcrumb showing the article's location, matching the contribute page format."""
     parts = rel_path.split(os.sep)
     if parts[-1].endswith('.md'):
         parts[-1] = parts[-1][:-3]
@@ -51,6 +54,9 @@ def create_location_breadcrumb(rel_path):
             folder_title = get_section_title(folder_path)
             url_path = build_url_path(parts[:i+1])
             location_parts.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{folder_title}</a>')
+        # Add the article title as the final part
+        url_path = build_url_path(parts)
+        location_parts.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{article_title}</a>')
         location = " > ".join(location_parts)
     else:
         location = "Root"
@@ -114,8 +120,19 @@ def create_collaboration_page(md_path, rel_path, frontmatter, style_config):
     author_field = frontmatter.get("author", "")
     author_name, author_handle = get_author_info(author_field)
     
+    # Create author display with handle
+    if author_handle != "unknown":
+        # If author_name is just the handle with @ prefix, don't show it twice
+        if author_name == f"@{author_handle}":
+            author_display = f'<a href="https://github.com/{author_handle}" target="_blank" rel="noopener noreferrer">@{author_handle}</a>'
+        else:
+            # Show name and handle in parentheses format: "Name (@handle)"
+            author_display = f"{author_name} (<a href=\"https://github.com/{author_handle}\" target=\"_blank\" rel=\"noopener noreferrer\">@{author_handle}</a>)"
+    else:
+        author_display = author_name
+    
     # Create location breadcrumb
-    location = create_location_breadcrumb(rel_path)
+    location = create_location_breadcrumb(rel_path, title)
     
     # Create discussion link
     discussion_link = create_discussion_link(title, author_handle, style_config)
@@ -131,8 +148,12 @@ def create_collaboration_page(md_path, rel_path, frontmatter, style_config):
     else:
         topics_display = str(topics) if topics else "Not specified"
     
-    # Get description from file content or use default
-    description = "This article needs collaboration to be completed. The author is looking for help with content, examples, or improvements."
+    # Get description from collaboration-topic or use default
+    collaboration_topic = frontmatter.get("collaboration-topic", "")
+    if collaboration_topic:
+        description = f"This article needs collaboration to be completed. Here's what the author wrote: {collaboration_topic}"
+    else:
+        description = "This article needs collaboration to be completed. The author is looking for help with content, examples, or improvements."
     
     # Get status and ETA
     status = frontmatter.get("status", "draft")
@@ -142,7 +163,7 @@ def create_collaboration_page(md_path, rel_path, frontmatter, style_config):
     content = template.format(
         title=title,
         id=id,
-        author=author_name,
+        author=author_display,
         author_handle=author_handle,
         location=location,
         discussion_link=discussion_link,

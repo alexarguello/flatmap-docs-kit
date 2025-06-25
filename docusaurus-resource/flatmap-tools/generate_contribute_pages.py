@@ -169,77 +169,6 @@ def create_contribution_page(md_path, rel_path, frontmatter):
         f.write(content)
     print(f"✅ Created: {output_path}")
 
-def generate_dashboard(all_articles):
-    today = datetime.date.today()
-    priority_map = {"high": "🔥", "medium": "❤️", "": "🤲"}
-    gaps_by_priority = {"high": [], "medium": [], "": []}
-    for art in all_articles:
-        if art['status'] == 'missing' and (not art.get('author')):
-            prio = art.get('article-priority', '')
-            prio = prio.strip().lower() if isinstance(prio, str) else ""
-            print(f"DEBUG: {art['rel_path']} article-priority='{repr(prio)}'")
-            if prio not in gaps_by_priority:
-                prio = ""
-            gaps_by_priority[prio].append(art)
-    gap_rows = []
-    for prio in ["high", "medium", ""]:
-        prio_icon = priority_map[prio]
-        grouped = {}
-        for art in gaps_by_priority[prio]:
-            parts = art['rel_path'].split(os.sep)
-            subfolder = "/".join(parts[:-1][-2:]) if len(parts) > 2 else "/".join(parts[:-1])
-            grouped.setdefault(subfolder, []).append(art)
-        for subfolder in sorted(grouped):
-            for art in grouped[subfolder]:
-                link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=True, root_dir=ROOT_DIR)
-                gap_rows.append(f'| {prio_icon} | {link} |')
-    high_impact_gaps_table = '\n'.join(gap_rows) if gap_rows else '| _No high-impact gaps!_ |  |'
-
-    collabs = []
-    # Use collaboration_articles if provided, otherwise fall back to scanning all_articles
-    articles_to_check = collaboration_articles if collaboration_articles is not None else all_articles
-    for art in articles_to_check:
-        if art.get('collaboration', '') == 'open':
-            link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
-            author = art.get('author', '')
-            eta = art.get('eta', '')
-            # Create collaboration page link - point to the collaboration page, not the original
-            collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
-            collab_link = f'<a href="/docs/99-contribute/{collab_id}" target="_blank" rel="noopener noreferrer">🤝 Collaborate</a>'
-            collabs.append(f'| {link} | {author} | {eta} | {collab_link} |')
-    open_to_collaboration_table = '\n'.join(collabs) if collabs else '| _No open collaborations!_ |  |  |  |'
-
-    reviews = []
-    for art in all_articles:
-        if art['status'] == 'review-needed':
-            link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
-            reviews.append(f'| {link} |')
-    needs_review_table = '\n'.join(reviews) if reviews else '| _No articles need review!_ |'
-
-    recents = []
-    for art in all_articles:
-        if art['status'] == 'published':
-            mod_date = None
-            if 'modified' in art and art['modified']:
-                mod_date = parse_ymd_date(art['modified'])
-            if not mod_date:
-                mod_date = get_file_modification_date_as_date(art['abs_path'])
-            if mod_date and (today - mod_date).days <= 14:
-                link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
-                recents.append(f'| {link} |')
-    recently_published_table = '\n'.join(recents) if recents else '| _No recent articles!_ |'
-
-    dashboard_template = load_dashboard_template()
-    dashboard_content = dashboard_template.format(
-        high_impact_gaps_table=high_impact_gaps_table,
-        open_to_collaboration_table=open_to_collaboration_table,
-        needs_review_table=needs_review_table,
-        recently_published_table=recently_published_table
-    )
-    with open(DASHBOARD_OUTPUT_PATH, "w", encoding="utf-8") as f:
-        f.write(dashboard_content)
-    print(f"✅ Dashboard written: {DASHBOARD_OUTPUT_PATH}")
-
 def extract_contrib_guide():
     # Extract the section from CONTRIBUTING.md
     if not os.path.exists(CONTRIBUTING_MD_PATH):
@@ -374,12 +303,13 @@ def walk_docs():
 
     collabs = []
     for art in collaboration_articles:
-        link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
+        # Create link to the collaboration page, not the original article
+        collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
+        collab_link = f'<a href="/docs/contribute/{collab_id}" target="_blank" rel="noopener noreferrer">{art["title"]}</a>'
         author = art.get('author', '')
         eta = art.get('eta', '')
-        collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
-        collab_link = f'<a href="/docs/99-contribute/{collab_id}" target="_blank" rel="noopener noreferrer">🤝 Collaborate</a>'
-        collabs.append(f'| {link} | {author} | {eta} | {collab_link} |')
+        collaboration_topic = art.get('collaboration-topic', 'Help needed')
+        collabs.append(f'| {collab_link} | {author} | {eta} | {collaboration_topic} |')
     open_to_collaboration_table = '\n'.join(collabs) if collabs else '| _No open collaborations!_ |  |  |  |'
 
     reviews = []

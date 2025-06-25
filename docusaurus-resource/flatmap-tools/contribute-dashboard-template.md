@@ -25,8 +25,8 @@ These are unclaimed but marked high priority or often requested.
 
 These are claimed, but the authors are inviting help!
 
-| Article | Author | ETA | Action |
-|---------|--------|-----|--------|
+| Article | Author | ETA | Details |
+|---------|--------|-----|---------|
 {open_to_collaboration_table}
 
 ---
