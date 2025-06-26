@@ -72,7 +72,7 @@ def extract_tags_from_frontmatter(frontmatter):
 
 def normalize_id(path):
     id_raw = path.replace("/", "_").replace("-", "_").replace(".", "_")
-    return f"n_{id_raw}" if re.match(r"^\d", id_raw) else id_raw
+    return id_raw
 
 
 def strip_order_prefix(name):
@@ -154,7 +154,7 @@ def make_breadcrumb_to_contribute_page(rel_path, article_title=None, root_dir=No
         url_path = build_url_path(parts[:i+1])
         crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
     art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
-    id = normalize_id(rel_path)
+    id = f"contribute-{normalize_id(rel_path)}"
     crumbs.append(f'<a href="/docs/contribute/{id}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
     return " > ".join(crumbs)
 
@@ -177,7 +177,7 @@ def make_dashboard_breadcrumb_link(rel_path, article_title=None, to_contribute_p
     crumb_text.append(art_title)
     text = " > ".join(crumb_text)
     if to_contribute_page:
-        id = normalize_id(rel_path)
+        id = f"contribute-{normalize_id(rel_path)}"
         url = f"/docs/contribute/{id}"
     else:
         url = f"/docs/{build_url_path(parts)}"

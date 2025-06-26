@@ -1,33 +1,24 @@
 ---
-title: Your Title
-sidebar_position: 1
+title: Dive Deeper
+sidebar_position: 10
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
-level: beginner        # beginner / intermediate / advanced / expert
-type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+level: intermediate        # beginner / intermediate / advanced / expert
+type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
+status: published          # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - Java, use cases, chatbot
 
 # 🧩 OPTIONAL TAGS:
-
-# article-priority: high   # high / medium — omit if not important
 
 # collaboration: open      # set if author welcomes collaborators
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-# review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
 # author:
@@ -43,3 +34,5 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+Here comes a list of deep dive topics that ppl new to Java (+ AI) would be interested in testing out.
+TODO: resource should be marked as missing still

@@ -1,3 +1,9 @@
+---
+title: "Contributor Dashboard"
+sidebar_label: "Contribute"
+hide_title: false
+---
+
 ## 🚀 Get Involved
 
 Do you know some article or resource that would fit in? Go ahead and add or create your resource! Step-by-step instructions: see [Contributor Guide for New Articles](/docs/contribute/contributing-new-resource)
@@ -35,8 +41,8 @@ These are claimed, but the authors are inviting help!
 
 These drafts are ready for feedback. Read and help polish them.
 
-| Article |
-|---------|
+| Article | Review Reason |
+|---------|---------------|
 {needs_review_table}
 
 ---

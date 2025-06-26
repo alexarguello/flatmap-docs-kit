@@ -1,5 +1,5 @@
 ---
-title: Your Title
+title: When to use Java
 sidebar_position: 1
 hide_title: true
 
@@ -7,7 +7,7 @@ hide_title: true
 
 level: beginner        # beginner / intermediate / advanced / expert
 type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+status: published          # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
@@ -43,3 +43,7 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+## When to use Java (and when not)?
+
+Stub for article explaining the strengths (and weaknesses) of Java and best use cases (and when to use sth else)s
+Level: beginner!

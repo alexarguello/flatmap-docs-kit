@@ -7,7 +7,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs"))
 OUTPUT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs", "99-contribute"))
 TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "contribute-page-template.md")
 DASHBOARD_TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "contribute-dashboard-template.md")
-DASHBOARD_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "contribute-dashboard.md")
+DASHBOARD_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "index.md")
 CONTRIBUTING_MD_PATH = os.path.abspath(os.path.join(os.getcwd(), "../CONTRIBUTING.md"))
 CONTRIB_GUIDE_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "contributing-new-resource.md")
 
@@ -97,7 +97,7 @@ def make_breadcrumb_from_root(rel_path, article_title=None, link_to_article=True
 
 def create_contribution_page(md_path, rel_path, frontmatter):
     title = frontmatter.get("title", os.path.basename(md_path).replace(".md", ""))
-    id = normalize_id(rel_path)
+    id = f"contribute-{normalize_id(rel_path)}"
     filename = os.path.basename(md_path)
     rel_path_folder = os.path.dirname(rel_path)
     abs_folder_path = os.path.join(ROOT_DIR, rel_path_folder)
@@ -210,6 +210,13 @@ def walk_docs():
         print(f"⚠️  Collaboration page generator not available: {e}")
         create_collaboration_page = None
     
+    # Import review page creation function
+    try:
+        from generate_review_pages import create_review_page
+    except ImportError as e:
+        print(f"⚠️  Review page generator not available: {e}")
+        create_review_page = None
+    
     # Dashboard data collection
     today = datetime.date.today()
     priority_map = {"high": "🔥", "medium": "❤️", "": "🤲"}
@@ -239,6 +246,8 @@ def walk_docs():
                     'priority': frontmatter.get('priority', ''),
                     'article-priority': frontmatter.get('article-priority', ''),
                     'collaboration': collaboration,
+                    'collaboration-topic': frontmatter.get('collaboration-topic', ''),
+                    'review-reason': frontmatter.get('review-reason', ''),
                     'eta': frontmatter.get('eta', ''),
                     'modified': frontmatter.get('modified', None)
                 }
@@ -275,6 +284,12 @@ def walk_docs():
                 # Collect other dashboard data (same logic as before)
                 if status == "review-needed":
                     review_articles.append(article)
+                    # Create review page for articles needing review
+                    if create_review_page:
+                        style_config = load_style_config()
+                        create_review_page(abs_path, rel_path, frontmatter, style_config)
+                    else:
+                        print(f"⚠️  Cannot create review page for {rel_path} - review generator not available")
                 elif status == "published":
                     mod_date = None
                     if 'modified' in article and article['modified']:
@@ -303,9 +318,24 @@ def walk_docs():
 
     collabs = []
     for art in collaboration_articles:
-        # Create link to the collaboration page, not the original article
+        # Create breadcrumb link with max 2 upstream folders like contribute section
+        parts = art['rel_path'].split(os.sep)
+        if parts[-1].endswith('.md'):
+            parts[-1] = parts[-1][:-3]
+        upstreams = parts[:-1][-2:]  # Max 2 upstreams
+        crumb_text = []
+        for i, part in enumerate(upstreams):
+            folder_path = os.path.join(ROOT_DIR, *parts[:-(len(upstreams)-i)])
+            title = get_section_title(folder_path)
+            crumb_text.append(title)
+        art_title = art['title']
+        crumb_text.append(art_title)
+        text = " > ".join(crumb_text)
+        
+        # Create link to the collaboration page
         collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
-        collab_link = f'<a href="/docs/contribute/{collab_id}" target="_blank" rel="noopener noreferrer">{art["title"]}</a>'
+        collab_link = f'<a href="/docs/contribute/{collab_id}" target="_blank" rel="noopener noreferrer">{text}</a>'
+        
         author = art.get('author', '')
         eta = art.get('eta', '')
         collaboration_topic = art.get('collaboration-topic', 'Help needed')
@@ -314,9 +344,28 @@ def walk_docs():
 
     reviews = []
     for art in review_articles:
-        link = make_dashboard_breadcrumb_link(art['rel_path'], article_title=art['title'], to_contribute_page=False, root_dir=ROOT_DIR)
-        reviews.append(f'| {link} |')
-    needs_review_table = '\n'.join(reviews) if reviews else '| _No articles need review!_ |'
+        # Create breadcrumb link with max 2 upstream folders like contribute section
+        parts = art['rel_path'].split(os.sep)
+        if parts[-1].endswith('.md'):
+            parts[-1] = parts[-1][:-3]
+        upstreams = parts[:-1][-2:]  # Max 2 upstreams
+        crumb_text = []
+        for i, part in enumerate(upstreams):
+            folder_path = os.path.join(ROOT_DIR, *parts[:-(len(upstreams)-i)])
+            title = get_section_title(folder_path)
+            crumb_text.append(title)
+        art_title = art['title']
+        crumb_text.append(art_title)
+        text = " > ".join(crumb_text)
+        
+        # Create link to the review page
+        review_id = f"review-{normalize_id(art['rel_path'])}"
+        review_link = f'<a href="/docs/contribute/{review_id}" target="_blank" rel="noopener noreferrer">{text}</a>'
+        
+        # Get review reason
+        review_reason = art.get('review-reason', 'Needs review')
+        reviews.append(f'| {review_link} | {review_reason} |')
+    needs_review_table = '\n'.join(reviews) if reviews else '| _No articles need review!_ |  |'
 
     recents = []
     for art in recent_articles:

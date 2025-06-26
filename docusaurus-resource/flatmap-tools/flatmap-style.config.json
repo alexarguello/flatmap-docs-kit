@@ -1,12 +1,13 @@
 {
   "repository_link": "https://github.com/YOUR_ORG/YOUR_REPO",
-  "flatmap_depth": 4,
+  "flatmap_depth": 2,
   "tags": {
     "type:code": { "icon": "💻" },
     "type:tutorial": { "icon": "🙌" },
     "type:benchmark": { "icon": "📊" },
     "type:api-doc": { "icon": "📚" },
     "type:overview": { "icon": "🧭" },
+    "type:external": { "icon": "🔗" },
     "level:beginner": { "border_color": "green", "border_width": "2px" },
     "level:intermediate": { "border_color": "yellow", "border_width": "2px" },
     "level:advanced": { "border_color": "orange", "border_width": "2px" },

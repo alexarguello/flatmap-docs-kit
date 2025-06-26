@@ -1,7 +1,7 @@
 ---
 title: "Help us write: {title}"
 id: {id}
-sidebar_label: "{title}"
+sidebar_label: "Contribute: {title}"
 hide_title: true
 ---
 

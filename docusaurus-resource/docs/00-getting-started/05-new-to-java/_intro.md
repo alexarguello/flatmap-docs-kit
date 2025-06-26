@@ -1,27 +1,23 @@
 ---
-title: Your Title
+title: New to Java
 sidebar_position: 1
-hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: beginner        # beginner / intermediate / advanced / expert
 type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+status: missing          # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
   - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
+  - ML
   # Add one or more topical tags.
   # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
 
 # 🧩 OPTIONAL TAGS:
 
-# article-priority: high   # high / medium — omit if not important
+article-priority: high   # high / medium — omit if not important
 
 # collaboration: open      # set if author welcomes collaborators
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
@@ -43,3 +39,5 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+This is a stub to kindly onboard newcomers with a Hello World, a Hello OpenAI, and many more resources underneath

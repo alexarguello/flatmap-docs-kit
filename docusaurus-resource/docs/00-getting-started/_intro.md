@@ -1,23 +1,17 @@
 ---
-title: Your Title
-sidebar_position: 1
+title: Getting Started
+sidebar_position: 3
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: beginner        # beginner / intermediate / advanced / expert
-type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
+status: review-needed          # draft / review-needed / published / missing
 visibility: public     # public
 
-topics:
-  - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+topics: Java, AI
+
 
 # 🧩 OPTIONAL TAGS:
 
@@ -27,14 +21,11 @@ topics:
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-# review-reason: "seems not to be on the right topic"
-#                        # required when status: review-needed — will show on the article and in the dashboard
+review-reason: "needs amelioration, emojis, clickable links"
 
-# author:
-#   - name: "Alex De Vries"
-#     github: "@alexdev"
-#   - name: "Lize Declercq"
-#     github: "@lizedev"
+author:
+  - name: "Lize Raes"
+    github: "@lizeraes"
 
 # eta: 2025-07-01           # Set only if status is draft
 
@@ -43,3 +34,11 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+## Welcome to this resource on Java and AI!
+
+Wether you're new to AI, new to Java, seasoned in both, or looking for classroom materials, here you'll find your joy.
+
+This site has short intros and clickable flatmaps to help you get where you need to get, as fast as possible.
+
+Do you want to contribute yourself, or know about an interesting resource to link here? Have a look at our contribution guideline (we made it as easy as possible, promised!).
