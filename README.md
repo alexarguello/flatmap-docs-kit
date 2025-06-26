@@ -33,8 +33,9 @@
 
 - **Docs live in**: `docusaurus-resource/docs/`  
   Folder structure is converted to chapter structure in a sidebar
-  Organize however you like — supports endless folder levels.
-  The flatmaps will be generated on each folder level, and if existing, the `_intro.md` file will be prepended.
+  At the moment it is prepopulated with (AI generated) sample data so you can explore how it all works.
+  Organize however you like, supports endless subfolder levels.
+  The flatmaps will be generated on each folder level, and if existing, the `_intro.md` file will be prepended to the flatmap as a kind of 'landing page' per folder.
 
 - **Customable taggging system**: `docusaurus-resource/docs/.template.md`
   Strongly recommended to define tags that can be later used for filtering, for visual signalling in the flatmap, for generating contributor / maintainer / ecosystem dashboards..
