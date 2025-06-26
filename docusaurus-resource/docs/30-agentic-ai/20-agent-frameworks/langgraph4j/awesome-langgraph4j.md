@@ -25,7 +25,7 @@ collaboration-topic: "need help curating more resources and examples"
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: "Jane Doe (@janedoe)"
+author: "Bob Doe (@bob)"
 
 # eta: 2025-08-10           # Set only if status is draft
 

@@ -21,23 +21,35 @@ def clean_collaborate_folder():
 def get_author_info(author_field):
     """Extract author name and handle from author field."""
     if isinstance(author_field, list) and len(author_field) > 0:
-        author = author_field[0]
+        # Handle array format: ["Name (@github)", "Name (@github)"]
+        author = author_field[0]  # Take the first author for now
     elif isinstance(author_field, str):
         author = author_field
     else:
         return "Unknown Author", "unknown"
     
-    # Extract handle from @username format
-    handle_match = re.search(r'@(\w+)', author)
-    handle = handle_match.group(1) if handle_match else "unknown"
+    # Handle the format: "Name (@github)"
+    # Pattern to match: "Name (@github)" or just "Name"
+    author_pattern = r'"([^"]+)"\s*\(@([^)]+)\)'
+    match = re.search(author_pattern, author)
     
-    # Clean up author name - remove the @handle part and any parentheses
-    author_name = re.sub(r'@\w+', '', author).strip()
-    author_name = re.sub(r'\([^)]*\)', '', author_name).strip()  # Remove any existing parentheses
-    
-    # If no name left after removing handle and parentheses, return just the handle
-    if not author_name:
-        return f"@{handle}", handle
+    if match:
+        # Format: "Name (@github)"
+        author_name = match.group(1).strip()
+        handle = match.group(2).strip()
+    else:
+        # Try to extract handle from @username format in the string
+        handle_match = re.search(r'@(\w+)', author)
+        handle = handle_match.group(1) if handle_match else "unknown"
+        
+        # Clean up author name - remove the @handle part and any parentheses
+        author_name = re.sub(r'@\w+', '', author).strip()
+        author_name = re.sub(r'\([^)]*\)', '', author_name).strip()  # Remove any existing parentheses
+        author_name = re.sub(r'^["\']|["\']$', '', author_name).strip()  # Remove quotes
+        
+        # If no name left after removing handle and parentheses, return just the handle
+        if not author_name:
+            return f"@{handle}", handle
     
     return author_name, handle
 

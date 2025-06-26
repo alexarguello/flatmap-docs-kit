@@ -44,14 +44,7 @@ def parse_frontmatter(file_path):
                     i += 1
                     continue
                 
-                # Handle author objects (multi-line)
-                if key == 'author':
-                    # Simple string format - just store as is (handles: "Name" (@github), "Name" (@github))
-                    tags[key] = value
-                    i += 1
-                    continue
-                
-                # Handle array values
+                # Handle array values first
                 if value.startswith('[') and value.endswith(']'):
                     array_content = value[1:-1]
                     value = [item.strip() for item in array_content.split(',')] if array_content.strip() else []
