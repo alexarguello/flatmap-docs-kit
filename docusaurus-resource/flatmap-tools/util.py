@@ -27,17 +27,44 @@ def parse_frontmatter(file_path):
             return {}
         frontmatter_text = match.group(1)
         tags = {}
-        for line in frontmatter_text.split('\n'):
-            line = line.strip()
+        lines = frontmatter_text.split('\n')
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            # Skip empty lines, comments, and section headers
+            if not line or line.startswith('#') or line.startswith('🧩'):
+                i += 1
+                continue
+            # Look for key-value pairs
             if ':' in line and not line.startswith('#'):
                 key, value = line.split(':', 1)
                 key, value = key.strip(), value.strip()
+                # Skip if the key is a comment or section marker
+                if key.startswith('#') or key.startswith('🧩'):
+                    i += 1
+                    continue
+                
+                # Handle author objects (multi-line)
+                if key == 'author':
+                    # Simple string format - just store as is (handles: "Name" (@github), "Name" (@github))
+                    tags[key] = value
+                    i += 1
+                    continue
+                
+                # Handle array values
                 if value.startswith('[') and value.endswith(']'):
                     array_content = value[1:-1]
                     value = [item.strip() for item in array_content.split(',')] if array_content.strip() else []
+                # Handle quoted strings
                 elif value.startswith(('"', "'")) and value.endswith(('"', "'")):
                     value = value[1:-1]
+                
+                # Strip comments from values (everything after #)
+                if isinstance(value, str):
+                    value = value.split('#')[0].strip()
+                
                 tags[key] = value
+            i += 1
         return tags
     except Exception as e:
         print(f"⚠️  Could not parse frontmatter from {file_path}: {e}")

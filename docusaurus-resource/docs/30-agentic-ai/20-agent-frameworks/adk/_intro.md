@@ -1,24 +1,25 @@
 ---
-title: What is AI?
-sidebar_position: 2
+title: "Introduction to ADK"
+sidebar_position: 1
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: beginner        # beginner / intermediate / advanced / expert
 type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
-status: missing          # draft / review-needed / published / missing
+status: published      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - ML
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - adk
+  - agent-frameworks
+  - google
+  - java
 
 # 🧩 OPTIONAL TAGS:
 
-article-priority: high   # high / medium — omit if not important
+# article-priority: high
+# high / medium — omit if not important
 
 # collaboration: open
 # set if author welcomes collaborators
@@ -28,11 +29,7 @@ article-priority: high   # high / medium — omit if not important
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: ""
-#   - name: "Alex De Vries"
-#     github: "@alexdev"
-#   - name: "Lize Declercq"
-#     github: "@lizedev"
+author: "Lize Raes (@lizeraes)"
 
 # eta: 2025-07-01
 # Set only if status is draft
@@ -46,7 +43,10 @@ article-priority: high   # high / medium — omit if not important
 # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
-This is a stub to make the difference between
-- Predictive AI (ML, pattern recognition, ...)
-- Generative AI (LLMs, Agents, ...)
-- AI to help you code
+# Introduction to ADK
+
+## Agent Development Kit (ADK)
+
+ADK was recently launched by Google and allows developers to easily build agents and expose them to other agents via agent charts. It provides a comprehensive framework for creating production-ready AI agents with built-in support for state management, tool integration, and monitoring.
+
+The framework is designed to simplify the development of complex agent systems by providing a standardized approach to agent creation, communication, and lifecycle management. ADK agents can be deployed individually or as part of larger multi-agent systems, making it ideal for both simple applications and complex enterprise solutions.

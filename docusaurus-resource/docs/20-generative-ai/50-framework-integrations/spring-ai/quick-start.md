@@ -1,5 +1,5 @@
 ---
-title: Your Title
+title: "Spring AI Quick Start"
 sidebar_position: 1
 hide_title: true
 
@@ -7,30 +7,27 @@ hide_title: true
 
 level: beginner        # beginner / intermediate / advanced / expert
 type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+status: review-needed   # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - spring-ai
+  - quick-start
+  - spring-boot
+  - java
 
 # 🧩 OPTIONAL TAGS:
 
-# article-priority: high   # high / medium — omit if not important
+article-priority: high   # high / medium — omit if not important
 
 # collaboration: open      # set if author welcomes collaborators
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-# review-reason: "seems not to be on the right topic"
+review-reason: "needs more code examples and better structure for beginners"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: ["Lize Lala (@lizela)", "Data Science Central (@datasciencecentral)"]
+author: "Sarah Johnson (@sarahj)"
 
 # eta: 2025-07-01           # Set only if status is draft
 
@@ -39,3 +36,9 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+# Spring AI Quick Start
+
+Get up and running with Spring AI in minutes. This guide walks you through creating your first AI-powered Spring Boot application with minimal configuration.
+
+Spring AI provides seamless integration with popular AI providers and simplifies common AI tasks like text generation, embeddings, and function calling. Perfect for developers who want to add AI capabilities to their existing Spring applications. 

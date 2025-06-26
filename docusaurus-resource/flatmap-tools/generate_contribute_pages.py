@@ -227,15 +227,29 @@ def walk_docs():
     
     for root, _, files in os.walk(ROOT_DIR):
         for f in files:
-            if f.endswith(".md") and f != "index.md":
+            if f.endswith(".md") and not f.startswith("."):
                 abs_path = os.path.join(root, f)
                 rel_path = os.path.relpath(abs_path, ROOT_DIR)
+                
+                # Skip index.md files if there's a corresponding _intro.md file
+                if f == "index.md":
+                    intro_path = os.path.join(root, "_intro.md")
+                    if os.path.exists(intro_path):
+                        print(f"⏭️  Skipping {rel_path} (has corresponding _intro.md)")
+                        continue
+                
                 frontmatter = parse_frontmatter(abs_path)
+                
                 # Normalize all frontmatter keys to lowercase
                 frontmatter = {k.lower(): v for k, v in frontmatter.items()}
                 status = frontmatter.get("status", None)
                 collaboration = frontmatter.get("collaboration", "")
                 author = frontmatter.get("author", "")
+                
+                # Check if author exists (handle string format: "Name" (@github), "Name" (@github))
+                has_author = False
+                if isinstance(author, str) and author.strip():
+                    has_author = True
                 
                 article = {
                     'abs_path': abs_path,
@@ -264,7 +278,7 @@ def walk_docs():
                         if prio not in gaps_by_priority:
                             prio = ""
                         gaps_by_priority[prio].append(article)
-                    elif collaboration == "open" and author:
+                    elif collaboration == "open" and has_author:
                         # Create collaboration page for claimed articles open for collaboration
                         if create_collaboration_page:
                             style_config = load_style_config()
@@ -272,7 +286,7 @@ def walk_docs():
                             collaboration_articles.append(article)
                         else:
                             print(f"⚠️  Cannot create collaboration page for {rel_path} - collaboration generator not available")
-                elif status in ["draft", "wip", "review-needed"] and collaboration == "open" and author:
+                elif status in ["draft", "wip", "review-needed"] and collaboration == "open" and has_author:
                     # Create collaboration page for in-progress articles open for collaboration
                     if create_collaboration_page:
                         style_config = load_style_config()

@@ -21,11 +21,9 @@ topics: Java, AI
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-review-reason: "needs amelioration, emojis, clickable links"
+review-reason: "needs better structure, more engaging introduction, and clearer navigation guidance"
 
-author:
-  - name: "Lize Raes"
-    github: "@lizeraes"
+author: "Lize Raes (@lizeraes)"
 
 # eta: 2025-07-01           # Set only if status is draft
 

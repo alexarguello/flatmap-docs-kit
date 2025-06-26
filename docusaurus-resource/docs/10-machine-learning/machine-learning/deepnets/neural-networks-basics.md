@@ -1,27 +1,24 @@
 ---
-title: Your Title
-sidebar_position: 1
+title: "Neural Networks Basics"
+sidebar_position: 2
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: beginner        # beginner / intermediate / advanced / expert
 type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+status: missing        # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - neural-networks
+  - deep-learning
+  - basics
+  - java
 
 # 🧩 OPTIONAL TAGS:
 
-# article-priority: high   # high / medium — omit if not important
+article-priority: high   # high / medium — omit if not important
 
 # collaboration: open      # set if author welcomes collaborators
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
@@ -30,12 +27,18 @@ topics:
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: ["Lize Lala (@lizela)", "Data Science Central (@datasciencecentral)"]
+author: "Dr. Michael Rodriguez (@mrodriguez)"
 
-# eta: 2025-07-01           # Set only if status is draft
+eta: 2025-09-20           # Set only if status is draft
 
 # Feature-related tags (only if this doc describes a feature or gap in Java+AI):
 # feature-status: preview        # missing / experimental / preview / stable / specified
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+# Neural Networks Basics
+
+Understanding the fundamentals of neural networks is essential for working with deep learning in Java. This tutorial covers the core concepts and mathematical foundations.
+
+Learn about neurons, layers, activation functions, and how to implement basic neural network components using Java libraries. This knowledge forms the foundation for more advanced deep learning applications. 

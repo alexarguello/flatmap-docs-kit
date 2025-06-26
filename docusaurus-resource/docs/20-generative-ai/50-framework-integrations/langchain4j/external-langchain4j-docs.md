@@ -1,27 +1,22 @@
 ---
-title: Your Title
-sidebar_position: 1
+title: Official LangChain4J Documentation
+sidebar_position: 2
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
-level: beginner        # beginner / intermediate / advanced / expert
-type: tutorial         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+level: intermediate        # beginner / intermediate / advanced / expert
+type: external         # tutorial / overview / code / benchmark / opinion / api-doc
+status: missing      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - provider:openai
-  - framework:your-framework-name
-  - tool:your-tool-name
-  - runtime:graalvm
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - langchain4j
+  - external
 
 # 🧩 OPTIONAL TAGS:
 
-# article-priority: high   # high / medium — omit if not important
+article-priority: medium   # high / medium — omit if not important
 
 # collaboration: open      # set if author welcomes collaborators
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
@@ -30,7 +25,7 @@ topics:
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: ["Lize Lala (@lizela)", "Data Science Central (@datasciencecentral)"]
+# author: "LangChain4J Team (@langchain4j)"
 
 # eta: 2025-07-01           # Set only if status is draft
 
@@ -39,3 +34,11 @@ topics:
 # feature-priority: high         # suggested / medium / high
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+<!-- This article is unclaimed. Link or summarize the official LangChain4J docs here! -->
+
+👉 **<a href="https://docs.langchain4j.dev/" target="_blank" rel="noopener noreferrer">Visit the Official LangChain4J Docs</a>**
+
+Complete API reference, tutorials, and examples for building AI applications with LangChain4J.
+
+(This is an external resource) 

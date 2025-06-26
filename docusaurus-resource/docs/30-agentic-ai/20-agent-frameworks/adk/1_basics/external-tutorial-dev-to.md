@@ -1,24 +1,25 @@
 ---
-title: What is AI?
-sidebar_position: 2
+title: "Building Your First ADK Agent (Dev.to)"
+sidebar_position: 6
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: beginner        # beginner / intermediate / advanced / expert
-type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
-status: missing          # draft / review-needed / published / missing
+type: external         # tutorial / overview / code / benchmark / opinion / api-doc
+status: published      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - LLM
-  - ML
-  # Add one or more topical tags.
-  # Where appropriate, use prefixes for easy filtering like provider:, framework:, tool:, runtime: whenever possible.
+  - adk
+  - tutorial
+  - agents
+  - java
 
 # 🧩 OPTIONAL TAGS:
 
-article-priority: high   # high / medium — omit if not important
+# article-priority: high
+# high / medium — omit if not important
 
 # collaboration: open
 # set if author welcomes collaborators
@@ -28,11 +29,7 @@ article-priority: high   # high / medium — omit if not important
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-# author: ""
-#   - name: "Alex De Vries"
-#     github: "@alexdev"
-#   - name: "Lize Declercq"
-#     github: "@lizedev"
+author: "Eva Müller (@evamdev)"
 
 # eta: 2025-07-01
 # Set only if status is draft
@@ -46,7 +43,8 @@ article-priority: high   # high / medium — omit if not important
 # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
-This is a stub to make the difference between
-- Predictive AI (ML, pattern recognition, ...)
-- Generative AI (LLMs, Agents, ...)
-- AI to help you code
+# Building Your First ADK Agent (Dev.to)
+
+👉 **<a href="https://www.datacamp.com/tutorial/agent-development-kit-adk" target="_blank" rel="noopener noreferrer">Read the full tutorial on Dev.to</a>**
+
+(This is an external resource)

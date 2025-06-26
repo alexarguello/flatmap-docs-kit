@@ -1,5 +1,5 @@
 ---
-title: Java Basics
+title: AI in Java Basics
 sidebar_position: 5
 hide_title: true
 
@@ -21,11 +21,9 @@ topics: Java, AI
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-review-reason: "needs amelioration, emojis, clickable links"
+review-reason: "needs AI-specific Java examples, practical code snippets, and integration patterns"
 
-author:
-  - name: "Lize Raes"
-    github: "@lizeraes"
+author: "Lize Raes (@lizeraes)"
 
 # eta: 2025-07-01           # Set only if status is draft
 

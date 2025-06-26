@@ -208,7 +208,7 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_overri
         if os.path.isdir(full_path):
             pos = get_folder_sidebar_position(full_path)
             combined.append((e, True, pos))
-        elif e.endswith('.md') and e not in ("index.md", "_intro.md"):
+        elif e.endswith('.md') and e not in ("index.md", "_intro.md") and not e.startswith("."):
             fm = parse_frontmatter(full_path)
             try:
                 pos = float(fm.get('sidebar_position', float('inf')))

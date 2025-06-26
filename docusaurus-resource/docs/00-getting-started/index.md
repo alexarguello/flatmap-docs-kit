@@ -21,11 +21,9 @@ topics: Java, AI
 # collaboration-topic: "need help implementing Spring Boot starter examples"  
 #                        # explain what help is welcome (appears on the dashboard & collab page)
 
-review-reason: "needs amelioration, emojis, clickable links"
+review-reason: "needs better structure, more engaging introduction, and clearer navigation guidance"
 
-author:
-  - name: "Lize Raes"
-    github: "@lizeraes"
+author: "Lize Raes (@lizeraes)"
 
 # eta: 2025-07-01           # Set only if status is draft
 
@@ -74,11 +72,11 @@ class n_00_getting_started_05_new_to_java_10_java_basics col2;
 class n_00_getting_started_05_new_to_java_20_ai_in_java_basics col2;
 class n_00_getting_started_05_new_to_java col1;
 class n_00_getting_started col0;
-classDef custom0 fill:#ffcccc,stroke:green,stroke-width:2px,stroke-dasharray:0;
+classDef custom0 fill:#ffcccc,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_05_new_to_java_40_when_java_md custom0;
-classDef custom1 fill:#ffcccc,stroke:yellow,stroke-width:2px,stroke-dasharray:0;
+classDef custom1 fill:#ffcccc,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_05_new_to_java_30_dive_deeper_md custom1;
-classDef custom2 fill:#d5b3ff,stroke:green,stroke-width:2px,stroke-dasharray:0;
+classDef custom2 fill:#d5b3ff,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_what_is_ai_md custom2;
 linkStyle default interpolate basis
 ```

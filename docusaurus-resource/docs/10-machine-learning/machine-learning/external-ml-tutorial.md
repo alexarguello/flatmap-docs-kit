@@ -1,20 +1,20 @@
 ---
-title: "Jlama"
-sidebar_position: 1
+title: "Machine Learning with Java - Complete Guide"
+sidebar_position: 3
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: intermediate      # beginner / intermediate / advanced / expert
-type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
-status: draft          # draft / review-needed / published / missing
+type: external         # tutorial / overview / code / benchmark / opinion / api-doc
+status: published      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - jlama
-  - local-inference
-  - llama
+  - machine-learning
+  - tutorial
   - java
+  - weka
 
 # 🧩 OPTIONAL TAGS:
 
@@ -27,9 +27,9 @@ topics:
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-author: "Lize Raes (@lizeraes)"
+author: "Data Science Central (@datasciencecentral)"
 
-eta: 2025-07-01           # Set only if status is draft
+# eta: 2025-07-01           # Set only if status is draft
 
 # Feature-related tags (only if this doc describes a feature or gap in Java+AI):
 # feature-status: preview        # missing / experimental / preview / stable / specified
@@ -37,8 +37,10 @@ eta: 2025-07-01           # Set only if status is draft
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
-# Jlama
+# Machine Learning with Java - Complete Guide
 
-Jlama is a Java library for running Llama models locally with high performance and low memory usage. It provides a native Java interface to the Llama inference engine, enabling developers to integrate local LLM capabilities into their Java applications.
+👉 **<a href="https://www.datasciencecentral.com/machine-learning-with-java-complete-guide/" target="_blank" rel="noopener noreferrer">Read the Complete Guide</a>**
 
-The library supports various Llama model formats and provides optimized inference for both CPU and GPU environments. Jlama is particularly useful for applications requiring offline AI capabilities or when you need to maintain full control over the inference process.
+Comprehensive tutorial covering machine learning algorithms, data preprocessing, and model evaluation using Java libraries like Weka and DL4J.
+
+(This is an external resource) 
