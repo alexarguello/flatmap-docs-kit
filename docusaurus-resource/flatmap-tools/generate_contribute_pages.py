@@ -274,7 +274,6 @@ def walk_docs():
                         # Collect for high impact gaps (same logic as before)
                         prio = frontmatter.get('article-priority', '')
                         prio = prio.strip().lower() if isinstance(prio, str) else ""
-                        print(f"DEBUG: {rel_path} article-priority='{repr(prio)}'")
                         if prio not in gaps_by_priority:
                             prio = ""
                         gaps_by_priority[prio].append(article)

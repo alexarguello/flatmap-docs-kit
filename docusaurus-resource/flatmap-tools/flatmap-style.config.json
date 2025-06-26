@@ -13,9 +13,9 @@
     "level:advanced": { "border_color": "orange", "border_width": "4px" },
     "level:expert": { "border_color": "red", "border_width": "4px" },
     "status:draft": { "background_color": "lightgrey" },
-    "status:wip": { "background_color": "lightgrey" },
     "status:review-needed": { "background_color": "lightgrey" },
-    "status:planned": { "background_color": "lightgrey" },
+    "status:published": {},
+    "status:missing": { "background_color": "lightgrey" },
     "visibility:internal": { "exclude": true },
     "visibility:archived": { "exclude": true }
   }

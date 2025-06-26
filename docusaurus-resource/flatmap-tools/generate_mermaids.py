@@ -11,7 +11,6 @@ def load_style_config():
     try:
         with open(STYLE_CONFIG_PATH, "r", encoding="utf-8") as f:
             config = json.load(f)
-            print(f"DEBUG: style_config keys={list(config.get('tags', {}).keys())}")
             return config
     except Exception as e:
         print(f"⚠️  Warning: Could not load style config: {e}")
@@ -217,10 +216,6 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_overri
             combined.append((e, False, pos))
     # Sort by sidebar_position, then name
     combined.sort(key=lambda x: (x[2], x[0]))
-    # Debug: print sorted order
-    print(f"DEBUG: FOLDER {folder_path}")
-    for name, is_dir, pos in combined:
-        print(f"  {'DIR ' if is_dir else 'FILE'}: {name} (sidebar_position={pos})")
     palette = ["#b3d9ff", "#d5b3ff", "#ffcccc", "#ffd699", "#d0f0c0"]
     for name, is_dir, _ in combined:
         if is_dir:
@@ -460,11 +455,15 @@ def color_to_dot(color):
         'green': '🟢',
         'blue': '🔵',
         'purple': '🟣',
-        'pink': '🩷',  # closest available
+        'pink': '🩷',
         'black': '⚫',
         'white': '⚪',
-        'grey': '⚪',  # no grey dot, use white
-        'gray': '⚪',
+        'grey': '⬤',  # Use filled circle for grey
+        'gray': '⬤',
+        'lightgrey': '⬤',
+        'lightgray': '⬤',
+        'lightgreen': '🟢',
+        'lightcoral': '🔴',
         # fallback for custom colors
     }
     # Try to match CSS hex colors to a dot (very basic)
@@ -475,28 +474,61 @@ def color_to_dot(color):
 
 def create_compact_legend(style_classes, style_config):
     """Create a compact legend showing all styles from the config, with color dots for border/background."""
-    legend_items = []
+    # Group tags by their visual properties
+    icon_tags = []
+    border_tags = []
+    background_groups = {}
+    
     for tag, tag_config in style_config.get('tags', {}).items():
+        # Skip invisible/excluded tags
+        if tag_config.get('exclude', False):
+            continue
+            
         icon = tag_config.get('icon', '')
         border_color = tag_config.get('border_color', '')
         background_color = tag_config.get('background_color', '')
-        border_dot = color_to_dot(border_color) if border_color else ''
-        background_dot = color_to_dot(background_color) if background_color else ''
-        visual_parts = []
+        
         if icon:
-            visual_parts.append(icon)
-        if border_dot:
-            visual_parts.append(f"border:{border_dot}")
-        if background_dot:
-            visual_parts.append(f"bg:{background_dot}")
-        visual = " ".join(visual_parts) if visual_parts else "•"
-        legend_items.append(f"**{visual}** {tag}")
-    if not legend_items:
+            icon_tags.append(f"**{icon}** {tag}")
+        
+        if border_color:
+            border_dot = color_to_dot(border_color)
+            border_tags.append(f"**border:{border_dot}** {tag}")
+        
+        if background_color:
+            if background_color not in background_groups:
+                background_groups[background_color] = []
+            background_groups[background_color].append(tag)
+    
+    legend_lines = []
+    
+    # Icons line
+    if icon_tags:
+        legend_lines.append(" | ".join(icon_tags))
+    
+    # Border colors line
+    if border_tags:
+        legend_lines.append(" | ".join(border_tags))
+    
+    # Background colors line - all on one line with text descriptions
+    if background_groups:
+        bg_parts = []
+        for bg_color, tags in background_groups.items():
+            if bg_color == "lightgrey":
+                bg_parts.append(f"**bg grey:** {', '.join(tags)}")
+            elif bg_color == "lightgreen":
+                bg_parts.append(f"**bg green:** {', '.join(tags)}")
+            else:
+                bg_parts.append(f"**bg {bg_color}:** {', '.join(tags)}")
+        legend_lines.append(" | ".join(bg_parts))
+    
+    if not legend_lines:
         return []
-    legend_text = " | ".join(legend_items)
+    
+    legend_text = "<br />".join(legend_lines)
     return [
         "",
-        f"<small><strong>Legend:</strong> {legend_text}</small>"
+        f"<small><strong>Legend:</strong><br />{legend_text}</small>"
     ]
 
 walk_folders()

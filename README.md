@@ -1,78 +1,121 @@
-# 🧠 AI Resource Navigator (Docusaurus + Flatmap)
+# 📚 flatmap-docs-kit
 
-This project is a template for building a **structured, deep, and navigable technical knowledge base**—perfect for documentation, developer onboarding, industry insight sharing, and feature roadmapping.
+**Turn any folder structure of Markdown docs and external links into a fully navigable, taggable, and contributor-friendly knowledge base.**
 
----
+🗺️ Served as a navigable web resource with **docusaurus**, 
+🗺️ Auto-generates **visual flatmaps** for overview and fast navigation,  
+🧑‍💻 Smart **contributor dashboards** to make contributing easier than ever,  
+💬 Supports **review flags**, **collaboration offers**, and more.
 
-## 🚀 Why This Is Cool
-
-- 🗺️ **Each folder (or "chapter") gets its own visual flatmap**: a clickable overview of all nested topics, up to 3 levels deep — so anyone can see the structure **at a glance** and jump directly to the content.
-- 🔁 **Multiple paths to the same resource**: organize docs the way readers think, not the way folders are stored.
-- 🌐 **External resources behave like first-class citizens**: they show up in the flatmap, open directly in a new tab, and are clearly marked.
-- 🛠️ **Great for contributors & feature architects**: internal content, WIP notes, and roadmap items can live side by side with polished docs — and stay organized.
-- 🧭 Helps both **users** and **strategists** navigate large projects with many moving parts.
-
-> 📸 _Flatmap preview here_  
-> _[insert screenshot placeholder]_
+<p align="center">
+  <img src="assets/flatmap-sample.png" alt="Flatmap example" width="45%" />
+  <img src="assets/contributor-dashboard-sample.png" alt="Contributor dashboard" width="45%" />
+</p>
 
 ---
 
-## 🏗 How It Works
+## 🚀 Setup Instructions
 
-- This uses [Docusaurus](https://docusaurus.io/) to render the contents of the docs/ folder as a static navigable site.
-- Python scripts auto-generate `index.md` files with Mermaid flatmaps for each folder.
-- If a folder contains an `intro.md`, it's shown above the flatmap (recommended: 1–2 paragraphs max).
+> 🧪 This tool uses [Docusaurus](https://docusaurus.io/) to serve and build the site.
 
----
+1. **Install Docusaurus locally**:
+   ```bash
+   cd docusaurus-resource
+   npm install
+   npm run start
+   ```
 
-## Build your own version
-
-- Clone this repo
-- Update docusaurus-resource/docs/.template.md with your own 'frontmatter' (header) and tags
-- Drop in your own content under /docs/ (for now it is populated with sample articles)
-
-### 🔄 External vs Internal Resources
-
-#### Internal `.md`:
-- Renders directly on the site
-- Appears in flatmaps with a regular label
-
-#### External `.md` with frontmatter:
-```yaml
----
-title: Official ADK Docs
-type: external
-link: https://docs.agent-dev-kit.org
----
-```
-Shows up with a 🔗 icon in the map
-
-Clicking it takes you directly to the external site
+2. _(optional)_ Add deployment config — **TODO: write instructions for deploying live**.
 
 ---
 
-## 🧪 Run It (Local Setup)
+## 🧩 Structure & Configuration
 
+- **Docs live in**: `docusaurus-resource/docs/`  
+  Folder structure is converted to chapter structure in a sidebar
+  Organize however you like — supports endless folder levels.
+  The flatmaps will be generated on each folder level, and if existing, the `_intro.md` file will be prepended.
+
+- **Customable taggging system**: `docusaurus-resource/docs/.template.md`
+  Strongly recommended to define tags that can be later used for filtering, for visual signalling in the flatmap, for generating contributor / maintainer / ecosystem dashboards..
+  Each Markdown file needs a header ('frontmatter') that is compliant with your tag template (see [`docusaurus-resource/docs/.template.md`](docs/.template.md)).
+
+- **Flatmap styling config**:  
+  `docusaurus-resource/flatmap-tools/flatmap-style.config.json`  
+  Set the link to your github repo and publishing url.
+  Set the desired flatmap depth (recommendation: not more than 3)
+  Define per-tag colors, borders, icons, ...
+
+- **Python utilities** (see `flatmap-tools/`):
+  - `generate-mermaids.py`: Generate the visual flatmaps
+  - `generate-contributor-pages.py`: Generate contributor dashboard + per-resource pages
+
+---
+
+## 🛠️ How to Use the Toolkit
+
+### 🗺️ Flatmap Generator
+
+**Command**:
 ```bash
-# 1. Go to docusaurus root
 cd docusaurus-resource
-
-# 2. Install
-npm install
-
-# 3. Generate flatmaps
-python tools/generate-mermaids.py
-
-# 4. Start the local site
-npm run start
+python3 flatmap-tools/generate-mermaids.py
 ```
 
-Then open: http://localhost:3000/docs
+**What it does**:
+- Scans all `docs/**` folders
+- For each, creates a `index.md` with:
+  - Mermaid map of clickable subfolders and files
+  - Optional text from `_intro.md`
+  - Visual styles based on tags
+  - Legend generated from style config
+- Also builds:
+  - A full-site overview (full depth): `docs/full-sitemap.md`
+  - Top-level summary map: `docs/index.md`
 
 ---
 
-## 🛣️ Features Coming Soon
-- Configurable tags and rendering options
-- 🏷️ Tag-based views — tags will appear in flatmaps (e.g. feature, bug, tutorial)
-- 📊 Dashboards — see missing docs, upcoming content, and WIP summaries
-- 🤖 Chatbot integration — ask natural-language questions across your structured docs
+### 🙌 Contributor Dashboard
+
+**Command**:
+```bash
+cd docusaurus-resource
+python3 flatmap-tools/generate-contributor-pages.py
+```
+
+**What it does**:
+- Generates `docusaurus-resource/docs/contributing/contribute-dashboard.md`  
+  → Lists wanna-have articles (tagged as missing), invites collaboration, list resources that need review, shows recent publications (last 2 weeks)
+
+- Generates `_contribute/*.md` files per missing article, with detailed context and contribution instruction, in order to make contributing frictionless.
+
+**Templates for the dashboard and the detailed contribution pages live in**: `docusaurus-resource/flatmap-tools/`
+
+---
+
+## 🧪 Extend or Customize
+
+All logic lives in the [`flatmap-tools/`](./flatmap-tools) folder:
+
+- 🧠 Add your own dashboards
+- 🧩 Extend metadata parsing
+- 🎨 Add new styles via `flatmap-style.config.json`
+
+---
+
+## 🗑️ Before Publishing
+
+When you're done setting up:
+
+1. **Delete this README**
+    Because it is aimed at the maintainer, not the actual resource users or contributors
+2. **Replace with [`README-once-published.md`](README-once-published.md)`**
+   - This currently contains usage and contribution guidelines for an actually published resource
+   - Update it to fit your resource and target audience
+
+---
+
+## 🧭 Coming Soon
+
+- **Maintainer Dashboard**: overdue resources, broken links, tag consistency
+- **Feature Ecosystem Dashboard**: (beyond articles) to show gaps in the ecosystem that would need implementing

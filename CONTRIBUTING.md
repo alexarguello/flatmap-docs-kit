@@ -13,6 +13,8 @@ We aim to make the resource:
 
 ## 📝 How to Add a New Resource
 
+Not sure where to start? Have a look at the last topic in the sidebar, `Contribute` for a dashboard with resources / reviews we'd love to have. If you have your own idea, go ahead as follow:
+
 1. Find the correct folder inside [`/docs/`](./docs)
 2. Copy the [`docs/.template.md`](./docs/.template.md) into that folder
 3. Rename the file (e.g., `overview.md`, `setup-guide.md`, etc.). Attention: `intro.md` and `index.md are reserved.

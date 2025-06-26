@@ -219,7 +219,7 @@ classDef custom3 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_05_new_to_java_10_java_basics_2_writing_a_file_md custom3;
 classDef custom4 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_05_new_to_java_30_dive_deeper_md custom4;
-classDef custom5 fill:#ffcccc,stroke:green,stroke-width:4px,stroke-dasharray:0;
+classDef custom5 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_what_is_ai_md custom5;
 classDef custom6 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_10_machine_learning_machine_learning_overview_md custom6;
@@ -227,13 +227,13 @@ classDef custom7 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_10_machine_learning_machine_learning_external_ml_tutorial_md custom7;
 classDef custom8 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_10_machine_learning_machine_learning_deepnets_deeplearning4j_md custom8;
-classDef custom9 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
+classDef custom9 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_10_machine_learning_machine_learning_deepnets_neural_networks_basics_md custom9;
-classDef custom10 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+classDef custom10 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_10_machine_learning_machine_learning_nlp_opennlp_md custom10;
 classDef custom11 fill:#ffd699,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_20_generative_ai_50_framework_integrations_overview_md custom11;
-classDef custom12 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+classDef custom12 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_20_generative_ai_50_framework_integrations_langchain4j_external_langchain4j_docs_md custom12;
 classDef custom13 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_20_generative_ai_50_framework_integrations_mcp_java_mcp_sdk_md custom13;
@@ -271,11 +271,11 @@ classDef custom29 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0
 class n_30_agentic_ai_20_agent_frameworks_langgraph4j_get_started_md custom29;
 classDef custom30 fill:lightgrey,stroke:orange,stroke-width:4px,stroke-dasharray:0;
 class n_30_agentic_ai_20_agent_frameworks_langgraph4j_langgraph4j_assistants_md custom30;
-classDef custom31 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+classDef custom31 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_30_agentic_ai_20_agent_frameworks_langgraph4j_awesome_langgraph4j_md custom31;
 classDef custom32 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md custom32;
 linkStyle default interpolate basis
 ```
 
-<small><strong>Legend:</strong> **💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **🔗** type:external | **border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert | **bg:⬤** status:draft | **bg:⬤** status:wip | **bg:⬤** status:review-needed | **bg:⬤** status:planned | **•** visibility:internal | **•** visibility:archived</small>
+<small><strong>Legend:</strong><br />**💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **🔗** type:external<br />**border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert<br />**bg grey:** status:draft, status:review-needed, status:missing</small>

@@ -63,9 +63,9 @@ class n_40_ai_for_code col1;
 class root col0;
 classDef custom0 fill:#d5b3ff;
 class full_sitemap_md custom0;
-classDef custom1 fill:#ffcccc,stroke:green,stroke-width:4px,stroke-dasharray:0;
+classDef custom1 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_what_is_ai_md custom1;
 linkStyle default interpolate basis
 ```
 
-<small><strong>Legend:</strong> **💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **🔗** type:external | **border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert | **bg:⬤** status:draft | **bg:⬤** status:wip | **bg:⬤** status:review-needed | **bg:⬤** status:planned | **•** visibility:internal | **•** visibility:archived</small>
+<small><strong>Legend:</strong><br />**💻** type:code | **🙌** type:tutorial | **📊** type:benchmark | **📚** type:api-doc | **🧭** type:overview | **🔗** type:external<br />**border:🟢** level:beginner | **border:🟡** level:intermediate | **border:🟠** level:advanced | **border:🔴** level:expert<br />**bg grey:** status:draft, status:review-needed, status:missing</small>
