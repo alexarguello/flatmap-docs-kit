@@ -1,10 +1,11 @@
 import os
 import re
+import json
 import datetime
-from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config
+from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config, get_docs_root_dir, extract_tags_from_frontmatter
 
-ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs"))
-OUTPUT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs", "99-contribute"))
+ROOT_DIR = get_docs_root_dir()
+OUTPUT_DIR = os.path.join(ROOT_DIR, "99-contribute")
 TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "collaborate-page-template.md")
 
 def load_template():

@@ -1,5 +1,6 @@
 {
   "repository_link": "https://github.com/YOUR_ORG/YOUR_REPO",
+  "base_folder": "educational-resource",
   "flatmap_depth": 2,
   "tags": {
     "type:code": { "icon": "💻" },

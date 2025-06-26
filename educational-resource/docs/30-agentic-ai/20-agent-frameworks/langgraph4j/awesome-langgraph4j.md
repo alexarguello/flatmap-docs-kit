@@ -27,7 +27,7 @@ collaboration-topic: "need help curating more resources and examples"
 
 author: "Bob Doe (@bob)"
 
-# eta: 2025-08-10           # Set only if status is draft
+eta: 2025-09-15           # Set only if status is draft
 
 # Feature-related tags (only if this doc describes a feature or gap in Java+AI):
 # feature-status: preview        # missing / experimental / preview / stable / specified

@@ -29,7 +29,7 @@ collaboration-topic: "would need some help with the Spring Boot starters of the 
 
 author: "Lize Raes (@lizeraes)"
 
-# eta: 2025-09-10           # Set only if status is draft
+eta: 2025-08-01           # Set only if status is draft
 
 # Feature-related tags (only if this doc describes a feature or gap in Java+AI):
 # feature-status: preview        # missing / experimental / preview / stable / specified

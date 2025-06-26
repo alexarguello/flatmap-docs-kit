@@ -16,6 +16,38 @@ def load_style_config():
         return {"tags": {}}
 
 
+def get_base_folder():
+    """Get the base folder name from config, with fallback to auto-detection."""
+    config = load_style_config()
+    config_base_folder = config.get("base_folder")
+    
+    # Auto-detect: find the folder that contains flatmap-tools
+    current_dir = os.path.dirname(__file__)  # flatmap-tools directory
+    parent_dir = os.path.dirname(current_dir)  # parent of flatmap-tools
+    detected_base_folder = os.path.basename(parent_dir)
+    
+    # If config value exists but doesn't match reality, use the detected value
+    if config_base_folder and config_base_folder != detected_base_folder:
+        print(f"⚠️  Config base_folder '{config_base_folder}' doesn't match actual folder '{detected_base_folder}'. Using detected value.")
+        return detected_base_folder
+    
+    # If config value exists and matches reality, use it
+    if config_base_folder:
+        return config_base_folder
+    
+    # Fallback to auto-detection
+    return detected_base_folder
+
+
+def get_docs_root_dir():
+    """Get the absolute path to the docs directory within the base folder."""
+    base_folder = get_base_folder()
+    # Find the absolute path to the base folder (parent of flatmap-tools)
+    flatmap_tools_dir = os.path.dirname(__file__)
+    base_folder_path = os.path.dirname(flatmap_tools_dir)
+    return os.path.abspath(os.path.join(base_folder_path, "docs"))
+
+
 def parse_frontmatter(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as f:

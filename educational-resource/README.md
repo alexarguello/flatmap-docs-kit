@@ -20,7 +20,6 @@
 
 1. **Install Docusaurus locally**:
    ```bash
-   cd docusaurus-resource
    npm install
    npm run start
    ```
@@ -31,18 +30,18 @@
 
 ## 🧩 Structure & Configuration
 
-- **Docs live in**: `docusaurus-resource/docs/`  
+- **Docs live in**: `docs/`  
   Folder structure is converted to chapter structure in a sidebar
   At the moment it is prepopulated with (AI generated) sample data so you can explore how it all works.
   Organize however you like, supports endless subfolder levels.
   The flatmaps will be generated on each folder level, and if existing, the `_intro.md` file will be prepended to the flatmap as a kind of 'landing page' per folder.
 
-- **Customable taggging system**: `docusaurus-resource/docs/.template.md`
+- **Customable taggging system**: `docs/.template.md`
   Strongly recommended to define tags that can be later used for filtering, for visual signalling in the flatmap, for generating contributor / maintainer / ecosystem dashboards..
-  Each Markdown file needs a header ('frontmatter') that is compliant with your tag template (see [`docusaurus-resource/docs/.template.md`](docs/.template.md)).
+  Each Markdown file needs a header ('frontmatter') that is compliant with your tag template (see [`docs/.template.md`](docs/.template.md)).
 
 - **Flatmap styling config**:  
-  `docusaurus-resource/flatmap-tools/flatmap-style.config.json`  
+  `flatmap-tools/flatmap-style.config.json`  
   Set the link to your github repo and publishing url.
   Set the desired flatmap depth (recommendation: not more than 3)
   Define per-tag colors, borders, icons, ...
@@ -59,7 +58,6 @@
 
 **Command**:
 ```bash
-cd docusaurus-resource
 python3 flatmap-tools/generate-mermaids.py
 ```
 
@@ -80,17 +78,16 @@ python3 flatmap-tools/generate-mermaids.py
 
 **Command**:
 ```bash
-cd docusaurus-resource
 python3 flatmap-tools/generate-contributor-pages.py
 ```
 
 **What it does**:
-- Generates `docusaurus-resource/docs/contributing/contribute-dashboard.md`  
+- Generates `docs/contributing/contribute-dashboard.md`  
   → Lists wanna-have articles (tagged as missing), invites collaboration, list resources that need review, shows recent publications (last 2 weeks)
 
 - Generates `_contribute/*.md` files per missing article, with detailed context and contribution instruction, in order to make contributing frictionless.
 
-**Templates for the dashboard and the detailed contribution pages live in**: `docusaurus-resource/flatmap-tools/`
+**Templates for the dashboard and the detailed contribution pages live in**: `flatmap-tools/`
 
 ---
 
@@ -110,7 +107,7 @@ When you're done setting up:
 
 1. **Delete this README**
     Because it is aimed at the maintainer, not the actual resource users or contributors
-2. **Replace with [`README-once-published.md`](README-once-published.md)`**
+2. **Replace with [`README-once-contributed.md`](README-once-contributed.md)**
    - This currently contains usage and contribution guidelines for an actually published resource
    - Update it to fit your resource and target audience
 

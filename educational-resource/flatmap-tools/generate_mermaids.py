@@ -1,20 +1,11 @@
 import os
 import re
 import json
+from util import get_docs_root_dir, load_style_config
 
-ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "docs"))
+ROOT_DIR = get_docs_root_dir()
 DO_NOT_EDIT = "<!-- AUTO-GENERATED FILE — DO NOT EDIT. Regenerated on merge -->"
-STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.getcwd(), "flatmap-tools", "flatmap-style.config.json"))
-
-def load_style_config():
-    """Load the flatmap styling configuration."""
-    try:
-        with open(STYLE_CONFIG_PATH, "r", encoding="utf-8") as f:
-            config = json.load(f)
-            return config
-    except Exception as e:
-        print(f"⚠️  Warning: Could not load style config: {e}")
-        return {"tags": {}, "flatmap_depth": 4}
+STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "flatmap-style.config.json"))
 
 def get_max_depth():
     """Get the maximum depth from style config."""
