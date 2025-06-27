@@ -1,14 +1,10 @@
 name: Deploy Docusaurus to GitHub Pages
 
 on:
-  # Run every day at 20:00 UTC
-  schedule:
-    - cron: '0 20 * * *'
-  # Allow manual deploy
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,29 +19,15 @@ jobs:
         with:
           node-version: 20
 
-      # Skip this if you're only testing dummy deploy
       - name: Install dependencies
         run: npm ci
 
-      # Skip this if you're only testing dummy deploy
-      - name: Run generate-mermaids.py
+      # ✅ Drop dummy build folder instead of real Docusaurus build
+      - name: Drop dummy build folder
         run: |
-          python3 flatmap-tools/generate_mermaids.py
-          python3 flatmap-tools/generate_contribute_pages.py
-
-      # Skip this if you're only testing dummy deploy
-      - name: Build Docusaurus site
-        run: npm run build
-
-      # ⚠️ Optional dummy deploy block:
-      # Uncomment the below to drop a dummy file instead of real build.
-      # This avoids waiting minutes for a real build during testing.
-      #
-      # - name: Drop dummy build folder
-      #   run: |
-      #     rm -rf build
-      #     mkdir -p build
-      #     echo "<html><body>dummy deploy success</body></html>" > build/index.html
+          rm -rf build
+          mkdir -p build
+          echo "<html><body>dummy deploy success</body></html>" > build/index.html
 
       - name: Configure Git user
         run: |
@@ -54,14 +36,11 @@ jobs:
 
       - name: Fix git remote URL
         run: |
-          # Lowercase the actor to avoid casing issues
           actor_lower=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
           git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${actor_lower}/flatmap-docs-kit.git
 
-      # ✅ Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
+      - name: Deploy dummy build to GitHub Pages
         env:
           GIT_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # ➡️ Use --skip-build if you're testing dummy deploy
         run: npx docusaurus deploy --skip-build
