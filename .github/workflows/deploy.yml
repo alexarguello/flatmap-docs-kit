@@ -6,6 +6,11 @@ on:
     - cron: '0 20 * * *'
   # Allow manual deploy
   workflow_dispatch:
+    inputs:
+      use_fake_build:
+        description: "Use fake build instead of real Docusaurus build?"
+        required: false
+        default: "false"
 
 jobs:
   build-and-deploy:
@@ -31,13 +36,22 @@ jobs:
           python3 flatmap-tools/generate_mermaids.py
           python3 flatmap-tools/generate_contribute_pages.py
 
-      - name: Build Docusaurus site
-        run: npm run build
+      # CONDITIONAL BUILD OR FAKE BUILD
+      - name: Conditionally build or fake build
+        run: |
+          if [ "${{ github.event.inputs.use_fake_build }}" == "true" ]; then
+            echo "⚠️ Using FAKE BUILD for testing..."
+            mkdir -p build
+            echo "Hello test deploy" > build/index.html
+          else
+            echo "✅ Running real Docusaurus build..."
+            npm run build
+          fi
 
       - name: Configure Git user
         run: |
-         git config --global user.email "lizeraes@users.noreply.github.com"
-         git config --global user.name "Lize Raes"
+          git config --global user.email "lizeraes@users.noreply.github.com"
+          git config --global user.name "Lize Raes"
 
       - name: Configure git credentials
         run: git config --global url."https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
@@ -47,4 +61,3 @@ jobs:
           GIT_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
-
