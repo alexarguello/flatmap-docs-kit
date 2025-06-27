@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from util import get_docs_root_dir, load_style_config
+from util import get_docs_root_dir, load_style_config, get_docs_url
 
 ROOT_DIR = get_docs_root_dir()
 DO_NOT_EDIT = "<!-- AUTO-GENERATED FILE — DO NOT EDIT. Regenerated on merge -->"
@@ -182,7 +182,8 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_overri
     lines.append(f'{current_id}["{label}"]')
     if rel_path:
         clean_rel_path = "/".join(strip_order_prefix(p) for p in rel_path.split(os.sep))
-        clicks.append(f'click {current_id} "/docs/{clean_rel_path}"')
+        docs_url = get_docs_url(clean_rel_path)
+        clicks.append(f'click {current_id} "{docs_url}"')
     if parent_id:
         lines.append(f"{parent_id} --> {current_id}")
     effective_max_depth = max_depth_override if max_depth_override is not None else get_max_depth()
@@ -233,7 +234,7 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_overri
                 node_label = create_node_label(title, styles, is_external, external_url)
                 lines.append(f'{node_id}["{node_label}"]')
                 if styles['clickable'] and not is_external:
-                    clean_entry_path = "/docs/" + "/".join(strip_order_prefix(p) for p in entry_rel_path.replace(".md", "").split(os.sep))
+                    clean_entry_path = get_docs_url("/".join(strip_order_prefix(p) for p in entry_rel_path.replace(".md", "").split(os.sep)))
                     clicks.append(f'click {node_id} "{clean_entry_path}"')
                 lines.append(f"{current_id} --> {node_id}")
                 color_for_depth = palette[(depth + 1) % len(palette)]

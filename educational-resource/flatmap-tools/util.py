@@ -186,10 +186,12 @@ def make_breadcrumb_to_article(rel_path, article_title=None, root_dir=None):
         folder_path = os.path.join(root_dir, *parts[:i+1])
         title = get_section_title(folder_path)
         url_path = build_url_path(parts[:i+1])
-        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+        docs_url = get_docs_url(url_path)
+        crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>')
     art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
     url_path = build_url_path(parts)
-    crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    docs_url = get_docs_url(url_path)
+    crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
     return " > ".join(crumbs)
 
 
@@ -204,10 +206,12 @@ def make_breadcrumb_to_contribute_page(rel_path, article_title=None, root_dir=No
         folder_path = os.path.join(root_dir, *parts[:i+1])
         title = get_section_title(folder_path)
         url_path = build_url_path(parts[:i+1])
-        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+        docs_url = get_docs_url(url_path)
+        crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>')
     art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
     id = f"contribute-{normalize_id(rel_path)}"
-    crumbs.append(f'<a href="/docs/contribute/{id}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    docs_url = get_docs_url(f"contribute/{id}")
+    crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
     return " > ".join(crumbs)
 
 
@@ -230,9 +234,12 @@ def make_dashboard_breadcrumb_link(rel_path, article_title=None, to_contribute_p
     text = " > ".join(crumb_text)
     if to_contribute_page:
         id = f"contribute-{normalize_id(rel_path)}"
-        url = f"/docs/contribute/{id}"
+        docs_url = get_docs_url(f"contribute/{id}")
+        url = docs_url
     else:
-        url = f"/docs/{build_url_path(parts)}"
+        url_path = build_url_path(parts)
+        docs_url = get_docs_url(url_path)
+        url = docs_url
     return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{text}</a>'
 
 
@@ -247,8 +254,44 @@ def make_full_breadcrumb(rel_path, article_title=None, root_dir=None):
         folder_path = os.path.join(root_dir, *parts[:i+1])
         title = get_section_title(folder_path)
         url_path = build_url_path(parts[:i+1])
-        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+        docs_url = get_docs_url(url_path)
+        crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>')
     art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
     url_path = build_url_path(parts)
-    crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+    docs_url = get_docs_url(url_path)
+    crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
     return " > ".join(crumbs)
+
+
+def get_base_url():
+    """Get the base URL for the site by reading from docusaurus.config.js."""
+    # Find the docusaurus.config.js file
+    flatmap_tools_dir = os.path.dirname(__file__)
+    base_folder_path = os.path.dirname(flatmap_tools_dir)
+    config_path = os.path.join(base_folder_path, "docusaurus.config.js")
+    
+    try:
+        with open(config_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # Look for baseUrl: '/something/'
+        import re
+        match = re.search(r"baseUrl:\s*['\"]([^'\"]*)['\"]", content)
+        if match:
+            base_url = match.group(1)
+            # Remove trailing slash if present
+            if base_url.endswith('/'):
+                base_url = base_url[:-1]
+            return base_url
+    except Exception as e:
+        print(f"⚠️  Warning: Could not read baseUrl from docusaurus.config.js: {e}")
+    
+    # Fallback: no base URL
+    return ''
+
+
+def get_docs_url(path=""):
+    """Generate a docs URL with proper base URL handling."""
+    base_url = get_base_url()
+    docs_path = f"/docs/{path}" if path else "/docs"
+    return f"{base_url}{docs_path}"

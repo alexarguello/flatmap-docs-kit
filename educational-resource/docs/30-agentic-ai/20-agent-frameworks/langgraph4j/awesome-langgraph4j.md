@@ -35,6 +35,12 @@ eta: 2025-09-15           # Set only if status is draft
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 <!-- This article is unclaimed. Add your favorite LangGraph4j resources here! -->
 
 # Awesome LangGraph4j

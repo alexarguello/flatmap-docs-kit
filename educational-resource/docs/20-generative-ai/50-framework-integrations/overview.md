@@ -40,6 +40,12 @@ author: "Lize Raes (@lizeraes)"
 
 # Framework Integrations Overview
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Welcome to the comprehensive guide on integrating AI frameworks with Java applications. This section covers the most popular and powerful frameworks that enable Java developers to build sophisticated AI-powered applications.
 
 ## 🎯 What You'll Find Here

@@ -2,7 +2,7 @@ import os
 import re
 import json
 import datetime
-from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config, get_docs_root_dir, extract_tags_from_frontmatter
+from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config, get_docs_root_dir, extract_tags_from_frontmatter, get_docs_url
 
 ROOT_DIR = get_docs_root_dir()
 OUTPUT_DIR = os.path.join(ROOT_DIR, "99-contribute")
@@ -66,10 +66,12 @@ def create_location_breadcrumb(rel_path, article_title):
             folder_path = os.path.join(ROOT_DIR, *parts[:i+1])
             folder_title = get_section_title(folder_path)
             url_path = build_url_path(parts[:i+1])
-            location_parts.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{folder_title}</a>')
+            docs_url = get_docs_url(url_path)
+            location_parts.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{folder_title}</a>')
         # Add the article title as the final part
         url_path = build_url_path(parts)
-        location_parts.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{article_title}</a>')
+        docs_url = get_docs_url(url_path)
+        location_parts.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{article_title}</a>')
         location = " > ".join(location_parts)
     else:
         location = "Root"

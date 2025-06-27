@@ -39,5 +39,12 @@ topics:
 # feature-responsible: openjdk
 # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Here comes a list of deep dive topics that ppl new to Java (+ AI) would be interested in testing out.
 TODO: resource should be marked as missing still

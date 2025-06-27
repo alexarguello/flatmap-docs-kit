@@ -46,6 +46,12 @@ article-priority: high   # high / medium — omit if not important
 # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 This is a stub to make the difference between
 - Predictive AI (ML, pattern recognition, ...)
 - Generative AI (LLMs, Agents, ...)

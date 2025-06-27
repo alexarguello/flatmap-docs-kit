@@ -1,1 +1,7 @@
-# TODO: A2A Work by @vorburger
+# A2A TODO
+
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::

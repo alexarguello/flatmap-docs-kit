@@ -2,7 +2,7 @@ import os
 import re
 import datetime
 import json
-from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config, get_docs_root_dir, extract_tags_from_frontmatter
+from util import parse_frontmatter, normalize_id, strip_order_prefix, get_section_title, build_url_path, extract_title, parse_ymd_date, get_file_modification_date_as_date, make_breadcrumb_to_article, make_breadcrumb_to_contribute_page, make_dashboard_breadcrumb_link, make_full_breadcrumb, load_style_config, get_docs_root_dir, extract_tags_from_frontmatter, get_docs_url
 
 ROOT_DIR = get_docs_root_dir()
 OUTPUT_DIR = os.path.join(ROOT_DIR, "99-contribute")
@@ -41,7 +41,8 @@ def create_section_links(rel_path_folder):
         current_folder_path = os.path.join(ROOT_DIR, *parts[:i+1])
         title = get_section_title(current_folder_path)
         url_path = build_url_path(parts[:i+1])
-        links.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+        docs_url = get_docs_url(url_path)
+        links.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>')
     return " > ".join(links)
 
 def get_sibling_summaries(folder_path, current_filename):
@@ -54,7 +55,8 @@ def get_sibling_summaries(folder_path, current_filename):
         fm = parse_frontmatter(fpath)
         status = fm.get("status", "?")
         url_path = os.path.relpath(fpath, ROOT_DIR).replace(os.sep, "/").replace(".md", "")
-        link = f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>'
+        docs_url = get_docs_url(url_path)
+        link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>'
         status_desc = {
             "missing": "missing",
             "draft": "in progress", 
@@ -86,12 +88,14 @@ def make_breadcrumb_from_root(rel_path, article_title=None, link_to_article=True
         folder_path = os.path.join(ROOT_DIR, *parts[:i+1])
         title = get_section_title(folder_path)
         url_path = build_url_path(parts[:i+1])
-        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>')
+        docs_url = get_docs_url(url_path)
+        crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>')
     # Article part
     art_title = article_title if article_title else extract_title(os.path.join(ROOT_DIR, rel_path))
     if link_to_article:
         url_path = build_url_path(parts)
-        crumbs.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
+        docs_url = get_docs_url(url_path)
+        crumbs.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{art_title}</a>')
     else:
         crumbs.append(art_title)
     return " > ".join(crumbs)
@@ -113,14 +117,16 @@ def create_contribution_page(md_path, rel_path, frontmatter):
             folder_path = os.path.join(ROOT_DIR, *parts[:i+1])
             folder_title = get_section_title(folder_path)
             url_path = build_url_path(parts[:i+1])
-            section_links.append(f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{folder_title}</a>')
+            docs_url = get_docs_url(url_path)
+            section_links.append(f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{folder_title}</a>')
         section_links = " > ".join(section_links)
     else:
         section_links = ""
 
     # Article link: just the article title, clickable, links to the article
     url_path = build_url_path(parts)
-    article_link = f'<a href="/docs/{url_path}" target="_blank" rel="noopener noreferrer">{title}</a>'
+    docs_url = get_docs_url(url_path)
+    article_link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>'
 
     # Sibling articles (skip intro.md and index.md)
     sibling_articles = []
@@ -348,7 +354,8 @@ def walk_docs():
         
         # Create link to the collaboration page
         collab_id = f"collaborate-{normalize_id(art['rel_path'])}"
-        collab_link = f'<a href="/docs/contribute/{collab_id}" target="_blank" rel="noopener noreferrer">{text}</a>'
+        docs_url = get_docs_url(f"contribute/{collab_id}")
+        collab_link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{text}</a>'
         
         author = art.get('author', '')
         eta = art.get('eta', '')
@@ -374,7 +381,8 @@ def walk_docs():
         
         # Create link to the review page
         review_id = f"review-{normalize_id(art['rel_path'])}"
-        review_link = f'<a href="/docs/contribute/{review_id}" target="_blank" rel="noopener noreferrer">{text}</a>'
+        docs_url = get_docs_url(f"contribute/{review_id}")
+        review_link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{text}</a>'
         
         # Get review reason
         review_reason = art.get('review-reason', 'Needs review')

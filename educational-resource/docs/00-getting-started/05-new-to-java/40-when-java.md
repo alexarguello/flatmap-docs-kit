@@ -49,6 +49,12 @@ topics:
 # feature-responsible: openjdk
 # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 ## When to use Java (and when not)?
 
 Stub for article explaining the strengths (and weaknesses) of Java and best use cases (and when to use sth else)s

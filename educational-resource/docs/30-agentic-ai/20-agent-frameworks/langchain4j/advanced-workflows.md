@@ -39,6 +39,12 @@ eta: 2025-08-15           # Set only if status is draft
 
 # Advanced Workflow Patterns
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Explore sophisticated workflow patterns for complex AI applications using LangGraph4j. This guide covers advanced techniques for building production-ready systems with multiple decision points and state management.
 
 Learn how to implement complex routing logic, handle concurrent operations, and optimize performance for high-throughput applications. These patterns are essential for building enterprise-grade AI systems that can scale and maintain reliability under load. 

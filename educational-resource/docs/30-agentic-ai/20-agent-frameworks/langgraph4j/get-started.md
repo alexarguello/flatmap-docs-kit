@@ -39,6 +39,12 @@ author: "Lize Raes (@lizeraes)"
 
 # Get Started with LangGraph4j
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 LangGraph4j is the Java implementation of LangGraph, enabling you to build stateful, multi-step AI applications with complex workflows. This guide will walk you through setting up your first LangGraph4j project.
 
 ## 🎯 What You'll Build

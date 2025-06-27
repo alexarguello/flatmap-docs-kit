@@ -12,6 +12,8 @@
   <img src="assets/contributor-dashboard-sample.png" alt="Contributor dashboard" width="45%" />
 </p>
 
+**Jump to:** [Setup Instructions](#-setup-instructions) • [Structure & Configuration](#-structure--configuration) • [How to Use the Toolkit](#️-how-to-use-the-toolkit) • [Extend or Customize](#-extend-or-customize) • [Before Publishing](#️-before-publishing) • [Coming Soon](#-coming-soon)
+
 ---
 
 ## 🚀 Setup Instructions

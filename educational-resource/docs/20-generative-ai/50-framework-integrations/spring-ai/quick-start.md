@@ -39,6 +39,12 @@ author: "Sarah Johnson (@sarahj)"
 
 # Spring AI Quick Start
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Get up and running with Spring AI in minutes. This guide walks you through creating your first AI-powered Spring Boot application with minimal configuration.
 
 Spring AI provides seamless integration with popular AI providers and simplifies common AI tasks like text generation, embeddings, and function calling. Perfect for developers who want to add AI capabilities to their existing Spring applications. 

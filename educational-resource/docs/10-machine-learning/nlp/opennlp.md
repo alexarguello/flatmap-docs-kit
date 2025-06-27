@@ -1,20 +1,20 @@
 ---
-title: "Machine Learning with Java - Complete Guide"
-sidebar_position: 3
+title: OpenNLP
+sidebar_position: 1
 hide_title: true
 
 # REQUIRED TAGS — fill in all of these:
 
 level: intermediate      # beginner / intermediate / advanced / expert
-type: external         # tutorial / overview / code / benchmark / opinion / api-doc
-status: published      # draft / review-needed / published / missing
+type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
+status: missing      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - machine-learning
-  - tutorial
+  - nlp
+  - opennlp
+  - natural-language-processing
   - java
-  - weka
 
 # 🧩 OPTIONAL TAGS:
 
@@ -27,7 +27,7 @@ topics:
 # review-reason: "seems not to be on the right topic"
 #                        # required when status: review-needed — will show on the article and in the dashboard
 
-author: "Data Science Central (@datasciencecentral)"
+# author: "Lize Raes (@lizeraes)"
 
 # eta: 2025-07-01           # Set only if status is draft
 
@@ -37,10 +37,16 @@ author: "Data Science Central (@datasciencecentral)"
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
-# Machine Learning with Java - Complete Guide
+<!-- This article is unclaimed. Contribute your knowledge about OpenNLP in Java! -->
 
-👉 **<a href="https://www.datasciencecentral.com/machine-learning-with-java-complete-guide/" target="_blank" rel="noopener noreferrer">Read the Complete Guide</a>**
+# OpenNLP
 
-Comprehensive tutorial covering machine learning algorithms, data preprocessing, and model evaluation using Java libraries like Weka and DL4J.
+:::caution
 
-(This is an external resource) 
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
+Apache OpenNLP is a machine learning toolkit for natural language processing tasks. It provides Java libraries for common NLP operations including tokenization, sentence segmentation, part-of-speech tagging, and named entity recognition.
+
+The library includes pre-trained models for multiple languages and offers tools for training custom models on domain-specific data. OpenNLP is widely used in enterprise applications for text processing and analysis workflows.

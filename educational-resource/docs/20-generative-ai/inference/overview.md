@@ -39,6 +39,12 @@ author: "Lize Raes (@lizeraes)"
 
 # Inference Overview
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Local inference enables Java applications to run AI models directly on your infrastructure without relying on external APIs. This section covers the various Java libraries and tools available for local model inference.
 
 These solutions provide benefits like reduced latency, improved privacy, and cost savings for high-volume applications. They range from lightweight implementations for simple use cases to full-featured frameworks supporting complex model architectures.

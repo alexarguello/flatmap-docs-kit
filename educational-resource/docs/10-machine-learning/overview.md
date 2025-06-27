@@ -40,6 +40,12 @@ author: "Lize Raes (@lizeraes)"
 
 # Machine Learning Overview
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Explore the world of machine learning in Java. From traditional ML algorithms to cutting-edge deep learning, discover how to build intelligent applications using Java's robust ecosystem.
 
 ## 🧠 What is Machine Learning?

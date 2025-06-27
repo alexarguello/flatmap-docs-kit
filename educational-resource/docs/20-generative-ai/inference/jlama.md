@@ -39,6 +39,12 @@ eta: 2025-07-01           # Set only if status is draft
 
 # Jlama
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Jlama is a Java library for running Llama models locally with high performance and low memory usage. It provides a native Java interface to the Llama inference engine, enabling developers to integrate local LLM capabilities into their Java applications.
 
 The library supports various Llama model formats and provides optimized inference for both CPU and GPU environments. Jlama is particularly useful for applications requiring offline AI capabilities or when you need to maintain full control over the inference process.

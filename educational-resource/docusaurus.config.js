@@ -11,13 +11,13 @@ const config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://lizeraes.github.io',
+  baseUrl: '/flatmap-docs-kit/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'lizeraes',
+  projectName: 'flatmap-docs-kit',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {

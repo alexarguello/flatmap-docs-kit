@@ -40,6 +40,12 @@ author: "Lize Raes (@lizeraes)"
 
 # Agent Frameworks Overview
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Discover the powerful world of AI agent frameworks in Java. These frameworks enable you to build intelligent, autonomous systems that can reason, plan, and execute complex tasks.
 
 ## 🤖 What Are AI Agents?

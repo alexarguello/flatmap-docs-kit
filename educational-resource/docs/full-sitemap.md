@@ -34,22 +34,22 @@ n_00_getting_started_what_is_ai_md["🧭 What is AI?"]
 n_00_getting_started --> n_00_getting_started_what_is_ai_md
 n_10_machine_learning["Machine Learning"]
 root --> n_10_machine_learning
-n_10_machine_learning_machine_learning["Machine Learning"]
-n_10_machine_learning --> n_10_machine_learning_machine_learning
-n_10_machine_learning_machine_learning_overview_md["🧭 Machine Learning Overview"]
-n_10_machine_learning_machine_learning --> n_10_machine_learning_machine_learning_overview_md
-n_10_machine_learning_machine_learning_external_ml_tutorial_md["🔗 Machine Learning with Java - Complete Guide"]
-n_10_machine_learning_machine_learning --> n_10_machine_learning_machine_learning_external_ml_tutorial_md
-n_10_machine_learning_machine_learning_deepnets["Deepnets"]
-n_10_machine_learning_machine_learning --> n_10_machine_learning_machine_learning_deepnets
-n_10_machine_learning_machine_learning_deepnets_deeplearning4j_md["🧭 Deeplearning4j"]
-n_10_machine_learning_machine_learning_deepnets --> n_10_machine_learning_machine_learning_deepnets_deeplearning4j_md
-n_10_machine_learning_machine_learning_deepnets_neural_networks_basics_md["🙌 Neural Networks Basics"]
-n_10_machine_learning_machine_learning_deepnets --> n_10_machine_learning_machine_learning_deepnets_neural_networks_basics_md
-n_10_machine_learning_machine_learning_nlp["Nlp"]
-n_10_machine_learning_machine_learning --> n_10_machine_learning_machine_learning_nlp
-n_10_machine_learning_machine_learning_nlp_opennlp_md["🧭 OpenNLP"]
-n_10_machine_learning_machine_learning_nlp --> n_10_machine_learning_machine_learning_nlp_opennlp_md
+n_10_machine_learning_overview_md["🧭 Machine Learning Overview"]
+n_10_machine_learning --> n_10_machine_learning_overview_md
+n_10_machine_learning_external_ml_tutorial_md["🔗 Machine Learning with Java - Complete Guide"]
+n_10_machine_learning --> n_10_machine_learning_external_ml_tutorial_md
+n_10_machine_learning_deepnets["Deepnets"]
+n_10_machine_learning --> n_10_machine_learning_deepnets
+n_10_machine_learning_deepnets_deeplearning4j_md["🧭 Deeplearning4j"]
+n_10_machine_learning_deepnets --> n_10_machine_learning_deepnets_deeplearning4j_md
+n_10_machine_learning_deepnets_deepnetts_md["🧭 Deeplearning4j"]
+n_10_machine_learning_deepnets --> n_10_machine_learning_deepnets_deepnetts_md
+n_10_machine_learning_deepnets_neural_networks_basics_md["🙌 Neural Networks Basics"]
+n_10_machine_learning_deepnets --> n_10_machine_learning_deepnets_neural_networks_basics_md
+n_10_machine_learning_nlp["Nlp"]
+n_10_machine_learning --> n_10_machine_learning_nlp
+n_10_machine_learning_nlp_opennlp_md["🧭 OpenNLP"]
+n_10_machine_learning_nlp --> n_10_machine_learning_nlp_opennlp_md
 n_20_generative_ai["Generative Ai"]
 root --> n_20_generative_ai
 n_20_generative_ai_50_framework_integrations["Framework Integrations"]
@@ -104,7 +104,7 @@ n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md["Java A2A S
 n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem --> n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md
 n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md["A2A Overview"]
 n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem --> n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md
-n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md["TODO: A2A Work by @vorburger"]
+n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md["A2A TODO"]
 n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem --> n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md
 n_30_agentic_ai_20_agent_frameworks_langchain4j["Langchain4J"]
 n_30_agentic_ai_20_agent_frameworks --> n_30_agentic_ai_20_agent_frameworks_langchain4j
@@ -122,59 +122,59 @@ n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md["🧭 Intro to La
 n_30_agentic_ai_20_agent_frameworks_langgraph4j --> n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md
 n_40_ai_for_code["Ai For Code"]
 root --> n_40_ai_for_code
-click full_sitemap_md "/docs/full-sitemap"
-click n_00_getting_started "/docs/getting-started"
-click n_00_getting_started_05_new_to_java "/docs/getting-started/new-to-java"
-click n_00_getting_started_05_new_to_java_40_when_java_md "/docs/getting-started/new-to-java/when-java"
-click n_00_getting_started_05_new_to_java_10_java_basics "/docs/getting-started/new-to-java/java-basics"
-click n_00_getting_started_05_new_to_java_20_ai_in_java_basics "/docs/getting-started/new-to-java/ai-in-java-basics"
-click n_00_getting_started_05_new_to_java_30_dive_deeper_md "/docs/getting-started/new-to-java/dive-deeper"
-click n_00_getting_started_what_is_ai_md "/docs/getting-started/what-is-ai"
-click n_10_machine_learning "/docs/machine-learning"
-click n_10_machine_learning_machine_learning "/docs/machine-learning/machine-learning"
-click n_10_machine_learning_machine_learning_overview_md "/docs/machine-learning/machine-learning/overview"
-click n_10_machine_learning_machine_learning_external_ml_tutorial_md "/docs/machine-learning/machine-learning/external-ml-tutorial"
-click n_10_machine_learning_machine_learning_deepnets "/docs/machine-learning/machine-learning/deepnets"
-click n_10_machine_learning_machine_learning_deepnets_deeplearning4j_md "/docs/machine-learning/machine-learning/deepnets/deeplearning4j"
-click n_10_machine_learning_machine_learning_deepnets_neural_networks_basics_md "/docs/machine-learning/machine-learning/deepnets/neural-networks-basics"
-click n_10_machine_learning_machine_learning_nlp "/docs/machine-learning/machine-learning/nlp"
-click n_10_machine_learning_machine_learning_nlp_opennlp_md "/docs/machine-learning/machine-learning/nlp/opennlp"
-click n_20_generative_ai "/docs/generative-ai"
-click n_20_generative_ai_50_framework_integrations "/docs/generative-ai/framework-integrations"
-click n_20_generative_ai_50_framework_integrations_overview_md "/docs/generative-ai/framework-integrations/overview"
-click n_20_generative_ai_50_framework_integrations_langchain4j "/docs/generative-ai/framework-integrations/langchain4j"
-click n_20_generative_ai_50_framework_integrations_langchain4j_external_langchain4j_docs_md "/docs/generative-ai/framework-integrations/langchain4j/external-langchain4j-docs"
-click n_20_generative_ai_50_framework_integrations_mcp "/docs/generative-ai/framework-integrations/mcp"
-click n_20_generative_ai_50_framework_integrations_mcp_java_mcp_sdk_md "/docs/generative-ai/framework-integrations/mcp/java-mcp-sdk"
-click n_20_generative_ai_50_framework_integrations_spring_ai "/docs/generative-ai/framework-integrations/spring-ai"
-click n_20_generative_ai_50_framework_integrations_spring_ai_quick_start_md "/docs/generative-ai/framework-integrations/spring-ai/quick-start"
-click n_20_generative_ai_inference "/docs/generative-ai/inference"
-click n_20_generative_ai_inference_jlama_md "/docs/generative-ai/inference/jlama"
-click n_20_generative_ai_inference_overview_md "/docs/generative-ai/inference/overview"
-click n_20_generative_ai_inference_llama3_java_md "/docs/generative-ai/inference/llama3-java"
-click n_30_agentic_ai "/docs/agentic-ai"
-click n_30_agentic_ai_20_agent_frameworks "/docs/agentic-ai/agent-frameworks"
-click n_30_agentic_ai_20_agent_frameworks_adk "/docs/agentic-ai/agent-frameworks/adk"
-click n_30_agentic_ai_20_agent_frameworks_adk_adk_fsm_overview_md "/docs/agentic-ai/agent-frameworks/adk/adk-fsm-overview"
-click n_30_agentic_ai_20_agent_frameworks_adk_agent_benchmarking_md "/docs/agentic-ai/agent-frameworks/adk/agent-benchmarking"
-click n_30_agentic_ai_20_agent_frameworks_adk_external_link_agent_sdk_md "/docs/agentic-ai/agent-frameworks/adk/external-link-agent-sdk"
-click n_30_agentic_ai_20_agent_frameworks_adk_1_basics "/docs/agentic-ai/agent-frameworks/adk/1_basics"
-click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_init_md "/docs/agentic-ai/agent-frameworks/adk/1_basics/agent-init"
-click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_charts_md "/docs/agentic-ai/agent-frameworks/adk/1_basics/agent-charts"
-click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_external_tutorial_dev_to_md "/docs/agentic-ai/agent-frameworks/adk/1_basics/external-tutorial-dev-to"
-click n_30_agentic_ai_20_agent_frameworks_overview_md "/docs/agentic-ai/agent-frameworks/overview"
-click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem "/docs/agentic-ai/agent-frameworks/a2a-ecosystem"
-click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md "/docs/agentic-ai/agent-frameworks/a2a-ecosystem/java-a2a-sdk"
-click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md "/docs/agentic-ai/agent-frameworks/a2a-ecosystem/overview"
-click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md "/docs/agentic-ai/agent-frameworks/a2a-ecosystem/status-todo"
-click n_30_agentic_ai_20_agent_frameworks_langchain4j "/docs/agentic-ai/agent-frameworks/langchain4j"
-click n_30_agentic_ai_20_agent_frameworks_langchain4j_advanced_workflows_md "/docs/agentic-ai/agent-frameworks/langchain4j/advanced-workflows"
-click n_30_agentic_ai_20_agent_frameworks_langgraph4j "/docs/agentic-ai/agent-frameworks/langgraph4j"
-click n_30_agentic_ai_20_agent_frameworks_langgraph4j_get_started_md "/docs/agentic-ai/agent-frameworks/langgraph4j/get-started"
-click n_30_agentic_ai_20_agent_frameworks_langgraph4j_langgraph4j_assistants_md "/docs/agentic-ai/agent-frameworks/langgraph4j/langgraph4j-assistants"
-click n_30_agentic_ai_20_agent_frameworks_langgraph4j_awesome_langgraph4j_md "/docs/agentic-ai/agent-frameworks/langgraph4j/awesome-langgraph4j"
-click n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md "/docs/agentic-ai/agent-frameworks/langgraph4j/status-todo"
-click n_40_ai_for_code "/docs/ai-for-code"
+click full_sitemap_md "/flatmap-docs-kit/docs/full-sitemap"
+click n_00_getting_started "/flatmap-docs-kit/docs/getting-started"
+click n_00_getting_started_05_new_to_java "/flatmap-docs-kit/docs/getting-started/new-to-java"
+click n_00_getting_started_05_new_to_java_40_when_java_md "/flatmap-docs-kit/docs/getting-started/new-to-java/when-java"
+click n_00_getting_started_05_new_to_java_10_java_basics "/flatmap-docs-kit/docs/getting-started/new-to-java/java-basics"
+click n_00_getting_started_05_new_to_java_20_ai_in_java_basics "/flatmap-docs-kit/docs/getting-started/new-to-java/ai-in-java-basics"
+click n_00_getting_started_05_new_to_java_30_dive_deeper_md "/flatmap-docs-kit/docs/getting-started/new-to-java/dive-deeper"
+click n_00_getting_started_what_is_ai_md "/flatmap-docs-kit/docs/getting-started/what-is-ai"
+click n_10_machine_learning "/flatmap-docs-kit/docs/machine-learning"
+click n_10_machine_learning_overview_md "/flatmap-docs-kit/docs/machine-learning/overview"
+click n_10_machine_learning_external_ml_tutorial_md "/flatmap-docs-kit/docs/machine-learning/external-ml-tutorial"
+click n_10_machine_learning_deepnets "/flatmap-docs-kit/docs/machine-learning/deepnets"
+click n_10_machine_learning_deepnets_deeplearning4j_md "/flatmap-docs-kit/docs/machine-learning/deepnets/deeplearning4j"
+click n_10_machine_learning_deepnets_deepnetts_md "/flatmap-docs-kit/docs/machine-learning/deepnets/deepnetts"
+click n_10_machine_learning_deepnets_neural_networks_basics_md "/flatmap-docs-kit/docs/machine-learning/deepnets/neural-networks-basics"
+click n_10_machine_learning_nlp "/flatmap-docs-kit/docs/machine-learning/nlp"
+click n_10_machine_learning_nlp_opennlp_md "/flatmap-docs-kit/docs/machine-learning/nlp/opennlp"
+click n_20_generative_ai "/flatmap-docs-kit/docs/generative-ai"
+click n_20_generative_ai_50_framework_integrations "/flatmap-docs-kit/docs/generative-ai/framework-integrations"
+click n_20_generative_ai_50_framework_integrations_overview_md "/flatmap-docs-kit/docs/generative-ai/framework-integrations/overview"
+click n_20_generative_ai_50_framework_integrations_langchain4j "/flatmap-docs-kit/docs/generative-ai/framework-integrations/langchain4j"
+click n_20_generative_ai_50_framework_integrations_langchain4j_external_langchain4j_docs_md "/flatmap-docs-kit/docs/generative-ai/framework-integrations/langchain4j/external-langchain4j-docs"
+click n_20_generative_ai_50_framework_integrations_mcp "/flatmap-docs-kit/docs/generative-ai/framework-integrations/mcp"
+click n_20_generative_ai_50_framework_integrations_mcp_java_mcp_sdk_md "/flatmap-docs-kit/docs/generative-ai/framework-integrations/mcp/java-mcp-sdk"
+click n_20_generative_ai_50_framework_integrations_spring_ai "/flatmap-docs-kit/docs/generative-ai/framework-integrations/spring-ai"
+click n_20_generative_ai_50_framework_integrations_spring_ai_quick_start_md "/flatmap-docs-kit/docs/generative-ai/framework-integrations/spring-ai/quick-start"
+click n_20_generative_ai_inference "/flatmap-docs-kit/docs/generative-ai/inference"
+click n_20_generative_ai_inference_jlama_md "/flatmap-docs-kit/docs/generative-ai/inference/jlama"
+click n_20_generative_ai_inference_overview_md "/flatmap-docs-kit/docs/generative-ai/inference/overview"
+click n_20_generative_ai_inference_llama3_java_md "/flatmap-docs-kit/docs/generative-ai/inference/llama3-java"
+click n_30_agentic_ai "/flatmap-docs-kit/docs/agentic-ai"
+click n_30_agentic_ai_20_agent_frameworks "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks"
+click n_30_agentic_ai_20_agent_frameworks_adk "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk"
+click n_30_agentic_ai_20_agent_frameworks_adk_adk_fsm_overview_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/adk-fsm-overview"
+click n_30_agentic_ai_20_agent_frameworks_adk_agent_benchmarking_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/agent-benchmarking"
+click n_30_agentic_ai_20_agent_frameworks_adk_external_link_agent_sdk_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/external-link-agent-sdk"
+click n_30_agentic_ai_20_agent_frameworks_adk_1_basics "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/1_basics"
+click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_init_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/1_basics/agent-init"
+click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_charts_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/1_basics/agent-charts"
+click n_30_agentic_ai_20_agent_frameworks_adk_1_basics_external_tutorial_dev_to_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/adk/1_basics/external-tutorial-dev-to"
+click n_30_agentic_ai_20_agent_frameworks_overview_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/overview"
+click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/a2a-ecosystem"
+click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/a2a-ecosystem/java-a2a-sdk"
+click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/a2a-ecosystem/overview"
+click n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/a2a-ecosystem/status-todo"
+click n_30_agentic_ai_20_agent_frameworks_langchain4j "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langchain4j"
+click n_30_agentic_ai_20_agent_frameworks_langchain4j_advanced_workflows_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langchain4j/advanced-workflows"
+click n_30_agentic_ai_20_agent_frameworks_langgraph4j "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langgraph4j"
+click n_30_agentic_ai_20_agent_frameworks_langgraph4j_get_started_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langgraph4j/get-started"
+click n_30_agentic_ai_20_agent_frameworks_langgraph4j_langgraph4j_assistants_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langgraph4j/langgraph4j-assistants"
+click n_30_agentic_ai_20_agent_frameworks_langgraph4j_awesome_langgraph4j_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langgraph4j/awesome-langgraph4j"
+click n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md "/flatmap-docs-kit/docs/agentic-ai/agent-frameworks/langgraph4j/status-todo"
+click n_40_ai_for_code "/flatmap-docs-kit/docs/ai-for-code"
 classDef col0 fill:#b3d9ff,stroke:none;
 classDef col1 fill:#d5b3ff,stroke:none;
 classDef col2 fill:#ffcccc,stroke:none;
@@ -190,9 +190,8 @@ class n_00_getting_started_05_new_to_java_10_java_basics col3;
 class n_00_getting_started_05_new_to_java_20_ai_in_java_basics col3;
 class n_00_getting_started_05_new_to_java col2;
 class n_00_getting_started col1;
-class n_10_machine_learning_machine_learning_deepnets col3;
-class n_10_machine_learning_machine_learning_nlp col3;
-class n_10_machine_learning_machine_learning col2;
+class n_10_machine_learning_deepnets col2;
+class n_10_machine_learning_nlp col2;
 class n_10_machine_learning col1;
 class n_20_generative_ai_50_framework_integrations_langchain4j col3;
 class n_20_generative_ai_50_framework_integrations_mcp col3;
@@ -221,60 +220,62 @@ classDef custom4 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_05_new_to_java_30_dive_deeper_md custom4;
 classDef custom5 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class n_00_getting_started_what_is_ai_md custom5;
-classDef custom6 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_10_machine_learning_machine_learning_overview_md custom6;
-classDef custom7 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_10_machine_learning_machine_learning_external_ml_tutorial_md custom7;
-classDef custom8 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_10_machine_learning_machine_learning_deepnets_deeplearning4j_md custom8;
-classDef custom9 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_10_machine_learning_machine_learning_deepnets_neural_networks_basics_md custom9;
-classDef custom10 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_10_machine_learning_machine_learning_nlp_opennlp_md custom10;
-classDef custom11 fill:#ffd699,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_50_framework_integrations_overview_md custom11;
-classDef custom12 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_50_framework_integrations_langchain4j_external_langchain4j_docs_md custom12;
+classDef custom6 fill:#ffcccc,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_overview_md custom6;
+classDef custom7 fill:#ffcccc,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_external_ml_tutorial_md custom7;
+classDef custom8 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_deepnets_deeplearning4j_md custom8;
+classDef custom9 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_deepnets_deepnetts_md custom9;
+classDef custom10 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_deepnets_neural_networks_basics_md custom10;
+classDef custom11 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_10_machine_learning_nlp_opennlp_md custom11;
+classDef custom12 fill:#ffd699,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_50_framework_integrations_overview_md custom12;
 classDef custom13 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_50_framework_integrations_mcp_java_mcp_sdk_md custom13;
-classDef custom14 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_50_framework_integrations_spring_ai_quick_start_md custom14;
-classDef custom15 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_inference_jlama_md custom15;
-classDef custom16 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_inference_overview_md custom16;
-classDef custom17 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_20_generative_ai_inference_llama3_java_md custom17;
-classDef custom18 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_adk_fsm_overview_md custom18;
-classDef custom19 fill:#d0f0c0,stroke:orange,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_agent_benchmarking_md custom19;
-classDef custom20 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_external_link_agent_sdk_md custom20;
-classDef custom21 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_init_md custom21;
-classDef custom22 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_charts_md custom22;
-classDef custom23 fill:#b3d9ff,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_external_tutorial_dev_to_md custom23;
-classDef custom24 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_overview_md custom24;
-classDef custom25 fill:#d0f0c0;
-class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md custom25;
+class n_20_generative_ai_50_framework_integrations_langchain4j_external_langchain4j_docs_md custom13;
+classDef custom14 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_50_framework_integrations_mcp_java_mcp_sdk_md custom14;
+classDef custom15 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_50_framework_integrations_spring_ai_quick_start_md custom15;
+classDef custom16 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_inference_jlama_md custom16;
+classDef custom17 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_inference_overview_md custom17;
+classDef custom18 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_20_generative_ai_inference_llama3_java_md custom18;
+classDef custom19 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_adk_fsm_overview_md custom19;
+classDef custom20 fill:#d0f0c0,stroke:orange,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_agent_benchmarking_md custom20;
+classDef custom21 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_external_link_agent_sdk_md custom21;
+classDef custom22 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_init_md custom22;
+classDef custom23 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_agent_charts_md custom23;
+classDef custom24 fill:#b3d9ff,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_adk_1_basics_external_tutorial_dev_to_md custom24;
+classDef custom25 fill:#ffd699,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_overview_md custom25;
 classDef custom26 fill:#d0f0c0;
-class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md custom26;
+class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_java_a2a_sdk_md custom26;
 classDef custom27 fill:#d0f0c0;
-class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md custom27;
-classDef custom28 fill:lightgrey,stroke:orange,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_langchain4j_advanced_workflows_md custom28;
-classDef custom29 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_langgraph4j_get_started_md custom29;
-classDef custom30 fill:lightgrey,stroke:orange,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_langgraph4j_langgraph4j_assistants_md custom30;
-classDef custom31 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_langgraph4j_awesome_langgraph4j_md custom31;
-classDef custom32 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md custom32;
+class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_overview_md custom27;
+classDef custom28 fill:#d0f0c0;
+class n_30_agentic_ai_20_agent_frameworks_40_a2a_ecosystem_status_todo_md custom28;
+classDef custom29 fill:lightgrey,stroke:orange,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_langchain4j_advanced_workflows_md custom29;
+classDef custom30 fill:#d0f0c0,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_langgraph4j_get_started_md custom30;
+classDef custom31 fill:lightgrey,stroke:orange,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_langgraph4j_langgraph4j_assistants_md custom31;
+classDef custom32 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_langgraph4j_awesome_langgraph4j_md custom32;
+classDef custom33 fill:#d0f0c0,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class n_30_agentic_ai_20_agent_frameworks_langgraph4j_status_todo_md custom33;
 linkStyle default interpolate basis
 ```
 

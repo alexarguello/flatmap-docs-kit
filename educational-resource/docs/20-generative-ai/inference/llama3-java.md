@@ -39,6 +39,12 @@ eta: 2025-07-01           # Set only if status is draft
 
 # llama3.java
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 llama3.java is a Java implementation for running Meta's Llama 3 models locally. It provides a lightweight and efficient way to integrate Llama 3 inference capabilities into Java applications without external dependencies.
 
 The library offers optimized performance for Java environments and supports various Llama 3 model sizes. It's designed for developers who want to leverage the latest Llama 3 capabilities while maintaining the benefits of Java's ecosystem and tooling.

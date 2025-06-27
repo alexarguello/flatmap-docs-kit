@@ -35,6 +35,12 @@ article-priority: medium   # high / medium — omit if not important
 # feature-responsible: openjdk   # community / openjdk / oracle-architects / jsr / vendor:redhat / project-lead:<name>
 ---
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 <!-- This article is unclaimed. Link or summarize the official LangChain4J docs here! -->
 
 👉 **<a href="https://docs.langchain4j.dev/" target="_blank" rel="noopener noreferrer">Visit the Official LangChain4J Docs</a>**

@@ -9,9 +9,11 @@ This resource is:
 - 🧭 Structured to help you **navigate**, **compare**, and **go deep** on the right topics  
 - ❤️ Always growing — with clear ways to **contribute**  
 - 📦 Collects high-quality tutorials, benchmarks, comparisons, guides, and insights — curated and tagged for easy filtering  
-- 🌐 A mix of specifically written articles and well-chosen external links — so you don’t miss anything important  
+- 🌐 A mix of specifically written articles and well-chosen external links — so you don't miss anything important  
 - 🔍 TODO: Add a **search bar** for easier discovery  
 - 🤖 TODO: Integrate a **chatbot** to guide users interactively  
+
+**Jump to:** [How to Use the Resource](#️-how-to-use-the-resource) • [How to Contribute](#️-how-to-contribute) • [Coming Soon](#-coming-soon)
 
 ---
 
@@ -20,17 +22,17 @@ This resource is:
 You can explore the content in a few ways:
 
 ### 📌 Get Started Path  
-Start here if you’re new to Java + AI, or want a guided path:  
+Start here if you're new to Java + AI, or want a guided path:  
 → [`/docs/getting-started`](./docs/00-getting-started)
 
 ### 🔍 Flatmaps (Clickable Topic Diagrams)  
-Each folder or topic area comes with a visual **flatmap** — a clickable diagram showing what’s inside, how it relates, and what’s missing.
+Each folder or topic area comes with a visual **flatmap** — a clickable diagram showing what's inside, how it relates, and what's missing.
 
 Want the full overview?  
 → [`Site Overview`](./docs/site-overview)
 
 ### 🧭 Jump to Any Section  
-Browse deeply structured folders, or skim via the site’s sidebar.
+Browse deeply structured folders, or skim via the site's sidebar.
 
 ---
 
@@ -47,12 +49,12 @@ We explain:
 - How to structure metadata
 - How to submit a PR
 
-### ❤️ See What We’re Missing  
+### ❤️ See What We're Missing  
 Jump to the last folder in the structure:  
 → [`Contribute`](./docs/contribute-dashboard)
 
-There you’ll find:
-- 🔥 Articles we’d love to have
+There you'll find:
+- 🔥 Articles we'd love to have
 - 🤝 Open collaborations
 - 📝 Drafts needing review
 - 🆕 Recently published resources

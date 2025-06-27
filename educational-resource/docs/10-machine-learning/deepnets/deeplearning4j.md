@@ -11,7 +11,7 @@ status: published      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:
-  - deeplearning4j
+  - framework:deeplearning4j
   - deep-learning
   - neural-networks
   - java
@@ -38,6 +38,12 @@ author: "Lize Raes (@lizeraes)"
 ---
 
 # Deeplearning4j
+
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
 
 Deeplearning4j (DL4J) is a comprehensive deep learning library for Java and the JVM. It provides tools for building and training neural networks, with support for various architectures including CNNs, RNNs, and transformers.
 

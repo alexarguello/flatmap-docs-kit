@@ -39,6 +39,12 @@ eta: 2025-07-01           # Set only if status is draft
 
 # Java SDK for MCP
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 The Java SDK for Model Context Protocol (MCP) provides developers with tools to build MCP servers and clients in Java applications. MCP enables AI models to connect to external data sources and tools through a standardized protocol.
 
 This SDK simplifies the implementation of MCP-compatible services, allowing Java developers to expose their applications' data and functionality to AI models. It includes utilities for resource management, tool integration, and protocol communication.

@@ -39,6 +39,12 @@ eta: 2025-09-20           # Set only if status is draft
 
 # Neural Networks Basics
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Understanding the fundamentals of neural networks is essential for working with deep learning in Java. This tutorial covers the core concepts and mathematical foundations.
 
 Learn about neurons, layers, activation functions, and how to implement basic neural network components using Java libraries. This knowledge forms the foundation for more advanced deep learning applications. 

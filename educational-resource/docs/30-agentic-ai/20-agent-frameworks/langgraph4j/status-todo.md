@@ -39,6 +39,14 @@ author: "Lize Raes (@lizeraes)"
 
 # Introduction to LangGraph4j
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
+
+
 LangGraph4j is the Java implementation of LangGraph, a powerful framework for building stateful, multi-step AI applications. It enables Java developers to create sophisticated workflows that can handle complex reasoning, maintain context, and orchestrate multiple AI operations.
 
 ## 🎯 What is LangGraph4j?

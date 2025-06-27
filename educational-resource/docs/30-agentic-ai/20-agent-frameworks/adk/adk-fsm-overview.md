@@ -39,6 +39,12 @@ author: "Dr. Alice Nguyen (@aliceng)"
 
 # Finite State Machines in ADK
 
+:::caution
+
+⚠️ **This page is just unchecked AI-generated sample data to demonstrate the resource structure for [flatmap-docs-kit](https://github.com/lizeraes/flatmap-docs-kit).**
+
+:::
+
 Finite State Machines (FSMs) are at the core of ADK's logic coordination model. This overview introduces how states and transitions are declared and managed within the ADK framework.
 
 ADK uses FSMs to model agent behavior and coordinate complex workflows. Each agent can have multiple states representing different phases of operation, with transitions triggered by events or conditions. This approach provides clear structure and predictable behavior for agent interactions.
