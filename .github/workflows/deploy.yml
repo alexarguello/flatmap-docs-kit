@@ -2,6 +2,11 @@ name: Deploy Docusaurus to GitHub Pages
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 20 * * *'
 
 jobs:
   deploy:
@@ -22,13 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Docusaurus site
-        run: npm run build
-        
       - name: Run generate-mermaids.py
         run: |
           python3 flatmap-tools/generate_mermaids.py
           python3 flatmap-tools/generate_contribute_pages.py
+
+      - name: Build Docusaurus site
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

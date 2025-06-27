@@ -12,7 +12,16 @@
   <img src="assets/contributor-dashboard-sample.png" alt="Contributor dashboard" width="45%" />
 </p>
 
-**Jump to:** [Setup Instructions](#-setup-instructions) • [Deploy to GitHub Pages](#-deploy-to-github-pages) • [Structure & Configuration](#-structure--configuration) • [How to Use the Toolkit](#️-how-to-use-the-toolkit) • [Extend or Customize](#-extend-or-customize) • [Before Publishing](#️-before-publishing) • [Coming Soon](#-coming-soon)
+**🎯 See it in action:** [Browse the full site map](https://lizeraes.github.io/flatmap-docs-kit/docs/full-sitemap/)
+
+**Jump to:**
+- [Setup Instructions](#-setup-instructions)
+- [Deploy to GitHub Pages](#-deploy-to-github-pages)
+- [Structure & Configuration](#-structure--configuration)
+- [How to Use the Toolkit](#️-how-to-use-the-toolkit)
+- [Extend or Customize](#-extend-or-customize)
+- [Before Publishing](#️-before-publishing)
+- [Coming Soon](#-coming-soon)
 
 ---
 
@@ -147,7 +156,7 @@ When you're done setting up:
 
 1. **Delete this README**
     Because it is aimed at the maintainer, not the actual resource users or contributors
-2. **Replace with [`README-once-contributed.md`](README-once-contributed.md)**
+2. **Replace with [`educational-resource/README.md`](educational-resource/README.md)**
    - This currently contains usage and contribution guidelines for an actually published resource
    - Update it to fit your resource and target audience
 

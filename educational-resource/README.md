@@ -13,7 +13,10 @@ This resource is:
 - 🔍 TODO: Add a **search bar** for easier discovery  
 - 🤖 TODO: Integrate a **chatbot** to guide users interactively  
 
-**Jump to:** [How to Use the Resource](#️-how-to-use-the-resource) • [How to Contribute](#️-how-to-contribute) • [Coming Soon](#-coming-soon)
+**Jump to:**
+- [How to Use the Resource](#️-how-to-use-the-resource)
+- [How to Contribute](#️-how-to-contribute)
+- [Coming Soon](#-coming-soon)
 
 ---
 
