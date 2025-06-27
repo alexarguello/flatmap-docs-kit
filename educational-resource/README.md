@@ -12,7 +12,7 @@
   <img src="assets/contributor-dashboard-sample.png" alt="Contributor dashboard" width="45%" />
 </p>
 
-**Jump to:** [Setup Instructions](#-setup-instructions) • [Structure & Configuration](#-structure--configuration) • [How to Use the Toolkit](#️-how-to-use-the-toolkit) • [Extend or Customize](#-extend-or-customize) • [Before Publishing](#️-before-publishing) • [Coming Soon](#-coming-soon)
+**Jump to:** [Setup Instructions](#-setup-instructions) • [Deploy to GitHub Pages](#-deploy-to-github-pages) • [Structure & Configuration](#-structure--configuration) • [How to Use the Toolkit](#️-how-to-use-the-toolkit) • [Extend or Customize](#-extend-or-customize) • [Before Publishing](#️-before-publishing) • [Coming Soon](#-coming-soon)
 
 ---
 
@@ -38,25 +38,29 @@
    ```js
    url: 'https://<your-github-username>.github.io',
    baseUrl: '/<repo-name>/',
-   trailingSlash: true,
-   onBrokenLinks: 'warn',
-   onBrokenMarkdownLinks: 'warn',
+   organizationName: '<your-github-username or org>',
+   projectName: '<repo-name>',
    ```
 
-2. **Create `gh-pages` branch** on GitHub (leave empty)
+2. **Update `.github/workflows/deploy.yml`**:
+   If you changed the name of `educational-resource`folder, make sure to update
+   ```yaml
+   publish_dir: ./educational-resource/build
+   ``` 
 
-3. **Enable GitHub Actions permissions**:
-   - Go to `Settings → Actions → General`
+3. **Push changes**
+
+4. **Create `gh-pages` branch** on GitHub from main (no ned to touch this branch ever after)
+
+5. **Enable GitHub Actions permissions**:
+   - Go to `Settings → Actions → General` (the settings of your repository)
    - Select `[x] Read and write permissions`
 
-4. **Push changes**:
-   ```bash
-   git add .
-   git commit -m "Set up deploy"
-   git push origin main
-   ```
+6. **Set Github Pages source***
+   - Go to `Settings → Pages` (the settings of your repository)
+   - Select `Source` : `GitHub Actions`
 
-5. **Run deploy workflow** in Actions tab
+7. **Run deploy workflow** in Actions tab
 
 Your site will be at: `https://<your-github-username>.github.io/<repo-name>/`
 
