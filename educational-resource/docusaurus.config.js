@@ -16,7 +16,7 @@ const config = {
 
   trailingSlash: true,
 
-  organizationName: 'myorg',
+  organizationName: 'lizeraes',
   projectName: 'flatmap-docs-kit',
 
   onBrokenLinks: 'warn',
