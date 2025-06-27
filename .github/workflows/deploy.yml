@@ -24,6 +24,11 @@ jobs:
 
       - name: Build Docusaurus site
         run: npm run build
+        
+      - name: Run generate-mermaids.py
+        run: |
+          python3 flatmap-tools/generate_mermaids.py
+          python3 flatmap-tools/generate_contribute_pages.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
