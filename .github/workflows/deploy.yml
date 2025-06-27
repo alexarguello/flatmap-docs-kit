@@ -30,3 +30,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./educational-resource/build
+          force_orphan: true
