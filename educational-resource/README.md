@@ -26,7 +26,41 @@
    npm run start
    ```
 
+   This will bring up the website on `localhost:3000`
+
 2. _(optional)_ Add deployment config — **TODO: write instructions for deploying live**.
+
+---
+
+## 🚀 Deploy to GitHub Pages
+
+1. **Update `docusaurus.config.js`**:
+   ```js
+   url: 'https://<your-github-username>.github.io',
+   baseUrl: '/<repo-name>/',
+   trailingSlash: true,
+   onBrokenLinks: 'warn',
+   onBrokenMarkdownLinks: 'warn',
+   ```
+
+2. **Create `gh-pages` branch** on GitHub (leave empty)
+
+3. **Enable GitHub Actions permissions**:
+   - Go to `Settings → Actions → General`
+   - Select `[x] Read and write permissions`
+
+4. **Push changes**:
+   ```bash
+   git add .
+   git commit -m "Set up deploy"
+   git push origin main
+   ```
+
+5. **Run deploy workflow** in Actions tab
+
+Your site will be at: `https://<your-github-username>.github.io/<repo-name>/`
+
+> ⚠️ GitHub Pages requires public repositories on free accounts.
 
 ---
 

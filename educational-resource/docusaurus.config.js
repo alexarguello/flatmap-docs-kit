@@ -14,7 +14,9 @@ const config = {
   url: 'https://lizeraes.github.io',
   baseUrl: '/flatmap-docs-kit/',
 
-  organizationName: 'lizeraes',
+  trailingSlash: true,
+
+  organizationName: '',
   projectName: 'flatmap-docs-kit',
 
   onBrokenLinks: 'warn',
