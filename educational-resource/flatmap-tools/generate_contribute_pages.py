@@ -23,7 +23,12 @@ def load_dashboard_template():
 def get_repository_link():
     """Get the repository link from style config."""
     style_config = load_style_config()
-    return style_config.get("repository_link", "https://github.com/YOUR_ORG/YOUR_REPO")
+    repo_link = style_config.get("repository_link")
+    if not repo_link:
+        print("⚠️  Warning: repository_link not found in flatmap-style.config.json")
+        print("   Please add 'repository_link': 'https://github.com/YOUR_USERNAME/YOUR_REPO' to your config")
+        return "https://github.com/YOUR_USERNAME/YOUR_REPO"
+    return repo_link
 
 def clean_contribute_folder():
     if not os.path.exists(OUTPUT_DIR):
@@ -123,40 +128,115 @@ def create_contribution_page(md_path, rel_path, frontmatter):
     else:
         section_links = ""
 
-    # Article link: just the article title, clickable, links to the article
-    url_path = build_url_path(parts)
-    docs_url = get_docs_url(url_path)
-    article_link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>'
+    # Article link: handle _intro.md files specially - link to folder, not file
+    if filename == "_intro.md":
+        # For _intro.md files, the section links already include the folder, so just use that
+        # This avoids duplication like "Getting Started > New to Java > New to Java"
+        article_link = section_links
+    else:
+        # For regular files, create the full breadcrumb with section links + article link
+        url_path = build_url_path(parts)
+        docs_url = get_docs_url(url_path)
+        if section_links:
+            article_link = f'{section_links} > <a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>'
+        else:
+            article_link = f'<a href="{docs_url}" target="_blank" rel="noopener noreferrer">{title}</a>'
 
-    # Sibling articles (skip intro.md and index.md)
+    # Sibling articles: handle both files and folders correctly
     sibling_articles = []
-    for fname in sorted(os.listdir(abs_folder_path)):
-        if not fname.endswith(".md") or fname == filename or fname in ("intro.md", "index.md"):
+    subfolder_resources = []
+    
+    # Get all items in the folder (both files and subdirectories)
+    for item_name in sorted(os.listdir(abs_folder_path)):
+        item_path = os.path.join(abs_folder_path, item_name)
+        
+        # Skip the current file
+        if item_name == filename:
             continue
-        fpath = os.path.join(abs_folder_path, fname)
-        sib_fm = parse_frontmatter(fpath)
-        # Use frontmatter title first, then fall back to extracted title
-        sib_title = sib_fm.get("title", extract_title(fpath))
-        status = sib_fm.get("status", "?")
-        sib_rel_path = os.path.relpath(fpath, ROOT_DIR)
-        link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
-        status_desc = {
-            "missing": "missing",
-            "draft": "in progress", 
-            "review-needed": "review needed",
-            "published": "published"
-        }.get(status, "")
-        status_icon = {
-            "missing": "❌",
-            "draft": "📝",
-            "review-needed": "🕵️",
-            "published": "✅"
-        }.get(status, None)
-        status_text = f" - {status_desc} {status_icon}" if status_desc and status_icon else ""
-        sibling_articles.append(f"- {link}{status_text}")
+            
+        # Skip index.md if there's a corresponding _intro.md
+        if item_name == "index.md" and os.path.exists(os.path.join(abs_folder_path, "_intro.md")):
+            continue
+            
+        # Handle files (sibling resources at same folder level)
+        if os.path.isfile(item_path) and item_name.endswith(".md"):
+            sib_fm = parse_frontmatter(item_path)
+            sib_title = sib_fm.get("title", extract_title(item_path))
+            status = sib_fm.get("status", "?")
+            
+            # Create link for sibling file - use full breadcrumb for contribute page
+            if item_name == "_intro.md":
+                # For _intro.md files, link to the folder with full breadcrumb
+                sib_rel_path = os.path.relpath(item_path, ROOT_DIR)
+                link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
+            else:
+                # For regular files, use the existing breadcrumb logic
+                sib_rel_path = os.path.relpath(item_path, ROOT_DIR)
+                link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
+                
+            # Add status information
+            status_desc = {
+                "missing": "missing",
+                "draft": "in progress", 
+                "review-needed": "review needed",
+                "published": "published"
+            }.get(status, "")
+            status_icon = {
+                "missing": "❌",
+                "draft": "📝",
+                "review-needed": "🕵️",
+                "published": "✅"
+            }.get(status, None)
+            status_text = f" - {status_desc} {status_icon}" if status_desc and status_icon else ""
+            sibling_articles.append(f"- {link}{status_text}")
+                
+        # Handle directories (subfolder resources)
+        elif os.path.isdir(item_path):
+            # Check if the directory has an _intro.md file
+            intro_path = os.path.join(item_path, "_intro.md")
+            if os.path.exists(intro_path):
+                # Use the _intro.md title for the folder
+                sib_fm = parse_frontmatter(intro_path)
+                sib_title = sib_fm.get("title", get_section_title(item_path))
+                status = sib_fm.get("status", "?")
+                # Link to the folder with full breadcrumb
+                sib_rel_path = os.path.relpath(item_path, ROOT_DIR)
+                link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
+            else:
+                # No _intro.md, use folder name
+                sib_title = get_section_title(item_path)
+                status = "?"
+                sib_rel_path = os.path.relpath(item_path, ROOT_DIR)
+                link = make_full_breadcrumb(sib_rel_path, article_title=sib_title, root_dir=ROOT_DIR)
+            
+            # Add status information
+            status_desc = {
+                "missing": "missing",
+                "draft": "in progress", 
+                "review-needed": "review needed",
+                "published": "published"
+            }.get(status, "")
+            status_icon = {
+                "missing": "❌",
+                "draft": "📝",
+                "review-needed": "🕵️",
+                "published": "✅"
+            }.get(status, None)
+            status_text = f" - {status_desc} {status_icon}" if status_desc and status_icon else ""
+            subfolder_resources.append(f"- {link}{status_text}")
+        else:
+            # Skip non-md files and non-directories
+            continue
+    
+    # Combine sibling articles and subfolder resources
     sibling_articles_md = "\n".join(sibling_articles) or "_No other articles in this folder yet._"
+    
+    if subfolder_resources:
+        subfolder_md = "\n".join(subfolder_resources)
+        sibling_articles_md = f"{sibling_articles_md}\n\n#### Resources already present under this topic:\n{subfolder_md}"
 
-    file_edit_link = f"{get_repository_link()}/edit/main/docs/{rel_path_folder}/{filename}"
+    # Fix GitHub edit link to include educational-resource prefix
+    file_edit_link = f"{get_repository_link()}/edit/main/educational-resource/docs/{rel_path_folder}/{filename}"
 
     template = load_template()
     content = template.format(

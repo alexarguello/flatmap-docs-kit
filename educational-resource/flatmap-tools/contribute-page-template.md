@@ -11,7 +11,7 @@ hide_title: true
 
 ### 🧩 Context
 
-Find this article here: {section_links} > {article_link}
+Find this article here: {article_link}
 
 #### Sibling articles in the same section, so you know what's already been written:
 {sibling_articles}
@@ -21,7 +21,7 @@ Find this article here: {section_links} > {article_link}
 ### ✍️ How to contribute this article
 
 #### If you have an existing external link
-Just fork the repo, [edit `{filename}`]({file_edit_link}) directly on GitHub, and submit a PR with your external link (see example below).
+Just fork the repo, or edit `{filename}` directly on GitHub, and submit a PR with your external link (see example below).
 
 #### 🔁 Example: external resource
 ```yaml

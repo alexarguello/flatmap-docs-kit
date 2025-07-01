@@ -7,7 +7,7 @@ hide_title: true
 
 level: intermediate      # beginner / intermediate / advanced / expert
 type: overview         # tutorial / overview / code / benchmark / opinion / api-doc
-status: published      # draft / review-needed / published / missing
+status: placeholder      # draft / review-needed / published / missing
 visibility: public     # public
 
 topics:

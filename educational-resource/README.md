@@ -15,6 +15,7 @@ This resource is:
 
 **Jump to:**
 - [How to Use the Resource](#️-how-to-use-the-resource)
+- [Tag System & Styling](#-tag-system--styling)
 - [How to Contribute](#️-how-to-contribute)
 - [Coming Soon](#-coming-soon)
 
@@ -36,6 +37,93 @@ Want the full overview?
 
 ### 🧭 Jump to Any Section  
 Browse deeply structured folders, or skim via the site's sidebar.
+
+---
+
+## 🏷️ Tag System & Styling
+
+This resource uses a comprehensive tag system to visually organize and categorize content. Tags are defined in frontmatter and automatically styled in the flatmaps.
+
+### Available Tags
+
+#### Content Types
+- `type:code` - Code samples and implementations
+- `type:tutorial` - Step-by-step guides
+- `type:benchmark` - Performance comparisons
+- `type:api-doc` - API documentation
+- `type:overview` - High-level introductions
+- `type:external` - Links to external resources
+
+#### Difficulty Levels
+- `level:beginner` - Green border
+- `level:intermediate` - Yellow border  
+- `level:advanced` - Orange border
+- `level:expert` - Red border
+
+#### Status
+- `status:draft` - Grey background
+- `status:review-needed` - Grey background
+- `status:published` - Default styling
+- `status:missing` - Grey background
+- `status:placeholder` - 🚧 icon (always shown first)
+
+#### Special Tags
+- `author:not_empty AND status:draft` - 👤 icon (appears when author field is not empty AND status is draft)
+- `visibility:internal` - Excluded from public view
+- `visibility:archived` - Excluded from public view
+
+### Conditional Tags
+
+You can use conditional logic in your frontmatter:
+
+```yaml
+---
+title: My Article
+author: "John Doe"
+status: draft
+# author:not_empty AND status:draft will be automatically added since both conditions are met
+---
+```
+
+The system automatically detects:
+- `author:not_empty` - When `author` field is not empty
+- `author:is_empty` - When `author` field is empty or missing
+- `status:draft` - When status is draft
+- `status:published` - When status is published
+- `field:is_empty` - When any field is empty or missing
+- `field:is_not_empty` - When any field has content
+
+### Complex Conditions (AND Logic)
+
+You can combine conditions using AND logic in the style config:
+
+```json
+{
+  "tags": {
+    "author:not_empty AND status:draft": { "icon": "👤", "icon_side": "right" }
+  }
+}
+```
+
+This will only show the icon when BOTH conditions are true:
+- `author` field is not empty
+- `status` is "draft"
+
+### Icon Positioning
+
+Icons can be positioned on the left (default) or right side of node labels:
+- `icon_side: left` - Icon appears before the title
+- `icon_side: right` - Icon appears after the title
+
+Example:
+```yaml
+---
+title: Draft Article
+author: "Jane Smith"
+status: draft
+# author:not_empty AND status:draft will show 👤 on the right side
+---
+```
 
 ---
 

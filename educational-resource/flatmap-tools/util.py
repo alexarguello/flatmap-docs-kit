@@ -10,7 +10,115 @@ STYLE_CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "fla
 def load_style_config():
     try:
         with open(STYLE_CONFIG_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
+            content = f.read()
+        
+        config = {"tags": {}}
+        
+        # Find the tags section
+        tags_start = content.find('"tags":')
+        if tags_start == -1:
+            return config
+        
+        # Extract everything from tags: to the end
+        tags_content = content[tags_start:]
+        
+        # Find the opening brace of tags object
+        brace_start = tags_content.find('{')
+        if brace_start == -1:
+            return config
+        
+        # Find the matching closing brace
+        brace_count = 1
+        brace_end = brace_start + 1
+        while brace_count > 0 and brace_end < len(tags_content):
+            if tags_content[brace_end] == '{':
+                brace_count += 1
+            elif tags_content[brace_end] == '}':
+                brace_count -= 1
+            brace_end += 1
+        
+        if brace_count > 0:
+            return config
+        
+        tags_section = tags_content[brace_start + 1:brace_end - 1]
+        print(f"DEBUG: Tags section: {tags_section[:200]}...")
+        
+        # Parse each tag entry
+        current_pos = 0
+        while current_pos < len(tags_section):
+            # Find the next quote (start of key)
+            quote_start = tags_section.find('"', current_pos)
+            if quote_start == -1:
+                break
+            
+            # Find the end of the key
+            quote_end = tags_section.find('"', quote_start + 1)
+            if quote_end == -1:
+                break
+            
+            key = tags_section[quote_start + 1:quote_end]
+            print(f"DEBUG: Found tag key: {key}")
+            
+            # Find the opening brace of the value
+            brace_start = tags_section.find('{', quote_end)
+            if brace_start == -1:
+                break
+            
+            # Find the closing brace of the value
+            brace_count = 1
+            brace_end = brace_start + 1
+            while brace_count > 0 and brace_end < len(tags_section):
+                if tags_section[brace_end] == '{':
+                    brace_count += 1
+                elif tags_section[brace_end] == '}':
+                    brace_count -= 1
+                brace_end += 1
+            
+            if brace_count > 0:
+                break
+            
+            value_section = tags_section[brace_start + 1:brace_end - 1]
+            print(f"DEBUG: Value section for {key}: {value_section}")
+            
+            # Parse the value object
+            properties = []
+            
+            # Split by commas and parse each property
+            prop_parts = value_section.split(',')
+            for part in prop_parts:
+                part = part.strip()
+                if ':' in part:
+                    # Find the colon
+                    colon_pos = part.find(':')
+                    prop_key = part[:colon_pos].strip().strip('"')
+                    prop_value = part[colon_pos + 1:].strip().strip('"')
+                    
+                    if prop_key and prop_value:
+                        properties.append((prop_key, prop_value))
+                        print(f"DEBUG: Added property {prop_key}: {prop_value} to {key}")
+            
+            # Add or merge the tag
+            if key in config["tags"]:
+                # Key already exists, extend the list
+                config["tags"][key].extend(properties)
+                print(f"DEBUG: Extended existing tag {key} with {len(properties)} properties")
+            else:
+                # New key, create list
+                config["tags"][key] = properties
+                print(f"DEBUG: Created new tag {key} with {len(properties)} properties")
+            
+            # Move to next tag
+            current_pos = brace_end
+            comma_pos = tags_section.find(',', current_pos)
+            if comma_pos == -1:
+                break
+            current_pos = comma_pos + 1
+        
+        print("DEBUG: Final config tags:")
+        for key, props in config["tags"].items():
+            print(f"  {key}: {props}")
+        
+        return config
     except Exception as e:
         print(f"⚠️  Warning: Could not load style config: {e}")
         return {"tags": {}}
@@ -229,9 +337,29 @@ def make_dashboard_breadcrumb_link(rel_path, article_title=None, to_contribute_p
         folder_path = os.path.join(root_dir, *parts[:-(len(upstreams)-i)])
         title = get_section_title(folder_path)
         crumb_text.append(title)
+    
+    # Get the article title
     art_title = article_title if article_title else extract_title(os.path.join(root_dir, rel_path))
-    crumb_text.append(art_title)
-    text = " > ".join(crumb_text)
+    
+    # Check if this is an _intro.md file (last part is _intro)
+    is_intro_file = rel_path.endswith('_intro.md')
+    
+    # For _intro.md files, don't add the article title if it's the same as the last folder name
+    if is_intro_file and len(parts) > 1:
+        last_folder_path = os.path.join(root_dir, *parts[:-1])
+        last_folder_title = get_section_title(last_folder_path)
+        if art_title == last_folder_title:
+            # Don't add the article title to avoid duplication
+            text = " > ".join(crumb_text)
+        else:
+            # Add the article title if it's different
+            crumb_text.append(art_title)
+            text = " > ".join(crumb_text)
+    else:
+        # For regular files, always add the article title
+        crumb_text.append(art_title)
+        text = " > ".join(crumb_text)
+    
     if to_contribute_page:
         id = f"contribute-{normalize_id(rel_path)}"
         docs_url = get_docs_url(f"contribute/{id}")

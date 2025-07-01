@@ -59,6 +59,33 @@ def parse_frontmatter(file_path):
         return {}
     return tags
 
+def evaluate_tag_condition(condition, frontmatter):
+    """Evaluate a tag condition like 'author:not_empty AND status:draft'."""
+    if ' AND ' in condition:
+        # Handle AND conditions
+        parts = condition.split(' AND ')
+        return all(evaluate_simple_condition(part.strip(), frontmatter) for part in parts)
+    else:
+        # Handle simple conditions
+        return evaluate_simple_condition(condition, frontmatter)
+
+def evaluate_simple_condition(condition, frontmatter):
+    """Evaluate a simple condition like 'author:not_empty' or 'status:draft'."""
+    if ':' not in condition:
+        return False
+    
+    field, value = condition.split(':', 1)
+    
+    if value == 'not_empty':
+        field_value = frontmatter.get(field, '')
+        return isinstance(field_value, str) and field_value.strip() != ''
+    elif value == 'is_empty':
+        field_value = frontmatter.get(field, '')
+        return not isinstance(field_value, str) or field_value.strip() == ''
+    else:
+        # Direct value comparison
+        return frontmatter.get(field) == value
+
 def extract_tags_from_frontmatter(frontmatter):
     """Extract all possible tags from frontmatter for styling."""
     tags = []
@@ -79,52 +106,164 @@ def extract_tags_from_frontmatter(frontmatter):
                 if isinstance(topic, str) and ':' in topic:
                     tags.append(topic)
     
+    # Handle conditional tags
+    # author:not_empty - when author field is not empty
+    author = frontmatter.get('author', '')
+    if isinstance(author, str) and author.strip():
+        tags.append('author:not_empty')
+    else:
+        tags.append('author:is_empty')
+    
+    # General is_empty/is_not_empty for any field
+    for field, value in frontmatter.items():
+        if isinstance(value, str):
+            if value.strip():
+                tags.append(f"{field}:is_not_empty")
+            else:
+                tags.append(f"{field}:is_empty")
+        elif value is None or value == "":
+            tags.append(f"{field}:is_empty")
+        else:
+            tags.append(f"{field}:is_not_empty")
+    
     return tags
 
-def apply_styling_to_node(tags, style_config):
+def apply_styling_to_node(tags, style_config, frontmatter=None):
     """Apply styling to a node based on tags and style config."""
+    print(f"DEBUG: apply_styling_to_node called with tags: {tags}")
+    print(f"DEBUG: style_config tags: {list(style_config.get('tags', {}).keys())}")
+    
     styles = {
-        'icon': None,
-        'border_color': None,
-        'background_color': None,
-        'text_color': None,
-        'border_style': None,
-        'border_width': None,
+        'left_icons': [],   # Icons for left side
+        'right_icons': [],  # Icons for right side
+        'border_colors': [],  # List of border colors
+        'background_colors': [],  # List of background colors
+        'text_colors': [],  # List of text colors
+        'border_styles': [],  # List of border styles
+        'border_widths': [],  # List of border widths
         'clickable': True,
         'exclude': False
     }
-    for tag in tags:
-        if tag in style_config.get('tags', {}):
-            tag_style = style_config['tags'][tag]
-            for style_key, style_value in tag_style.items():
-                if style_key in styles:
-                    if styles[style_key] is None:
-                        styles[style_key] = style_value
+    
+    # Process all config entries to accumulate properties
+    for config_tag, tag_properties in style_config.get('tags', {}).items():
+        print(f"DEBUG: Processing config tag: {config_tag}")
+        print(f"DEBUG: Tag properties: {tag_properties}")
+        
+        # Check if this config entry matches any of our tags
+        tag_matches = False
+        
+        # Handle simple tags
+        if config_tag in tags:
+            tag_matches = True
+            print(f"DEBUG: Simple tag match: {config_tag}")
+        
+        # Handle complex conditions (AND conditions)
+        elif ' AND ' in config_tag and frontmatter:
+            if evaluate_tag_condition(config_tag, frontmatter):
+                tag_matches = True
+                print(f"DEBUG: Complex tag match: {config_tag}")
+        
+        # Apply all properties from matching tags
+        if tag_matches:
+            print(f"DEBUG: Applying properties for {config_tag}")
+            # Handle list of property tuples
+            if isinstance(tag_properties, list):
+                for prop_key, prop_value in tag_properties:
+                    print(f"DEBUG: Processing property {prop_key}: {prop_value}")
+                    if prop_key == 'icon':
+                        # Check if this tag has icon_side specified
+                        icon_side = 'left'  # default
+                        for check_key, check_value in tag_properties:
+                            if check_key == 'icon_side':
+                                icon_side = check_value
+                                break
+                        
+                        if icon_side == 'right':
+                            styles['right_icons'].append(prop_value)
+                            print(f"DEBUG: Added right icon: {prop_value}")
+                        else:
+                            styles['left_icons'].append(prop_value)
+                            print(f"DEBUG: Added left icon: {prop_value}")
+                    elif prop_key == 'border_color':
+                        styles['border_colors'].append(prop_value)
+                        print(f"DEBUG: Added border color: {prop_value}")
+                    elif prop_key == 'background_color':
+                        styles['background_colors'].append(prop_value)
+                        print(f"DEBUG: Added background color: {prop_value}")
+                    elif prop_key == 'text_color':
+                        styles['text_colors'].append(prop_value)
+                    elif prop_key == 'border_style':
+                        styles['border_styles'].append(prop_value)
+                    elif prop_key == 'border_width':
+                        styles['border_widths'].append(prop_value)
+                    elif prop_key == 'exclude':
+                        styles['exclude'] = prop_value
+    
+    print(f"DEBUG: Final styles: {styles}")
     return styles
 
 def create_mermaid_node_style(styles, default_fill=None):
     """Create Mermaid-compatible styling for a node."""
     style_parts = []
-    fill_color = styles.get('background_color') or default_fill
+    
+    # Use the last background color, or default
+    background_colors = styles.get('background_colors', [])
+    fill_color = background_colors[-1] if background_colors else default_fill
     if fill_color:
         style_parts.append(f"fill:{fill_color}")
-    if styles.get('border_color'):
-        border_style = styles.get('border_style') or 'solid'
-        border_width = styles.get('border_width') or '2px'
-        style_parts.append(f"stroke:{styles['border_color']}")
+    
+    # Use the last border color if available
+    border_colors = styles.get('border_colors', [])
+    if border_colors:
+        border_color = border_colors[-1]
+        border_styles = styles.get('border_styles', [])
+        border_style = border_styles[-1] if border_styles else 'solid'
+        border_widths = styles.get('border_widths', [])
+        border_width = border_widths[-1] if border_widths else '2px'
+        
+        style_parts.append(f"stroke:{border_color}")
         style_parts.append(f"stroke-width:{border_width}")
         style_parts.append(f"stroke-dasharray:{'5,5' if border_style == 'dashed' else '1,1' if border_style == 'dotted' else '0'}")
-    if styles.get('text_color'):
-        style_parts.append(f"color:{styles['text_color']}")
+    
+    # Use the last text color if available
+    text_colors = styles.get('text_colors', [])
+    if text_colors:
+        style_parts.append(f"color:{text_colors[-1]}")
+    
     return ",".join(style_parts) if style_parts else None
 
+def has_author_and_draft(frontmatter):
+    """Check if an article has an author and is in draft status."""
+    status = frontmatter.get('status', '')
+    author = frontmatter.get('author', '')
+    
+    # Check if status is draft
+    is_draft = status == 'draft'
+    
+    # Check if author exists (handle string format: "Name" (@github), "Name" (@github))
+    has_author = False
+    if isinstance(author, str) and author.strip():
+        has_author = True
+    
+    return is_draft and has_author
+
 def create_node_label(title, styles, is_external=False, external_url=None):
-    """Create the label for a node with optional icon and external link."""
+    """Create the label for a node with optional icons and external link."""
     label_parts = []
-    if styles.get('icon'):
-        label_parts.append(styles['icon'])
+    
+    # Add left icons first
+    if styles.get('left_icons'):
+        label_parts.extend(styles['left_icons'])
+    
+    # Add the title
     safe_title = title.replace('"', "'")
     label_parts.append(safe_title)
+    
+    # Add right icons after the title
+    if styles.get('right_icons'):
+        label_parts.extend(styles['right_icons'])
+    
     label = " ".join(label_parts)
     if is_external and external_url:
         return f"<a href='{external_url}' target='_blank' rel='noopener noreferrer'>{label}</a>"
@@ -173,22 +312,56 @@ def get_folder_sidebar_position(folder_path):
 def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_override=None, style_config=None):
     if style_config is None:
         style_config = load_style_config()
+    
     lines = []
     clicks = []
     classes = {}
     style_classes = {}
     current_id = normalize_id(rel_path or "root")
     label = strip_order_prefix(os.path.basename(folder_path)).replace("-", " ").title() or "Home"
-    lines.append(f'{current_id}["{label}"]')
+    
+    # Apply styling to folder nodes by checking index.md or _intro.md
+    folder_styles = {'left_icons': [], 'right_icons': [], 'border_colors': [], 'background_colors': [], 'text_colors': [], 'border_styles': [], 'border_widths': [], 'clickable': True, 'exclude': False}
+    
+    # Check for index.md first, then _intro.md
+    index_md_path = os.path.join(folder_path, "index.md")
+    intro_md_path = os.path.join(folder_path, "_intro.md")
+    
+    folder_frontmatter = {}
+    if os.path.isfile(index_md_path):
+        folder_frontmatter = parse_frontmatter(index_md_path)
+        tags = extract_tags_from_frontmatter(folder_frontmatter)
+        folder_styles = apply_styling_to_node(tags, style_config, folder_frontmatter)
+    elif os.path.isfile(intro_md_path):
+        folder_frontmatter = parse_frontmatter(intro_md_path)
+        tags = extract_tags_from_frontmatter(folder_frontmatter)
+        folder_styles = apply_styling_to_node(tags, style_config, folder_frontmatter)
+    
+    # Skip folder if it's excluded
+    if folder_styles['exclude']:
+        return lines, clicks, classes, style_classes
+    
+    # Create node label with styling
+    node_label = create_node_label(label, folder_styles, is_external=False, external_url=None)
+    lines.append(f'{current_id}["{node_label}"]')
+    
     if rel_path:
         clean_rel_path = "/".join(strip_order_prefix(p) for p in rel_path.split(os.sep))
         docs_url = get_docs_url(clean_rel_path)
         clicks.append(f'click {current_id} "{docs_url}"')
     if parent_id:
         lines.append(f"{parent_id} --> {current_id}")
+    
+    # Apply styling to the folder node
+    color_for_depth = ["#b3d9ff", "#d5b3ff", "#ffcccc", "#ffd699", "#d0f0c0"][depth % 5]
+    mermaid_style = create_mermaid_node_style(folder_styles, default_fill=color_for_depth)
+    if mermaid_style:
+        style_classes[current_id] = mermaid_style
+    
     effective_max_depth = max_depth_override if max_depth_override is not None else get_max_depth()
     if depth >= effective_max_depth:
-        return lines, clicks, {current_id: depth}, style_classes
+        classes[current_id] = depth
+        return lines, clicks, classes, style_classes
     entries = sorted(os.listdir(folder_path))
     # Exclude 99-contribute folder
     entries = [e for e in entries if e != '99-contribute']
@@ -226,7 +399,7 @@ def build_mermaid(folder_path, rel_path, depth, parent_id=None, max_depth_overri
             is_external, external_url = is_external_doc(full_path)
             frontmatter = parse_frontmatter(full_path)
             tags = extract_tags_from_frontmatter(frontmatter)
-            styles = apply_styling_to_node(tags, style_config)
+            styles = apply_styling_to_node(tags, style_config, frontmatter)
             if styles['exclude']:
                 continue
             status = frontmatter.get('status', '')
@@ -472,16 +645,23 @@ def create_compact_legend(style_classes, style_config):
     background_groups = {}
     
     for tag, tag_config in style_config.get('tags', {}).items():
+        # Convert list of tuples to dict for easier access
+        tag_props = dict(tag_config) if isinstance(tag_config, list) else tag_config
+        
         # Skip invisible/excluded tags
-        if tag_config.get('exclude', False):
+        if tag_props.get('exclude', False):
             continue
             
-        icon = tag_config.get('icon', '')
-        border_color = tag_config.get('border_color', '')
-        background_color = tag_config.get('background_color', '')
+        icon = tag_props.get('icon', '')
+        border_color = tag_props.get('border_color', '')
+        background_color = tag_props.get('background_color', '')
         
         if icon:
-            icon_tags.append(f"**{icon}** {tag}")
+            # Handle AND conditions specially
+            if ' AND ' in tag:
+                icon_tags.append(f"**{icon}** {tag}")
+            else:
+                icon_tags.append(f"**{icon}** {tag}")
         
         if border_color:
             border_dot = color_to_dot(border_color)
