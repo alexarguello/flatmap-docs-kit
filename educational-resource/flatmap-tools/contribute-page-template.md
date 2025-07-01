@@ -21,7 +21,7 @@ Find this article here: {article_link}
 ### ✍️ How to contribute this article
 
 #### If you have an existing external link
-Just fork the repo, or edit `{filename}` directly on GitHub, and submit a PR with your external link (see example below).
+Just fork the repo, or <a href="{file_edit_link}" target="_blank" rel="noopener noreferrer">{filename}</a> directly on GitHub, and submit a PR with your external link (see example below).
 
 #### 🔁 Example: external resource
 ```yaml

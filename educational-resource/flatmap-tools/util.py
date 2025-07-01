@@ -423,3 +423,22 @@ def get_docs_url(path=""):
     base_url = get_base_url()
     docs_path = f"/docs/{path}" if path else "/docs"
     return f"{base_url}{docs_path}"
+
+
+def get_repository_link_from_config():
+    try:
+        with open(STYLE_CONFIG_PATH, "r", encoding="utf-8") as f:
+            for line in f:
+                if '"repository_link"' in line:
+                    # Extract the value between the first pair of double quotes after the colon
+                    parts = line.split(':', 1)
+                    if len(parts) > 1:
+                        value = parts[1].strip().strip(',').strip().strip('"')
+                        value = value.replace('"', '').replace(',', '').strip()
+                        if value:
+                            return value
+        # fallback
+        return "https://github.com/YOUR_USERNAME/YOUR_REPO"
+    except Exception as e:
+        print(f"⚠️  Warning: Could not load repository_link from style config: {e}")
+        return "https://github.com/YOUR_USERNAME/YOUR_REPO"
