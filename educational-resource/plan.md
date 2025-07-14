@@ -59,6 +59,70 @@ This master plan drives our **community-driven hub** for AI & digital solutions 
 - [Full Sitemap](#full-sitemap) *(-> sitemap.md)*
 
 ---
+## Project File Structure
+📂 Project Root
+├── 1.01-overview.md
+├── 2.01-about.md
+├── 📂 3.01-for-users
+│   ├── 📂 1.01-by-disability-type
+│   │   ├── 1.01-vision.md
+│   │   ├── 📂 1.01-vision
+│   │   │   ├── 1.01-screen-readers.md
+│   │   │   ├── 1.02-e-readers.md
+│   │   │   ├── 1.03-external-resources.md
+│   │   ├── 1.02-hearing.md
+│   │   ├── 📂 1.02-hearing
+│   │   │   └── 1.01-external-resources.md
+│   │   ├── 1.03-cognitive.md
+│   │   ├── 📂 1.03-cognitive
+│   │   │   └── 1.01-external-resources.md
+│   │   ├── 1.04-mobility.md
+│   │   ├── 📂 1.04-mobility
+│   │   │   └── 1.01-external-resources.md
+│   │   ├── 1.05-speech-language.md
+│   │   ├── 📂 1.05-speech-language
+│   │   │   └── 1.01-external-resources.md
+│   │   ├── 1.06-neurodiversity.md
+│   │   ├── 📂 1.06-neurodiversity
+│   │   │   └── 1.01-external-resources.md
+│   │   ├── 1.07-aging-dexterity.md
+│   │   ├── 📂 1.07-aging-dexterity
+│   │   │   └── 1.01-external-resources.md
+├── 📂 4.01-for-developers
+│   ├── 1.01-apis-sdks.md
+│   ├── 1.02-engineering-gaps.md
+│   ├── 1.03-contribution-guidelines.md
+│   ├── 1.04-case-studies.md
+├── 📂 5.01-community
+│   ├── 1.01-forums.md
+│   ├── 1.02-events.md
+│   ├── 1.03-success-stories.md
+├── 📂 6.01-resources
+│   ├── 1.01-legal-standards.md
+│   ├── 1.02-tutorials.md
+│   ├── 1.03-research.md
+├── 📂 7.01-applications
+│   ├── 1.01-for-visual.md
+│   ├── 1.02-open-source.md
+├── 📂 8.01-use-cases
+│   ├── 1.01-work.md
+│   ├── 1.02-home.md
+│   ├── 1.03-future.md
+├── 📂 9.01-unmet-needs
+│   └── 1.01-unmet-needs.md
+├── 10.01-ai-solution-categories.md
+├── 11.01-tool-directory.md
+├── 12.01-engineering-gaps.md
+├── 13.01-personas
+├── 📂 14.01-community-contributions
+│   ├── 1.01-whats-missing.md
+│   ├── 1.02-getting-started.md
+│   ├── 1.03-testimony-template.md
+├── 15.01-roadmap.md
+├── 16.01-to-do-list.md
+└── 17.01-sitemap.md
+
+---
 ## ♿ Accessibility HUB Overview
 
 An open-source, AI-powered platform designed to centralize accessibility tools, identify gaps, and foster collaboration between people with disabilities and developers building inclusive technology.
