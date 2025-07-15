@@ -1,92 +1,110 @@
-# 🤝 Contributing to Java & AI Resource Hub
+# 🤝 Contributing to the Accessibility Hub
+Thank you for your interest in contributing to our **Accessibility Hub**!
+Our mission is to create the **most reliable, well-organized, and user-friendly resource** for anyone involved in making the world more accessible. This includes tools, guidelines, and resources for improving digital accessibility in areas such as screen readers, assistive technologies, visual impairments, and more.
+By contributing, you help developers, individuals with disabilities, accessibility testers, educators, and advocates find the resources they need to support accessible technology.
+## 🥅 Goals of the Accessibility Hub
+1. **Promote Awareness**: Provide actionable and relatable accessibility information.
+2. **Serve All Skill Levels**: Create resources for **beginners, experienced professionals, educators**, and **end users**.
+3. **Cover Diverse Topics**: Include tools, best practices, regulations, user experience insights, and accessibility technologies.
+4. **Improve Accessibility Culture**: Reduce barriers and make digital spaces inclusive.
 
-Thanks for helping build the most useful, well-structured resource landscape for Java and AI!
+## 📝 How to Contribute
+Not sure where to start? Here’s how you can pitch in:
+### 1. **Browse Current Needs**
+Check the last section in the sidebar called `Contribute`. Here you'll find examples of **resources we need**, as well as requests for improvements to existing materials.
+### 2. **Add or Improve Resources**
+Have your own idea? Follow these steps:
+- Browse `/docs/` to find the right folder for your topic.
+- Copy the [`/docs/.template.md`](./docs/.template.md) file as a starting point for your new resource.
+- Rename your file (e.g., `screen-readers.md`, `dos-and-donts.md`).
 
-We aim to make the resource:
+⚠️ Do not name files `intro.md` or `index.md` — these are reserved for folder landing pages.
 
-- **Easy to navigate**, even at depth
-- **Structured**, tagged, and filterable
-- **Low maintenance**, yet dynamically visualized
-- **Equally useful for beginners and experts**
+### 3. **Write and Format the Frontmatter**
+At the top of every Markdown file, include your **frontmatter** to classify, tag, and describe the resource. 
+Frontmatter is essential YAML metadata included in every resource file to ensure classification, seamless system integration, and proper organization. Here are the key highlights:
 
----
+1. **Purpose**: Frontmatter provides structure by categorizing and describing resources, making them easier to manage and access.
+2. **Required Fields**:
+  - `title`: A concise, descriptive name for the resource (e.g., "Introduction to ARIA").
+  - `type`: The content type (e.g., `overview`, `guide`, `tutorial`, `reference`).
+  - `level`: The intended audience expertise level (`beginner`, `intermediate`, or `advanced`).
+  - `status`: The development stage of the resource (`draft`, `wip`, `published`).
+  - `topics`: Tags summarizing the content, with a focus on:
+    - Broad categories like `accessibility`.
+    - Specific prefixes such as `assistive-technology`.
+    - More about topics [here](/TOPICS_GUIDE.md)
 
-## 📝 How to Add a New Resource
+For the full guide, refer to [FRONTMATTER_GUIDE.md](./FRONTMATTER_GUIDE.md).
 
-Not sure where to start? Have a look at the last topic in the sidebar, `Contribute` for a dashboard with resources / reviews we'd love to have. If you have your own idea, go ahead as follow:
 
-1. Find the correct folder inside [`/docs/`](./docs)
-2. Copy the [`docs/.template.md`](./docs/.template.md) into that folder
-3. Rename the file (e.g., `overview.md`, `setup-guide.md`, etc.). Attention: `intro.md` and `index.md are reserved.
-4. Fill in the frontmatter (YAML block at the top) as described in the template
-5. Make a PR 🙌 
+### 4. **Submit a Pull Request**
+Create a Pull Request (PR) in our GitHub repository. Include a summary of your changes, why they're important, and mention any related GitHub issues.
 
----
-
-## ✍️ Metadata: Required & Optional Tags
-
-**All required and optional metadata fields are documented directly in [`docs/.template.md`](./docs/.template.md)**.
-
-Please follow that template closely — it includes:
-
-- Required fields like `title`, `type`, `level`, `status`, `topics`, etc.
-- Optional fields like `author`, `eta`, `feature-priority`, `feature-responsible`, etc.
-- Tagging examples and allowed values
-
-These tags ensure:
-
-- Resources are **findable** and **well-classified**
-- Flatmaps and dashboards reflect up-to-date context
-- Maintainers can triage what’s missing or in progress
-
-**Some tags are visualized** on the site:
-- `level` and `type` may impact box **borders**, **colors**, or **icons**
-- `status` will guide visual styling for clarity (`wip`, `published`, etc.)
-
----
 
 ## 📌 About `intro.md` Pages
-
-Each folder can contain a `intro.md` file that:
-
-- Serves as the **landing page** for that topic
-- Appears **above the visual “flatmap” diagram**
-- Should be **short and to the point** (2–3 paragraphs max)
-- The flatmap that comes after should remain **partially visible without scrolling**, so viewers realize it's there
-- Should **dispatch readers** toward subtopics depending on their persona:
-    - **Expected readers**: new to the topic / experienced / educators
-
-We recommend thinking of the `intro.md` as a **landing tile or dispatch hub**. It helps the user orient themselves before diving into the deeper levels of the structure.
-
-Please limit subfolders to 4, max 5. If adding more, try to group in a new subfolder.
-
----
+Each directory in `/docs/` can have an `intro.md` as a **topic landing page**.
+### Guidelines for `intro.md` Files
+- Keep it **short and clear** (max 2–3 paragraphs).
+- Define the purpose of the section and direct users to subtopics.
+- Mention the expected audience, whether beginners, experienced developers, end-users, or educators.
+- Ensure the section remains partially visible above **visual diagrams** or **flatmaps** on the site.
 
 ## ✅ Pull Request Guidelines
+When submitting a PR, ensure:
+- All **required frontmatter fields** are present.
+- **Optional fields** are only added if relevant (e.g., `eta` for planned work).
+- Files are placed in the correct folder within `/docs/`.
+- Your content aligns with our **accessibility-first values**.
 
-We will soon enable **automated PR checks** that validate:
+Our automated PR checks will validate:
+- Proper metadata format and values.
+- Required fields like `title`, `type`, `level`, and `topics`.
+- **For planned or in-progress resources**: an `eta` field (completion date) must be included.
 
-- Presence of all required fields
-- Correct format of tag values (e.g., known `type`, valid `visibility`)
-- Optional `eta` only present if `status` is `planned` or `wip`
+⚠️ **Tip**: If there’s an issue or discussion related to your PR, reference it in the description!
 
-If your PR is missing tags or uses incorrect values, the check will comment with what’s wrong.
+## Available Topics and Prefixes
+To maintain consistency, use the following **topics** when tagging your content:
+### General Categories
+- `accessibility`
+- `assistive-technology`
+- `visual-impairment`
+- `design-principles`
+- `standards` (WCAG, ARIA, etc.)
 
----
+### Tools (Prefix: `tool:`)
+- `tool:JAWS`
+- `tool:NVDA`
+- `tool:VoiceOver`
+- `tool:Narrator`
+- `tool:Orca`
 
-### ⏳ Claimed or Planned Resources
+### Providers (Prefix: `provider:`)
+- `provider:freedom-scientific`
+- `provider:microsoft`
+- `provider:apple`
+- `provider:nv-access`
 
-When marking a resource as `status: planned` or `status: wip`, you **must include** an estimated completion date via the `eta` field (see example in [`docs/.template.md`](./docs/.template.md))
+Include your tags as **specific and accurate as possible** — these improve searchability and structure for other contributors.
+for more details, check out the [Topics by Category](./TOPICS_GUIDE.md).
+## ✍️ Formatting and Writing Guidelines
+1. **Focus on Accessibility**: Write with an accessibility-first mindset, including inclusive examples (e.g., using headings, lists, and descriptive text).
+2. **Use Clear Language**: Avoid technical jargon whenever possible. Cater to all skill levels.
+3. **Cite Reliable Sources**: Reference official accessibility standards (e.g., WCAG, ARIA specifications).
+4. **Test Recommendations**: Ensure tools or techniques described in your resource are tested and validated.
 
-This allows us to:
+## ⭐ Contributor Responsibilities
+Contributors help ensure this hub is **valuable and up-to-date** by:
+- Responding to resource requests.
+- Keeping planned content on schedule (`eta` informed).
+- Updating `draft` or `wip` resources once complete.
 
-- **Send automatic reminders** to contributors and maintainers when a resource is overdue
-- Keep the roadmap and site fresh and realistic
-- Help others avoid duplicate efforts
+## “Planned” or “Work in Progress” Resources
+If your resource is still being developed, set its `status` to `planned` or `wip` and include an **estimated completion date** (`eta`).
+**Why?**:
+- It prevents duplication.
+- Maintainers and other contributors can monitor progress or assist.
 
-⏰ ETA can be updated later if needed — it's not punishment, just visibility 🙂
+Thank you for helping make the Accessibility Hub a trusted, inclusive, and insightful resource! Let us know if you have ideas for improving our contributions system 🙌
 
----
-
-Thanks again for contributing 🙌  
-If you have ideas, improvements, or need support, open a Discussion or contact the maintainers.
