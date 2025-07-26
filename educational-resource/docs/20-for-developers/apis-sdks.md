@@ -1,6 +1,6 @@
 ---
 title: Accessibility APIs & SDKs
-sidebar_position: 1
+sidebar_position: 2
 hide_title: true
 level: intermediate
 type: api-doc

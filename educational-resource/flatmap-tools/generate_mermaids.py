@@ -249,21 +249,26 @@ def has_author_and_draft(frontmatter):
     return is_draft and has_author
 
 def create_node_label(title, styles, is_external=False, external_url=None):
-    """Create the label for a node with optional icons and external link."""
+    """
+    Create the label for a node with optional icons and external link.
+    Escapes quotes, brackets, and newlines for Mermaid compatibility.
+    """
     label_parts = []
-    
     # Add left icons first
     if styles.get('left_icons'):
         label_parts.extend(styles['left_icons'])
-    
     # Add the title
     safe_title = title.replace('"', "'")
+    safe_title = safe_title.replace('\n', ' ').replace('\r', ' ')
+    # Remove or escape brackets (Mermaid bug: brackets in labels can break parsing)
+    safe_title = safe_title.replace('[', '(').replace(']', ')')
+    # Optionally, truncate very long titles
+    if len(safe_title) > 80:
+        safe_title = safe_title[:77] + "..."
     label_parts.append(safe_title)
-    
     # Add right icons after the title
     if styles.get('right_icons'):
         label_parts.extend(styles['right_icons'])
-    
     label = " ".join(label_parts)
     if is_external and external_url:
         return f"<a href='{external_url}' target='_blank' rel='noopener noreferrer'>{label}</a>"
@@ -271,10 +276,25 @@ def create_node_label(title, styles, is_external=False, external_url=None):
 
 def strip_order_prefix(name):
     return re.sub(r"^\d{2,}-", "", name)
-
+import unicodedata
 def normalize_id(path):
-    id_raw = path.replace("/", "_").replace("-", "_").replace(".", "_")
-    return f"n_{id_raw}" if re.match(r"^\d", id_raw) else id_raw
+    """
+    Sanitize node IDs for Mermaid: only allow a-z, A-Z, 0-9, _, and -.
+    Replace all other characters with '_'. Ensure no leading digit.
+    """
+    # Remove accents and normalize unicode
+    id_raw = unicodedata.normalize('NFKD', path)
+    id_raw = id_raw.encode('ascii', 'ignore').decode('ascii')
+    # Replace /, -, . with _
+    id_raw = id_raw.replace("/", "_").replace("-", "_").replace(".", "_")
+    # Remove all non-alphanumeric, _, or -
+    id_raw = re.sub(r'[^a-zA-Z0-9_-]', '_', id_raw)
+    # Remove leading underscores/digits
+    id_raw = re.sub(r'^[_\d]+', '', id_raw)
+    # Ensure not empty
+    if not id_raw:
+        id_raw = "node"
+    return id_raw
 
 def extract_title(path):
     try:

@@ -36,6 +36,13 @@
    ```
 
    This will bring up the website on `localhost:3000`
+useful windows  commands: 
+```bash
+netstat -ano | findstr :3000
+taskkill /pid 99999 /F
+
+
+1. ```
 
 2. _(optional)_ Add deployment config — **TODO: write instructions for deploying live**.
 

@@ -1,6 +1,6 @@
 ---
 title: How to contribute
-sidebar_position: 2
+sidebar_position: 1
 hide_title: true
 level: beginner
 type: tutorial
@@ -11,7 +11,7 @@ topics:
   - contribution
   - accessibility
   - guide
-author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
+author: 'Alexandra Arguello Saenz (https://github.com/alexarguello)'
 eta: 2024-12-06
 ---
 
