@@ -1,0 +1,86 @@
+/* Core styling remains the same */
+.topic-tag {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.topic-tag:focus,
+.topic-tag:hover {
+  outline: none;
+  background-color: #eef6ff;
+  border-color: #005fcc;
+}
+
+/* Type-based classes */
+.topic-tool {
+  background-color: #e0f7fa;
+  border-color: #006064;
+}
+
+.topic-concept {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+}
+
+.topic-protocol {
+  background-color: #fbe9e7;
+  border-color: #d84315;
+}
+
+.topic-use {
+  background-color: #ede7f6;
+  border-color: #4527a0;
+}
+
+/* Toggle button */
+.motionToggle {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #fafafa;
+  border: 2px solid #005fcc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.motionToggle:focus {
+  outline: 2px dashed #005fcc;
+}
+
+/* Grid container */
+.topicsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Reduce motion class disables transitions */
+.reduceMotion * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+.topic-tag {
+  white-space: normal;     /* allow wrapping */
+  overflow: visible;       /* no clipping */
+  text-overflow: unset;    /* no ellipsis */
+}
+.header {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hotWord {
+  color: #d84315;
+  font-size: 2.6rem;
+}
+

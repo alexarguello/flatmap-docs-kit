@@ -1,77 +1,71 @@
-import React from 'react';
-import '@site/src/css/custom.css';
+import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
+import styles from './HotTopics.module.css';
 
 const topics = [
-  // First line – 2 items
-  { label: 'Tool calling', size: 'xl', type: 'protocol', link: '/docs/placeholder' },
-  { label: 'Image recognition', size: 'lg', type: 'concept', link: '/docs/machine-learning' },
-
-  // Line 2
-  { label: 'ADK', size: 'lg', type: 'tool', link: '/docs/agentic-ai/agent-frameworks/adk' },
-  { label: 'MCP', size: 'xl', type: 'protocol', link: '/docs/generative-ai/framework-integrations/mcp' },
-  { label: 'Training Models', size: 'lg', type: 'concept', link: '/docs/machine-learning' },
-  { label: 'Machine Learning', size: 'xl', type: 'concept', link: '/docs/machine-learning' },
-  { label: 'GPU', size: 'lg', type: 'tool', link: '/docs/placeholder' },
-  { label: 'Transcription', size: 'md', type: 'use', link: '/docs/placeholder' },
-
-  // Middle line – center focus
-  { label: 'LLM', size: 'xl', type: 'concept', link: '/docs/generative-ai' },
-  { label: 'Finetuning', size: 'xl', type: 'concept', link: '/docs/placeholder' },
-  { label: 'SpringAI', size: 'xl', type: 'tool', link: '/docs/generative-ai/framework-integrations/spring-ai' },
-  { label: 'Chatbots', size: 'lg', type: 'use', link: '/docs/placeholder' },
-  { label: 'Agents', size: 'lg', type: 'concept', link: '/docs/agentic-ai' },
-  { label: 'OpenAI', size: 'md', type: 'tool', link: '/docs/placeholder' },
-
-  // Line 4
-  { label: 'Ollama', size: 'md', type: 'tool', link: '/docs/placeholder' },
-  { label: 'Vector DBs', size: 'md', type: 'tool', link: '/docs/placeholder' },
-  { label: 'Classification', size: 'md', type: 'concept', link: '/docs/machine-learning' },
-  { label: 'Evaluation', size: 'md', type: 'concept', link: '/docs/machine-learning' },
-  { label: 'Gemini', size: 'sm', type: 'tool', link: '/docs/placeholder' },
-  { label: 'LangChain4J', size: 'lg', type: 'tool', link: '/docs/generative-ai/framework-integrations/langchain4j' },
-
-  // Last line – 2 items
-  { label: 'Hugging Face', size: 'md', type: 'tool', link: '/docs/placeholder' },
-  { label: 'Local models', size: 'md', type: 'concept', link: '/docs/generative-ai/inference' },
-  { label: 'Non-deterministic testing', size: 'md', type: 'concept', link: '/docs/placeholder' },
+  { label: 'Alt Text AI', type: 'tool', link: '/docs/placeholder' },
+  { label: 'Voice Navigation', type: 'tool', link: '/docs/placeholder' },
+  { label: 'Real-time Captions', type: 'tool', link: '/docs/generative-ai/inference' },
+  { label: 'Screen Readers', type: 'tool', link: '/docs/placeholder' },
+  { label: 'NLP Assist', type: 'concept', link: '/docs/machine-learning' },
+  { label: 'Accessibility Audit', type: 'protocol', link: '/docs/placeholder' },
+  { label: 'Color Contrast', type: 'concept', link: '/docs/placeholder' },
+  { label: 'ARIA Roles', type: 'concept', link: '/docs/placeholder' },
+  { label: 'Inclusive Design', type: 'concept', link: '/docs/placeholder' },
+  { label: 'Seeing AI', type: 'tool', link: '/docs/placeholder' },
+  { label: 'Otter.ai', type: 'tool', link: '/docs/placeholder' },
+  { label: 'GitHub Access Tools', type: 'tool', link: '/docs/agentic-ai/agent-frameworks/adk' },
+  { label: 'Accessibility Testing', type: 'protocol', link: '/docs/machine-learning' },
+  { label: 'SpringAI Assistive', type: 'tool', link: '/docs/generative-ai/framework-integrations/spring-ai' },
+  { label: 'LangChain4J Tools', type: 'tool', link: '/docs/generative-ai/framework-integrations/langchain4j' },
+  { label: 'Smart Homes', type: 'use', link: '/docs/placeholder' },
+  { label: 'Dyslexia Support', type: 'concept', link: '/docs/placeholder' },
+  { label: 'Bug Bounty', type: 'protocol', link: '/docs/placeholder' },
 ];
 
-const HotTopicsPage = () => {
-  const chunked = [];
-  let index = 0;
-
-  while (index < topics.length) {
-    const count =
-      index === 0 || index + 2 >= topics.length ? 2 : Math.min(6, topics.length - index);
-    chunked.push(topics.slice(index, index + count));
-    index += count;
-  }
+export default function HotTopicsPage() {
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   return (
-    <div className="hot-topics">
-      <div className="hot-topics__container">
-        <h1 className="hot-topics__title">Frequently Asked Topics</h1>
-        <p className="hot-topics__subtitle">Explore what everyone's curious about right now, click on the topic of your choice to start reading / watching.</p>
+    <main className={styles.hotTopics} role="main" aria-label="Hot Topics in Accessibility and AI">
+      <div className={styles.container}>
+        <h1 className={styles.header}>
+          🔥 <span className={styles.hotWord}>Hot</span> Topics in Accessibility & AI
+        </h1>
+        <p>Click a tag to learn more. This view is fully keyboard and screen-reader accessible.</p>
 
-        <div className="wordcloud">
-          {chunked.map((row, i) => (
-            <div key={i} className="wordcloud__row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '1.5rem' }}>
-              {row.map((topic, j) => (
-                <Link
-                  key={`${topic.label}-${j}`}
-                  to={topic.link}
-                  className={`word word--${topic.size} word--${topic.type} ${i % 2 === 0 ? 'rotate-left' : 'rotate-right'}`}
-                >
-                  {topic.label}
-                </Link>
-              ))}
-            </div>
+        <button
+          onClick={() => setReduceMotion(prev => !prev)}
+          aria-pressed={reduceMotion}
+          className={styles.motionToggle}
+        >
+          {reduceMotion ? 'Enable Animations' : 'Reduce Motion'}
+        </button>
+
+        <ul
+          className={`${styles.topicsGrid} ${reduceMotion ? styles.reduceMotion : ''}`}
+          role="list"
+        >
+          {topics.map((topic, i) => (
+            <li key={i} role="listitem">
+              <Link
+                to={topic.link}
+                className={`${styles.topicTag} ${styles[`topic-${topic.type}`]}`}
+                aria-label={`Topic: ${topic.label}, Category: ${topic.type}`}
+              >
+                {topic.label}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
-  );
-};
+      <div className={styles.legend}>
+        <span className={styles.toolLegend}>🧰 Tool</span>
+        <span className={styles.conceptLegend}>🎓 Concept</span>
+        <span className={styles.protocolLegend}>📜 Protocol</span>
+        <span className={styles.useLegend}>🏠 Use Case</span>
+      </div>
 
-export default HotTopicsPage;
+    </main>
+  );
+}
