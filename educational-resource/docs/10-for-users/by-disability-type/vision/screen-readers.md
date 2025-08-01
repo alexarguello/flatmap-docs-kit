@@ -23,48 +23,57 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2024-12-06
 ---
 
-#### Screen readers
-Access text content. JAWS is the most feature-rich but expensive; NVDA is free and highly capable; VoiceOver and Narrator are good built-in options. The future is in AI-driven context, smarter navigation, and making these tools more affordable and intuitive.
+# 🧑‍🦯 Screen Readers: Your Gateway to Digital Access
 
-##### JAWS (Job Access With Speech)
-- Overview: Commercial Windows screen reader by Freedom Scientific.
-- Features:
-  - Reads text aloud from applications, web pages, and documents.
-  - Braille display support.
-  - Powerful scripting for custom app accessibility.
-  - OCR for reading images and scanned PDFs.
-  - Advanced navigation for tables, forms, and complex web content.
-- Price: ~$95/year (home license), or ~$1,000 for a perpetual license. Discounts for students/educators.
-- How Users Use It: Keyboard shortcuts to navigate, read, and interact with all elements on screen. Used for work, study, and daily computing.
-- Gaps/Future Needs:
-  - High cost is a barrier.
-  - Steep learning curve for beginners.
-  - Needs better AI-driven context awareness (e.g., summarizing complex layouts, describing images in detail).
+> **Screen readers turn text and interface elements into speech or Braille, opening up the digital world for people with vision loss.**
 
-##### NVDA (NonVisual Desktop Access)
-- Overview: Free, open-source screen reader for Windows, developed by NV Access.
-- Key Features:
-  - Reads text from most Windows apps and browsers.
-  - Braile display support.
-  - Regular updates and strong community support.
-  - Extensible via add-ons.
-- Price: Free (donation-supported).
-- How Users Use It: Similar to JAWS—keyboard navigation, customizable settings, and add-ons for extra features.
-- Gaps/Future Needs:
-  - Slightly less robust with complex enterprise apps (e.g., some Office features).
-  - Lacks some advanced scripting/customization found in JAWS.
-  - Could benefit from more AI-powered features (e.g., image description, smart navigation).
+Screen readers are essential tools for millions of users. Whether you’re a developer, educator, or someone exploring accessibility, understanding these tools is key to building and using inclusive technology.
 
-##### Other Tools (VoiceOver, Narrator, Orca)
-- VoiceOver (macOS/iOS): Built-in on Apple devices.
-  - Features: Touch and gesture navigation, Braille support, reads everything on screen.
-  - Price: Free with Apple devices.
-  - Gaps: Less customizable than JAWS/NVDA, but highly usable for most tasks.
-- Narrator (Windows): Built-in on Windows 10/11.
-  - Features: Basic screen reading, improved in recent versions, supports Braille.
-  - Price: Free.
-  - Gaps: Still less powerful than JAWS/NVDA for advanced users.
-- Orca (Linux): Open-source for Linux desktops.
-  - Features: Reads text, supports Braille, works with many Linux apps.
-  - Price: Free.
-  - Gaps: Varies in quality depending on Linux distribution and app support.
+## 🚀 Quick Start
+
+- **Windows:** Try [NVDA](https://www.nvaccess.org/) (free) or [JAWS](https://www.freedomscientific.com/products/software/jaws/) (commercial)
+- **Mac/iOS:** Use [VoiceOver](https://www.apple.com/accessibility/mac/vision/) (built-in)
+- **Linux:** Try [Orca](https://help.gnome.org/users/orca/stable/)
+- **Windows Built-in:** [Narrator](https://support.microsoft.com/en-us/windows/get-started-with-narrator-3e3e2b8a-ec8c-4e1c-9b1c-5c6e1a5c7b2e)
+
+> 💡 **Tip:** Most screen readers can be started with a keyboard shortcut. For example, press `Ctrl+Alt+N` to launch NVDA on Windows (if installed).
+
+## 🏆 Feature Comparison
+
+| Screen Reader | Platform         | Price      | Braille | Scripting | OCR/Image | Community |
+|--------------|------------------|------------|---------|-----------|-----------|-----------|
+| JAWS         | Windows          | Paid       | Yes     | Advanced  | Yes       | Large     |
+| NVDA         | Windows          | Free       | Yes     | Add-ons   | Yes       | Large     |
+| VoiceOver    | macOS/iOS        | Free       | Yes     | Limited   | Yes       | Apple     |
+| Narrator     | Windows          | Free       | Yes     | Limited   | Yes       | Microsoft |
+| Orca         | Linux            | Free       | Yes     | Add-ons   | No        | Open      |
+
+## 🔍 Highlights & Gaps
+
+- **JAWS:** Most feature-rich, but expensive and has a learning curve.
+- **NVDA:** Free, open-source, highly capable, strong add-on ecosystem.
+- **VoiceOver:** Excellent for Apple users, touch/gesture navigation.
+- **Narrator:** Good for basic needs, improving steadily.
+- **Orca:** Best for Linux, but quality varies by app/distribution.
+
+:::tip
+The future of screen readers is in AI-driven context, smarter navigation, and making these tools more affordable and intuitive.
+:::
+
+## 🌐 Learn More & Get Involved
+
+- [WebAIM: Screen Reader Survey Results](https://webaim.org/projects/screenreadersurvey8/)
+- [NVDA Community Add-ons](https://addons.nvda-project.org/)
+- [Apple Accessibility](https://www.apple.com/accessibility/)
+- [Freedom Scientific Training](https://www.freedomscientific.com/training/)
+- [Orca Documentation](https://help.gnome.org/users/orca/stable/)
+
+## 🤝 Community & Support
+
+- [r/Blind on Reddit](https://www.reddit.com/r/Blind/)
+- [NVDA Users Email List](https://nvda.groups.io/g/nvda)
+- [AppleVis Community](https://www.applevis.com/)
+
+---
+
+Screen readers are evolving fast. If you have tips, stories, or want to help improve this page, [contribute on GitHub](https://github.com/alexarguello/flatmap-docs-kit)!
