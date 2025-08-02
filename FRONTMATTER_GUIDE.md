@@ -1,6 +1,6 @@
 ## 🛠️ Metadata for Resources (Frontmatter)
 Every file must include a `frontmatter` section (YAML metadata) to classify and describe the resource. This helps us organize the hub and ensures your contribution integrates seamlessly into our systems.
-You can find a full **frontmatter guide** [here](./FRONTMATTER_GUIDE.md), but below are **standard fields** for accessibility-related content:
+You can find a full **frontmatter guide** [here](FRONTMATTER_GUIDE.md), but below are **standard fields** for accessibility-related content:
 ### **Required Metadata Fields**
 - `title`: concise resource name (e.g., "Introduction to ARIA").
 - `type`: type of content (e.g., `overview`, `guide`, `tutorial`, `reference`).

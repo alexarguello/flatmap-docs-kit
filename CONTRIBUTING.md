@@ -15,7 +15,7 @@ Check the last section in the sidebar called `Contribute`. Here you'll find exam
 ### 2. **Add or Improve Resources**
 Have your own idea? Follow these steps:
 - Browse `/docs/` to find the right folder for your topic.
-- Copy the [`/docs/.template.md`](./docs/.template.md) file as a starting point for your new resource.
+- Copy the [`/docs/.template.md`](educational-resource/docs/.template.md) file as a starting point for your new resource.
 - Rename your file (e.g., `screen-readers.md`, `dos-and-donts.md`).
 
 ⚠️ Do not name files `intro.md` or `index.md` — these are reserved for folder landing pages.
@@ -35,7 +35,7 @@ Frontmatter is essential YAML metadata included in every resource file to ensure
     - Specific prefixes such as `assistive-technology`.
     - More about topics [here](/TOPICS_GUIDE.md)
 
-For the full guide, refer to [FRONTMATTER_GUIDE.md](./FRONTMATTER_GUIDE.md).
+For the full guide, refer to [FRONTMATTER_GUIDE.md](FRONTMATTER_GUIDE.md).
 
 
 ### 4. **Submit a Pull Request**
@@ -87,7 +87,7 @@ To maintain consistency, use the following **topics** when tagging your content:
 - `provider:nv-access`
 
 Include your tags as **specific and accurate as possible** — these improve searchability and structure for other contributors.
-for more details, check out the [Topics by Category](./TOPICS_GUIDE.md).
+for more details, check out the [Topics by Category](TOPICS_GUIDE.md).
 ## ✍️ Formatting and Writing Guidelines
 1. **Focus on Accessibility**: Write with an accessibility-first mindset, including inclusive examples (e.g., using headings, lists, and descriptive text).
 2. **Use Clear Language**: Avoid technical jargon whenever possible. Cater to all skill levels.
