@@ -40,10 +40,18 @@ for_users_by_disability_type_neurodiversity["🙌 Neurodiversity"]
 for_users_by_disability_type --> for_users_by_disability_type_neurodiversity
 for_users_by_disability_type_neurodiversity_external_resources_md["🙌 Neurodiversity - External Resources"]
 for_users_by_disability_type_neurodiversity --> for_users_by_disability_type_neurodiversity_external_resources_md
-for_users_by_disability_type_speech_language["🙌 Speech Language"]
+for_users_by_disability_type_speech_language["🙌 Speech Language 👤"]
 for_users_by_disability_type --> for_users_by_disability_type_speech_language
 for_users_by_disability_type_speech_language_external_resources_md["🙌 Speech & Language - External Resources"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_external_resources_md
+for_users_by_disability_type_speech_language_stroke_communication_checklist_md["Stroke Communication Needs Checklist 👤"]
+for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_communication_checklist_md
+for_users_by_disability_type_speech_language_stroke_aac_tools_md["🙌 AAC Tools for Stroke Recovery 👤"]
+for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_aac_tools_md
+for_users_by_disability_type_speech_language_stroke_caregiver_guide_md["Caregiver Guide for Post-Stroke Communication 👤"]
+for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_caregiver_guide_md
+for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md["Stroke Communication Profile Questionnaire 👤"]
+for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md
 for_users_by_disability_type_vision["🧭 Vision"]
 for_users_by_disability_type --> for_users_by_disability_type_vision
 for_users_by_disability_type_vision_screen_readers_md["🧭 Screen Readers"]
@@ -116,6 +124,42 @@ unmet_needs["Unmet Needs"]
 root --> unmet_needs
 unmet_needs_unmet_needs_md["🧭 Unmet Needs & Future Possibilities"]
 unmet_needs --> unmet_needs_unmet_needs_md
+hot_topics["Hot Topics"]
+root --> hot_topics
+hot_topics_accessibility_audit_md["Accessibility Audit"]
+hot_topics --> hot_topics_accessibility_audit_md
+hot_topics_accessibility_testing_md["Accessibility Testing"]
+hot_topics --> hot_topics_accessibility_testing_md
+hot_topics_alt_text_ai_md["Alt Text AI"]
+hot_topics --> hot_topics_alt_text_ai_md
+hot_topics_aria_roles_md["ARIA Roles"]
+hot_topics --> hot_topics_aria_roles_md
+hot_topics_bug_bounty_md["Bug Bounty"]
+hot_topics --> hot_topics_bug_bounty_md
+hot_topics_color_contrast_md["Color Contrast"]
+hot_topics --> hot_topics_color_contrast_md
+hot_topics_dyslexia_support_md["Dyslexia Support"]
+hot_topics --> hot_topics_dyslexia_support_md
+hot_topics_github_access_tools_md["GitHub Access Tools"]
+hot_topics --> hot_topics_github_access_tools_md
+hot_topics_inclusive_design_md["Inclusive Design"]
+hot_topics --> hot_topics_inclusive_design_md
+hot_topics_langchain4j_tools_md["LangChain4J Tools"]
+hot_topics --> hot_topics_langchain4j_tools_md
+hot_topics_nlp_assist_md["NLP Assist"]
+hot_topics --> hot_topics_nlp_assist_md
+hot_topics_otter_ai_md["Otter.ai"]
+hot_topics --> hot_topics_otter_ai_md
+hot_topics_real_time_captions_md["Real-time Captions"]
+hot_topics --> hot_topics_real_time_captions_md
+hot_topics_seeing_ai_md["Seeing AI"]
+hot_topics --> hot_topics_seeing_ai_md
+hot_topics_smart_homes_md["Smart Homes"]
+hot_topics --> hot_topics_smart_homes_md
+hot_topics_springai_assistive_md["SpringAI Assistive"]
+hot_topics --> hot_topics_springai_assistive_md
+hot_topics_voice_navigation_md["Voice Navigation"]
+hot_topics --> hot_topics_voice_navigation_md
 click full_sitemap_md "/flatmap-docs-kit/docs/full-sitemap"
 click for_users "/flatmap-docs-kit/docs/for-users"
 click for_users_applications "/flatmap-docs-kit/docs/for-users/applications"
@@ -132,6 +176,10 @@ click for_users_by_disability_type_neurodiversity "/flatmap-docs-kit/docs/for-us
 click for_users_by_disability_type_neurodiversity_external_resources_md "/flatmap-docs-kit/docs/for-users/by-disability-type/neurodiversity/external-resources"
 click for_users_by_disability_type_speech_language "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language"
 click for_users_by_disability_type_speech_language_external_resources_md "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language/external-resources"
+click for_users_by_disability_type_speech_language_stroke_communication_checklist_md "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language/stroke-communication-checklist"
+click for_users_by_disability_type_speech_language_stroke_aac_tools_md "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language/stroke-aac-tools"
+click for_users_by_disability_type_speech_language_stroke_caregiver_guide_md "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language/stroke-caregiver-guide"
+click for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md "/flatmap-docs-kit/docs/for-users/by-disability-type/speech-language/stroke-profile-questionnaire"
 click for_users_by_disability_type_vision "/flatmap-docs-kit/docs/for-users/by-disability-type/vision"
 click for_users_by_disability_type_vision_screen_readers_md "/flatmap-docs-kit/docs/for-users/by-disability-type/vision/screen-readers"
 click for_users_by_disability_type_vision_e_readers_md "/flatmap-docs-kit/docs/for-users/by-disability-type/vision/e-readers"
@@ -168,6 +216,24 @@ click community_contributions_getting_started_md "/flatmap-docs-kit/docs/communi
 click community_contributions_to_do_list_md "/flatmap-docs-kit/docs/community-contributions/to-do-list"
 click unmet_needs "/flatmap-docs-kit/docs/unmet-needs"
 click unmet_needs_unmet_needs_md "/flatmap-docs-kit/docs/unmet-needs/unmet-needs"
+click hot_topics "/flatmap-docs-kit/docs/hot-topics"
+click hot_topics_accessibility_audit_md "/flatmap-docs-kit/docs/hot-topics/accessibility-audit"
+click hot_topics_accessibility_testing_md "/flatmap-docs-kit/docs/hot-topics/accessibility-testing"
+click hot_topics_alt_text_ai_md "/flatmap-docs-kit/docs/hot-topics/alt-text-ai"
+click hot_topics_aria_roles_md "/flatmap-docs-kit/docs/hot-topics/aria-roles"
+click hot_topics_bug_bounty_md "/flatmap-docs-kit/docs/hot-topics/bug-bounty"
+click hot_topics_color_contrast_md "/flatmap-docs-kit/docs/hot-topics/color-contrast"
+click hot_topics_dyslexia_support_md "/flatmap-docs-kit/docs/hot-topics/dyslexia-support"
+click hot_topics_github_access_tools_md "/flatmap-docs-kit/docs/hot-topics/github-access-tools"
+click hot_topics_inclusive_design_md "/flatmap-docs-kit/docs/hot-topics/inclusive-design"
+click hot_topics_langchain4j_tools_md "/flatmap-docs-kit/docs/hot-topics/langchain4j-tools"
+click hot_topics_nlp_assist_md "/flatmap-docs-kit/docs/hot-topics/nlp-assist"
+click hot_topics_otter_ai_md "/flatmap-docs-kit/docs/hot-topics/otter-ai"
+click hot_topics_real_time_captions_md "/flatmap-docs-kit/docs/hot-topics/real-time-captions"
+click hot_topics_seeing_ai_md "/flatmap-docs-kit/docs/hot-topics/seeing-ai"
+click hot_topics_smart_homes_md "/flatmap-docs-kit/docs/hot-topics/smart-homes"
+click hot_topics_springai_assistive_md "/flatmap-docs-kit/docs/hot-topics/springai-assistive"
+click hot_topics_voice_navigation_md "/flatmap-docs-kit/docs/hot-topics/voice-navigation"
 classDef col0 fill:#b3d9ff,stroke:none;
 classDef col1 fill:#d5b3ff,stroke:none;
 classDef col2 fill:#ffcccc,stroke:none;
@@ -214,77 +280,121 @@ class for_users_by_disability_type_speech_language custom15;
 classDef custom16 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
 class for_users_by_disability_type_speech_language_external_resources_md custom16;
 classDef custom17 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_users_by_disability_type_vision custom17;
+class for_users_by_disability_type_speech_language_stroke_communication_checklist_md custom17;
 classDef custom18 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_users_by_disability_type_vision_screen_readers_md custom18;
+class for_users_by_disability_type_speech_language_stroke_aac_tools_md custom18;
 classDef custom19 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_users_by_disability_type_vision_e_readers_md custom19;
+class for_users_by_disability_type_speech_language_stroke_caregiver_guide_md custom19;
 classDef custom20 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_users_by_disability_type_vision_external_resources_md custom20;
+class for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md custom20;
 classDef custom21 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_users_by_disability_type_vision_companies_md custom21;
-classDef custom22 fill:#d5b3ff;
-class about custom22;
+class for_users_by_disability_type_vision custom21;
+classDef custom22 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class for_users_by_disability_type_vision_screen_readers_md custom22;
 classDef custom23 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class about_overview_md custom23;
+class for_users_by_disability_type_vision_e_readers_md custom23;
 classDef custom24 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class about_about_md custom24;
+class for_users_by_disability_type_vision_external_resources_md custom24;
 classDef custom25 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class about_roadmap_md custom25;
+class for_users_by_disability_type_vision_companies_md custom25;
 classDef custom26 fill:#d5b3ff;
-class for_developers custom26;
+class about custom26;
 classDef custom27 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_developers_how_to__contribute_md custom27;
-classDef custom28 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class for_developers_apis_sdks_md custom28;
-classDef custom29 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class for_developers_case_studies_md custom29;
-classDef custom30 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class for_developers_engineering_gaps_md custom30;
+class about_overview_md custom27;
+classDef custom28 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class about_about_md custom28;
+classDef custom29 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class about_roadmap_md custom29;
+classDef custom30 fill:#d5b3ff;
+class for_developers custom30;
 classDef custom31 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class for_developers_accessible_web_dev_checklist_md custom31;
-classDef custom32 fill:#d5b3ff;
-class community custom32;
-classDef custom33 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_forums_md custom33;
-classDef custom34 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_events_md custom34;
+class for_developers_how_to__contribute_md custom31;
+classDef custom32 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class for_developers_apis_sdks_md custom32;
+classDef custom33 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class for_developers_case_studies_md custom33;
+classDef custom34 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class for_developers_engineering_gaps_md custom34;
 classDef custom35 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_success_stories_md custom35;
-classDef custom36 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_personas_md custom36;
-classDef custom37 fill:#d5b3ff;
-class resources custom37;
+class for_developers_accessible_web_dev_checklist_md custom35;
+classDef custom36 fill:#d5b3ff;
+class community custom36;
+classDef custom37 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class community_forums_md custom37;
 classDef custom38 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class resources_tutorials_md custom38;
+class community_events_md custom38;
 classDef custom39 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class resources_research_md custom39;
+class community_success_stories_md custom39;
 classDef custom40 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class resources_legal_standards_md custom40;
-classDef custom41 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class resources_tool_directory_md custom41;
-classDef custom42 fill:#d5b3ff;
-class use_cases custom42;
+class community_personas_md custom40;
+classDef custom41 fill:#d5b3ff;
+class resources custom41;
+classDef custom42 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class resources_tutorials_md custom42;
 classDef custom43 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class use_cases_work_md custom43;
+class resources_research_md custom43;
 classDef custom44 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class use_cases_home_md custom44;
+class resources_legal_standards_md custom44;
 classDef custom45 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class use_cases_future_md custom45;
+class resources_tool_directory_md custom45;
 classDef custom46 fill:#d5b3ff;
-class community_contributions custom46;
+class use_cases custom46;
 classDef custom47 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_contributions_interview_template_md custom47;
+class use_cases_work_md custom47;
 classDef custom48 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_contributions_whats_missing_md custom48;
+class use_cases_home_md custom48;
 classDef custom49 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_contributions_getting_started_md custom49;
-classDef custom50 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
-class community_contributions_to_do_list_md custom50;
-classDef custom51 fill:#d5b3ff;
-class unmet_needs custom51;
-classDef custom52 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
-class unmet_needs_unmet_needs_md custom52;
+class use_cases_future_md custom49;
+classDef custom50 fill:#d5b3ff;
+class community_contributions custom50;
+classDef custom51 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class community_contributions_interview_template_md custom51;
+classDef custom52 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class community_contributions_whats_missing_md custom52;
+classDef custom53 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class community_contributions_getting_started_md custom53;
+classDef custom54 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class community_contributions_to_do_list_md custom54;
+classDef custom55 fill:#d5b3ff;
+class unmet_needs custom55;
+classDef custom56 fill:lightgrey,stroke:yellow,stroke-width:4px,stroke-dasharray:0;
+class unmet_needs_unmet_needs_md custom56;
+classDef custom57 fill:#d5b3ff;
+class hot_topics custom57;
+classDef custom58 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_accessibility_audit_md custom58;
+classDef custom59 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_accessibility_testing_md custom59;
+classDef custom60 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_alt_text_ai_md custom60;
+classDef custom61 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_aria_roles_md custom61;
+classDef custom62 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_bug_bounty_md custom62;
+classDef custom63 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_color_contrast_md custom63;
+classDef custom64 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_dyslexia_support_md custom64;
+classDef custom65 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_github_access_tools_md custom65;
+classDef custom66 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_inclusive_design_md custom66;
+classDef custom67 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_langchain4j_tools_md custom67;
+classDef custom68 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_nlp_assist_md custom68;
+classDef custom69 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_otter_ai_md custom69;
+classDef custom70 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_real_time_captions_md custom70;
+classDef custom71 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_seeing_ai_md custom71;
+classDef custom72 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_smart_homes_md custom72;
+classDef custom73 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_springai_assistive_md custom73;
+classDef custom74 fill:lightgrey,stroke:green,stroke-width:4px,stroke-dasharray:0;
+class hot_topics_voice_navigation_md custom74;
 linkStyle default interpolate basis
 ```
 
