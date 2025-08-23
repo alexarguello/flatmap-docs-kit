@@ -1,44 +1,46 @@
-# ♿ (wheelchair symbol) Accessibility Hub
+# Accessibility Hub
 
 Welcome to the **Accessibility Hub**—your central resource for accessible technology, inclusive design, and community-driven support. Our mission is to empower everyone, regardless of ability, to access, contribute to, and benefit from digital resources.
 
 This hub is:
 
-- 🌍 (globe) Open to all: people with disabilities, developers, educators, advocates, and allies
-- 🛠️ (tools) Curated for easy navigation, comparison, and deep dives into accessibility topics
-- 🤝 (handshake) Community-driven, always growing with your contributions
-- 🏷️ (label) Organized with a clear tag system for quick discovery
-- 📚 (books) A mix of original guides, curated links, and practical tools
-- 💬 (speech balloon) Welcoming feedback to improve both content and accessibility
+- Open to all: people with disabilities, developers, educators, advocates, and allies
+- Curated for easy navigation, comparison, and deep dives into accessibility topics
+- Community-driven, always growing with your contributions
+- Organized with a clear tag system for quick discovery
+- A mix of original guides, curated links, and practical tools
+- Welcoming feedback to improve both content and accessibility
+
+Note on accessibility: Headings and primary link labels are plain text per our Accessible Emoji Policy. Decorative emojis may appear in body text with clear textual equivalents.
 
 **Jump to:**
-- [How to Use the Hub](#️-how-to-use-the-hub)
-- [Tag System & Styling](#-tag-system--styling)
-- [How to Contribute](#️-how-to-contribute)
-- [Coming Soon](#-coming-soon)
+- [How to Use the Hub](#how-to-use-the-hub)
+- [Tag System & Styling](#tag-system--styling)
+- [How to Contribute](#how-to-contribute)
+- [Coming Soon](#coming-soon)
 
 ---
 
-## 🗺️ (map) How to Use the Hub
+## How to Use the Hub
 
 Explore accessibility resources in ways that work for you:
 
-### 🚦 (traffic light) Get Started Path
+### Get Started Path
 If you’re new to accessibility or want a guided introduction:
 → [`/docs/getting-started`](./docs/00-getting-started)
 
-### 🗂️ (file folder) Browse by Topic or Disability Type
+### Browse by Topic or Disability Type
 Navigate by topic, disability type, or use our sidebar for structured exploration.
 
-### 🗺️ (map) Visual Maps
+### Visual Maps
 Many sections include visual flatmaps—clickable diagrams showing relationships and gaps in accessibility topics.
 
-### 🔎 (magnifying glass) Quick Search (Coming Soon)
+### Quick Search (Coming Soon)
 A search bar and chatbot will soon make finding resources even easier.
 
 ---
 
-## 🏷️ (label) Tag System & Styling
+## Tag System & Styling
 
 Our tag system helps you quickly identify and filter resources by type, audience, accessibility focus, and more. Tags are defined in frontmatter and styled for clarity and inclusivity.
 
@@ -75,18 +77,18 @@ Our tag system helps you quickly identify and filter resources by type, audience
 
 ---
 
-## ✍️ (writing hand) How to Contribute
+## How to Contribute
 
 Your contributions make the Accessibility Hub better for everyone! We welcome:
 
-### ➕ (plus) Adding New Resources
+### Adding New Resources
 Submit guides, tools, case studies, or links that help make technology more accessible. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for:
 - Where to place your file
 - How to structure metadata and tags
 - Accessibility best practices for contributions
 - How to submit a pull request
 
-### ❤️ (heart) Help Us Fill the Gaps
+### Help Us Fill the Gaps
 Visit the [`Contribute`](./docs/contribute-dashboard) dashboard to:
 - Find articles and resources we need
 - Join open collaborations
@@ -100,17 +102,17 @@ Each entry includes:
 
 ---
 
-## 🧪 (test tube) Coming Soon
+## Coming Soon
 
-- 🧑‍💼 (office worker) **Maintainer Dashboard** – Track drafts, tag warnings, and resource health
-- 🌐 (globe with meridians) **Accessibility Audit Tools** – Automated checks and reporting
-- 🔍 (magnifying glass) **Search** and 🤖 (robot) **Chatbot** for easier discovery and support
-- 📅 (calendar) **Community Events** – Accessibility meetups, webinars, and more
+- Maintainer Dashboard – Track drafts, tag warnings, and resource health
+- Accessibility Audit Tools – Automated checks and reporting
+- Search and Chatbot for easier discovery and support
+- Community Events – Accessibility meetups, webinars, and more
 
 ---
 
-## ♿ (wheelchair symbol) Accessibility Commitment
+## Accessibility Commitment
 
 We are committed to making this hub accessible to everyone. If you encounter any barriers or have suggestions for improvement, please [open an issue](https://github.com/your-repo/issues) or contact us directly.
 
-Thank you for helping build a more accessible digital world! 🙌 (raising hands)
+Thank you for helping build a more accessible digital world!

@@ -23,13 +23,13 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2024-12-06
 ---
 
-# 🧑‍🦯 Screen Readers: Your Gateway to Digital Access
+# Screen Readers: Your Gateway to Digital Access
 
 > **Screen readers turn text and interface elements into speech or Braille, opening up the digital world for people with vision loss.**
 
 Screen readers are essential tools for millions of users. Whether you’re a developer, educator, or someone exploring accessibility, understanding these tools is key to building and using inclusive technology.
 
-## 🚀 Quick Start
+## Quick Start
 
 - **Windows:** Try [NVDA](https://www.nvaccess.org/) (free) or [JAWS](https://www.freedomscientific.com/products/software/jaws/) (commercial)
 - **Mac/iOS:** Use [VoiceOver](https://www.apple.com/accessibility/mac/vision/) (built-in)
@@ -38,7 +38,7 @@ Screen readers are essential tools for millions of users. Whether you’re a dev
 
 > 💡 **Tip:** Most screen readers can be started with a keyboard shortcut. For example, press `Ctrl+Alt+N` to launch NVDA on Windows (if installed).
 
-## 🏆 Feature Comparison
+## Feature Comparison
 
 | Screen Reader | Platform         | Price      | Braille | Scripting | OCR/Image | Community |
 |--------------|------------------|------------|---------|-----------|-----------|-----------|

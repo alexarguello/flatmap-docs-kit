@@ -5,8 +5,7 @@ import '../css/custom.css';
 
 const cards = [
  {
-    title: 'Full Resource Map',
-    emoji: '🗺️',
+    title: 'Full Resource Map',    
     headline: 'Looking for specific topics or an overview?',
     description: 'See all the content at a glance and click to dive right into your preferred topics and tutorials.',
     link: '/docs/full-sitemap',
@@ -26,7 +25,7 @@ const cards = [
     headline: 'Essential tools for accessibility',
     description: 'Discover testing tools, browser extensions, and frameworks that help you build accessible applications.',
     link: '/docs/tools',
-    bgClass: 'card-bg-blue',
+    bgClass: 'card-bg-purple',
   },
   {
     title: 'Case Studies',
@@ -34,7 +33,7 @@ const cards = [
     headline: 'Real-world accessibility in action',
     description: 'Learn from organizations and projects that have successfully implemented accessibility best practices.',
     link: '/docs/case-studies',
-    bgClass: 'card-bg-purple',
+    bgClass: 'card-bg-yellow',
   },
   {
     title: 'Learning Paths',
@@ -42,7 +41,7 @@ const cards = [
     headline: 'Start your accessibility journey',
     description: 'Follow curated learning paths for beginners and advanced practitioners to master accessibility.',
     link: '/docs/learning-paths',
-    bgClass: 'card-bg-yellow',
+    bgClass: 'card-bg-red',
   },
     {
       title: 'Frequently Asked Topics',
@@ -50,7 +49,7 @@ const cards = [
       headline: 'Want to dive into the hot topics?',
       description: 'See the most requested topics and jump directly to neural networks, RAG, chatbots, MCP, agents, and more.',
       link: '/hot-topics',
-      bgClass: 'card-bg-purple',
+      bgClass: 'card-bg-orange',
     },
 
 ];
@@ -70,7 +69,7 @@ export default function Home() {
               {cards.map((card, idx) => (
                 <Link key={idx} to={card.link} className={`card-link ${card.bgClass}`}>
                   <h2 className="card-title">
-                    <div>{card.emoji} {card.title}</div>
+                    <div>{card.title} <span aria-hidden="true">{card.emoji}</span> </div>
                   </h2>
                   <p className="card-headline">{card.headline}</p>
                   <p className="card-desc">{card.description}</p>

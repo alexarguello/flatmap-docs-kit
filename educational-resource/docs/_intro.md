@@ -28,7 +28,7 @@ eta: 2024-12-06
 
 An open-source, AI-powered platform designed to centralize accessibility tools, identify gaps, and foster collaboration between people with disabilities and developers building inclusive technology.
 
-### 🌟 Purpose
+### Purpose
 
 Accessibility HUB serves two core audiences:
 
@@ -38,11 +38,11 @@ Accessibility HUB serves two core audiences:
 - **Software developers and creators**  
   To explore accessibility gaps, find inspiration, and build inclusive, legally compliant applications.
 
-### 🎯 Mission
+### Mission
 
 To bridge the gap between accessibility needs and inclusive technology by mapping existing tools, identifying unmet needs, and fostering collaboration between users and developers.
 
-### 🧩 Key Features
+### Key Features
 
 - **Interactive Site Map**  
   Auto-generated using Flatmap Docs Kit, providing a visual overview of tools, resources, and opportunities.

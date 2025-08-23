@@ -248,13 +248,40 @@ def has_author_and_draft(frontmatter):
     
     return is_draft and has_author
 
+def _strip_emojis(text: str) -> str:
+    """Remove emoji and certain pictographic symbols from text for accessibility in generated labels."""
+    if not isinstance(text, str):
+        return text
+    # Basic regex ranges for emojis and pictographs
+    emoji_pattern = re.compile(
+        """
+        [\U0001F600-\U0001F64F]  # Emoticons
+        |[\U0001F300-\U0001F5FF]  # Misc Symbols and Pictographs
+        |[\U0001F680-\U0001F6FF]  # Transport & Map
+        |[\U0001F700-\U0001F77F]  # Alchemical Symbols
+        |[\U0001F780-\U0001F7FF]  # Geometric Shapes Extended
+        |[\U0001F800-\U0001F8FF]  # Supplemental Arrows-C
+        |[\U0001F900-\U0001F9FF]  # Supplemental Symbols and Pictographs
+        |[\U0001FA00-\U0001FAFF]  # Chess etc.
+        |[\U00002600-\U000026FF]  # Misc symbols
+        |[\U00002700-\U000027BF]  # Dingbats
+        |[\U0000FE00-\U0000FE0F]  # Variation Selectors
+        |[\U0001F1E6-\U0001F1FF]  # Flags
+        |[\U0000200D]             # Zero Width Joiner
+        """,
+        re.VERBOSE,
+    )
+    return emoji_pattern.sub('', text)
+
+
 def create_node_label(title, styles, is_external=False, external_url=None):
     """
     Create the label for a node with optional icons and external link.
     Escapes quotes, brackets, and newlines for Mermaid compatibility.
+    Also strips emojis from the final label for accessibility.
     """
     label_parts = []
-    # Add left icons first
+    # Add left icons first (will be stripped if emojis)
     if styles.get('left_icons'):
         label_parts.extend(styles['left_icons'])
     # Add the title
@@ -266,10 +293,12 @@ def create_node_label(title, styles, is_external=False, external_url=None):
     if len(safe_title) > 80:
         safe_title = safe_title[:77] + "..."
     label_parts.append(safe_title)
-    # Add right icons after the title
+    # Add right icons after the title (will be stripped if emojis)
     if styles.get('right_icons'):
         label_parts.extend(styles['right_icons'])
     label = " ".join(label_parts)
+    # Strip emojis from the composed label
+    label = _strip_emojis(label).strip()
     if is_external and external_url:
         return f"<a href='{external_url}' target='_blank' rel='noopener noreferrer'>{label}</a>"
     return label

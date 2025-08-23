@@ -19,7 +19,8 @@ eta: 2024-12-06
 ---
 
 A brief introduction to the Accessibility HUB, its history, and the founder’s motivation.  
-**Mission:** To empower people with disabilities and developers to co-create accessible digital solutions.  
+**Mission:** To empower people with disabilities and developers to co-create and shape more accessible and inclusive environments for all.
+
 1. Audience ([PEOPLE])
    People with disabilities
    Caregivers
@@ -32,4 +33,5 @@ A brief introduction to the Accessibility HUB, its history, and the founder’s 
 
 
 I help people with disabilities and caregivers find, use, and share trusted, curated resources, supportive communities, and AI-powered tools for independent reading, learning, daily life, and work, so they can overcome everyday challenges, gain confidence and independence, and actively shape more accessible and inclusive environments for all.
+
 **Vision:** A world where technology is barrier-free for everyone.

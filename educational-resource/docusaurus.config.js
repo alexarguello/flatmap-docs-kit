@@ -1,5 +1,6 @@
 // @ts-check
 import { themes as prismThemes } from 'prism-react-renderer';
+import remarkStripHeadingEmojis from './plugins/remark-strip-heading-emojis.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -44,6 +45,9 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          remarkPlugins: [
+            remarkStripHeadingEmojis,
+          ],
         },
         blog: {
           showReadingTime: true,
