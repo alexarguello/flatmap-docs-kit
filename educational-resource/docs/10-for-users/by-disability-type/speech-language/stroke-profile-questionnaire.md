@@ -15,24 +15,24 @@ Use this questionnaire to assess the communication needs of individuals recoveri
 
 ---
 
-### 🔧 Physical & Motor Abilities
+### Physical & Motor Abilities 🔧
 - [ ] Can reliably move hands or fingers
 - [ ] Can operate a touchscreen or keyboard
 - [ ] Can control head, foot, or eye movements
 - [ ] Has no painful or limiting conditions affecting mobility
 
-### 👀 Sensory Abilities
+### Sensory Abilities 👀
 - [ ] Can see images, text, or icons clearly
 - [ ] Can hear speech, music, and ambient sound
 - [ ] Uses hearing aids or visual aids
 
-### 🧠 Cognitive & Comprehension Skills
+### Cognitive & Comprehension Skills 🧠
 - [ ] Can understand spoken language
 - [ ] Can follow short instructions
 - [ ] Can recognize symbols and photos
 - [ ] Can focus on a task for several minutes
 
-### 📣 Speech & Language Function
+### Speech & Language Function 📣
 - [ ] Can produce vocal sounds or partial speech
 - [ ] Can respond yes/no through any gesture or vocalization
 - [ ] Can read or write (even minimally)
@@ -41,12 +41,12 @@ Use this questionnaire to assess the communication needs of individuals recoveri
     - [ ] Apraxia
     - [ ] Dysarthria
 
-### 📱 Technology Access & Experience
+### Technology Access & Experience 📱
 - [ ] Has used tablets, phones, or computers before
 - [ ] Has a caregiver available for setup or daily use
 - [ ] Has stable access to electricity and Wi-Fi
 
-### 💬 Communication Goals
+### Communication Goals 💬
 - [ ] Wants to communicate basic needs
 - [ ] Wants to express emotions or socialize
 - [ ] Interested in phone, text, or email use
@@ -58,7 +58,7 @@ Use this questionnaire to assess the communication needs of individuals recoveri
 
 ---
 
-### 📎 How to Use This Questionnaire
+### How to Use This Questionnaire 📎
 
 Once completed, use the responses to:
 - Select appropriate AAC apps or devices from [AAC Tools for Stroke Recovery](../stroke-aac-tools.md)

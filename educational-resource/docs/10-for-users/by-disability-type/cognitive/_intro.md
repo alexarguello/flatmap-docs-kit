@@ -17,7 +17,7 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2024-12-06
 ---
 
-# 🧠 Cognitive Disabilities
+# Cognitive Disabilities 🧠
 
 ## Medical Definition
 Cognitive disabilities affect mental processes such as memory, problem-solving, attention, and comprehension.

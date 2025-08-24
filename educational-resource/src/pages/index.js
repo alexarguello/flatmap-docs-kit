@@ -5,7 +5,8 @@ import '../css/custom.css';
 
 const cards = [
  {
-    title: 'Full Resource Map',    
+    title: 'Full Resource Map',
+    emoji: '🗺️',
     headline: 'Looking for specific topics or an overview?',
     description: 'See all the content at a glance and click to dive right into your preferred topics and tutorials.',
     link: '/docs/full-sitemap',
@@ -49,7 +50,7 @@ const cards = [
       headline: 'Want to dive into the hot topics?',
       description: 'See the most requested topics and jump directly to neural networks, RAG, chatbots, MCP, agents, and more.',
       link: '/hot-topics',
-      bgClass: 'card-bg-orange',
+      bgClass: 'card-bg-teal',
     },
 
 ];

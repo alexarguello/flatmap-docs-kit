@@ -24,6 +24,20 @@ const topics = [
 ];
 const types = ['tool', 'concept', 'protocol', 'use'];
 
+// Category emoji and label mappings
+const categoryEmojis = {
+  tool: '🧰',
+  concept: '🎓',
+  protocol: '📜',
+  use: '🏠',
+};
+const categoryText = {
+  tool: 'Tool',
+  concept: 'Concept',
+  protocol: 'Protocol',
+  use: 'Use Case',
+};
+
 export default function HotTopicsPage() {
   const [reduceMotion, setReduceMotion] = useState(false);
   const [activeFilters, setActiveFilters] = useState([]);
@@ -57,10 +71,20 @@ export default function HotTopicsPage() {
     <main className={styles.hotTopics} role="main" aria-label="Hot Topics in Accessibility and AI">
       <div className={styles.container}>
         <h1 className={styles.header}>
-          🔥 <span className={styles.hotWord}>Hot</span> Topics in Accessibility & AI
+          <span className={styles.hotWord}>Hot</span> Topics in Accessibility & AI
         </h1>
         <p>Click a tag to learn more. You can also filter by category below.</p>
+        {/* Legend for category types */}
+        <ul className={styles.categoryLegend}>
+          {types.map(type => (
+            <li key={type} className={styles.categoryLegendItem}>
+              <span aria-hidden="true" className={styles.legendEmoji}>{categoryEmojis[type]}</span>
+              <span className={styles.legendText}>{categoryText[type]}</span>
+            </li>
+          ))}
+        </ul>
 
+{/**
         <button
           onClick={() => setReduceMotion(prev => !prev)}
           aria-pressed={reduceMotion}
@@ -74,6 +98,7 @@ export default function HotTopicsPage() {
               : 'Animations are currently enabled. Click to reduce motion.'}
           </span>
         </button>
+*/}
 
         {/* 🪧 Filter Buttons */}
         <div role="group" aria-label="Filter topics by category" className={styles.filterGroup}>
@@ -86,12 +111,14 @@ export default function HotTopicsPage() {
               onClick={() => toggleFilter(type)}
               aria-pressed={activeFilters.includes(type)}
               className={`${styles.filterButton} ${styles[`${type}Legend`]} ${activeFilters.includes(type) ? styles.active : styles.inactive}`}
+              aria-label={`Filter by category: ${categoryText[type]}`}
             >
-              {activeFilters.includes(type) && <span aria-hidden="true" style={{ textDecoration: 'underline', fontWeight: 'bold' }}>&#10003; </span>}
-              {type === 'tool' && '🧰 Tool'}
-              {type === 'concept' && '🎓 Concept'}
-              {type === 'protocol' && '📜 Protocol'}
-              {type === 'use' && '🏠 Use Case'}
+              {activeFilters.includes(type) && (
+                <span aria-hidden="true" style={{ textDecoration: 'underline', fontWeight: 'bold' }}>&#10003; </span>
+              )}
+              <span aria-hidden="true" className={styles.filterEmoji}>{categoryEmojis[type]}</span> {' '}
+              <span className={styles.filterText}>{categoryText[type]}</span>
+              <span className="sr-only"> category button: {categoryText[type]}</span>
             </button>
           ))}
         </div>
@@ -115,9 +142,11 @@ export default function HotTopicsPage() {
                 to={topic.link}
                 tabIndex={0}
                 className={`${styles.topicTag} ${styles[`topic-${topic.type}`]}`}
-                aria-label={`Topic: ${topic.label}, Category: ${topic.type}`}
+                aria-label={`Topic: ${topic.label}. Category: ${categoryText[topic.type]}`}
               >
-                {topic.label}
+                <span className={styles.topicLabel}>{topic.label}</span>{' '}
+                <span aria-hidden="true" className={styles.topicEmoji}>{categoryEmojis[topic.type]}</span>
+                <span className="sr-only"> {categoryText[topic.type]} category</span>
               </Link>
             </li>
           ))}

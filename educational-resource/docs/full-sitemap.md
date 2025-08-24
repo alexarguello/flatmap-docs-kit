@@ -14,115 +14,115 @@ graph LR
 root["Docs"]
 full_sitemap_md["Full Site Map"]
 root --> full_sitemap_md
-for_users["🙌 For Users"]
+for_users["For Users"]
 root --> for_users
-for_users_applications["🧭 Applications"]
+for_users_applications["Applications"]
 for_users --> for_users_applications
 for_users_by_disability_type["By Disability Type"]
 for_users --> for_users_by_disability_type
-for_users_by_disability_type_aging_dexterity["🙌 Aging Dexterity"]
+for_users_by_disability_type_aging_dexterity["Aging Dexterity"]
 for_users_by_disability_type --> for_users_by_disability_type_aging_dexterity
-for_users_by_disability_type_aging_dexterity_external_resources_md["🙌 Aging & Dexterity - External Resources"]
+for_users_by_disability_type_aging_dexterity_external_resources_md["Aging & Dexterity - External Resources"]
 for_users_by_disability_type_aging_dexterity --> for_users_by_disability_type_aging_dexterity_external_resources_md
-for_users_by_disability_type_cognitive["🙌 Cognitive"]
+for_users_by_disability_type_cognitive["Cognitive"]
 for_users_by_disability_type --> for_users_by_disability_type_cognitive
-for_users_by_disability_type_cognitive_external_resources_md["🙌 Cognitive - External Resources"]
+for_users_by_disability_type_cognitive_external_resources_md["Cognitive - External Resources"]
 for_users_by_disability_type_cognitive --> for_users_by_disability_type_cognitive_external_resources_md
-for_users_by_disability_type_hearing["🧭 Hearing"]
+for_users_by_disability_type_hearing["Hearing"]
 for_users_by_disability_type --> for_users_by_disability_type_hearing
-for_users_by_disability_type_hearing_external_resources_md["🙌 Hearing - External Resources"]
+for_users_by_disability_type_hearing_external_resources_md["Hearing - External Resources"]
 for_users_by_disability_type_hearing --> for_users_by_disability_type_hearing_external_resources_md
-for_users_by_disability_type_mobility["🙌 Mobility"]
+for_users_by_disability_type_mobility["Mobility"]
 for_users_by_disability_type --> for_users_by_disability_type_mobility
-for_users_by_disability_type_mobility_external_resources_md["🙌 Mobility - External Resources"]
+for_users_by_disability_type_mobility_external_resources_md["Mobility - External Resources"]
 for_users_by_disability_type_mobility --> for_users_by_disability_type_mobility_external_resources_md
-for_users_by_disability_type_neurodiversity["🙌 Neurodiversity"]
+for_users_by_disability_type_neurodiversity["Neurodiversity"]
 for_users_by_disability_type --> for_users_by_disability_type_neurodiversity
-for_users_by_disability_type_neurodiversity_external_resources_md["🙌 Neurodiversity - External Resources"]
+for_users_by_disability_type_neurodiversity_external_resources_md["Neurodiversity - External Resources"]
 for_users_by_disability_type_neurodiversity --> for_users_by_disability_type_neurodiversity_external_resources_md
-for_users_by_disability_type_speech_language["🙌 Speech Language 👤"]
+for_users_by_disability_type_speech_language["Speech Language"]
 for_users_by_disability_type --> for_users_by_disability_type_speech_language
-for_users_by_disability_type_speech_language_external_resources_md["🙌 Speech & Language - External Resources"]
+for_users_by_disability_type_speech_language_external_resources_md["Speech & Language - External Resources"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_external_resources_md
-for_users_by_disability_type_speech_language_stroke_communication_checklist_md["Stroke Communication Needs Checklist 👤"]
+for_users_by_disability_type_speech_language_stroke_communication_checklist_md["Stroke Communication Needs Checklist"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_communication_checklist_md
-for_users_by_disability_type_speech_language_stroke_aac_tools_md["🙌 AAC Tools for Stroke Recovery 👤"]
+for_users_by_disability_type_speech_language_stroke_aac_tools_md["AAC Tools for Stroke Recovery"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_aac_tools_md
-for_users_by_disability_type_speech_language_stroke_caregiver_guide_md["Caregiver Guide for Post-Stroke Communication 👤"]
+for_users_by_disability_type_speech_language_stroke_caregiver_guide_md["Caregiver Guide for Post-Stroke Communication"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_caregiver_guide_md
-for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md["Stroke Communication Profile Questionnaire 👤"]
+for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md["Stroke Communication Profile Questionnaire"]
 for_users_by_disability_type_speech_language --> for_users_by_disability_type_speech_language_stroke_profile_questionnaire_md
-for_users_by_disability_type_vision["🧭 Vision"]
+for_users_by_disability_type_vision["Vision"]
 for_users_by_disability_type --> for_users_by_disability_type_vision
-for_users_by_disability_type_vision_screen_readers_md["🧭 Screen Readers"]
+for_users_by_disability_type_vision_screen_readers_md["Screen Readers"]
 for_users_by_disability_type_vision --> for_users_by_disability_type_vision_screen_readers_md
-for_users_by_disability_type_vision_e_readers_md["🧭 Accessible E-Readers"]
+for_users_by_disability_type_vision_e_readers_md["Accessible E-Readers"]
 for_users_by_disability_type_vision --> for_users_by_disability_type_vision_e_readers_md
-for_users_by_disability_type_vision_external_resources_md["🙌 Vision - External Resources"]
+for_users_by_disability_type_vision_external_resources_md["Vision - External Resources"]
 for_users_by_disability_type_vision --> for_users_by_disability_type_vision_external_resources_md
-for_users_by_disability_type_vision_companies_md["🧭 Companies Committed to Accessibility (Vision)"]
+for_users_by_disability_type_vision_companies_md["Companies Committed to Accessibility (Vision)"]
 for_users_by_disability_type_vision --> for_users_by_disability_type_vision_companies_md
 about["About"]
 root --> about
-about_overview_md["🧭 Accessibility Hub Overview"]
+about_overview_md["Accessibility Hub Overview"]
 about --> about_overview_md
-about_about_md["🧭 About Accessibility Hub"]
+about_about_md["About Accessibility Hub"]
 about --> about_about_md
-about_roadmap_md["🧭 Roadmap"]
+about_roadmap_md["Roadmap"]
 about --> about_roadmap_md
 for_developers["For Developers"]
 root --> for_developers
-for_developers_how_to__contribute_md["🙌 How to contribute 👤"]
+for_developers_how_to__contribute_md["How to contribute"]
 for_developers --> for_developers_how_to__contribute_md
-for_developers_apis_sdks_md["📚 Accessibility APIs & SDKs"]
+for_developers_apis_sdks_md["Accessibility APIs & SDKs"]
 for_developers --> for_developers_apis_sdks_md
-for_developers_case_studies_md["🧭 Developer Case Studies"]
+for_developers_case_studies_md["Developer Case Studies"]
 for_developers --> for_developers_case_studies_md
-for_developers_engineering_gaps_md["🧭 Engineering Gaps & Design Patterns"]
+for_developers_engineering_gaps_md["Engineering Gaps & Design Patterns"]
 for_developers --> for_developers_engineering_gaps_md
 for_developers_accessible_web_dev_checklist_md["Accessible Web Development Checklist  # A concise, descriptive title (e.g., '..."]
 for_developers --> for_developers_accessible_web_dev_checklist_md
 community["Community"]
 root --> community
-community_forums_md["🧭 Forums or Discussions"]
+community_forums_md["Forums or Discussions"]
 community --> community_forums_md
-community_events_md["🧭 Events & Hackathons"]
+community_events_md["Events & Hackathons"]
 community --> community_events_md
-community_success_stories_md["🧭 Success Stories"]
+community_success_stories_md["Success Stories"]
 community --> community_success_stories_md
-community_personas_md["🧭 User Personas"]
+community_personas_md["User Personas"]
 community --> community_personas_md
 resources["Resources"]
 root --> resources
-resources_tutorials_md["🙌 Tutorials & Courses"]
+resources_tutorials_md["Tutorials & Courses"]
 resources --> resources_tutorials_md
-resources_research_md["🙌 Research & Whitepapers"]
+resources_research_md["Research & Whitepapers"]
 resources --> resources_research_md
-resources_legal_standards_md["🙌 Legal standards"]
+resources_legal_standards_md["Legal standards"]
 resources --> resources_legal_standards_md
-resources_tool_directory_md["🧭 Tool Directory"]
+resources_tool_directory_md["Tool Directory"]
 resources --> resources_tool_directory_md
 use_cases["Use Cases"]
 root --> use_cases
-use_cases_work_md["🙌 Work-Related Use Cases"]
+use_cases_work_md["Work-Related Use Cases"]
 use_cases --> use_cases_work_md
-use_cases_home_md["🙌 Home and Daily Life Scenarios"]
+use_cases_home_md["Home and Daily Life Scenarios"]
 use_cases --> use_cases_home_md
-use_cases_future_md["🙌 Hypothetical/Future Scenarios"]
+use_cases_future_md["Hypothetical/Future Scenarios"]
 use_cases --> use_cases_future_md
 community_contributions["Community Contributions"]
 root --> community_contributions
-community_contributions_interview_template_md["🙌 Testimony Interview Template"]
+community_contributions_interview_template_md["Testimony Interview Template"]
 community_contributions --> community_contributions_interview_template_md
-community_contributions_whats_missing_md["🙌 What’s Missing?"]
+community_contributions_whats_missing_md["What’s Missing?"]
 community_contributions --> community_contributions_whats_missing_md
-community_contributions_getting_started_md["🙌 Getting Started"]
+community_contributions_getting_started_md["Getting Started"]
 community_contributions --> community_contributions_getting_started_md
-community_contributions_to_do_list_md["🧭 To-Do List"]
+community_contributions_to_do_list_md["To-Do List"]
 community_contributions --> community_contributions_to_do_list_md
 unmet_needs["Unmet Needs"]
 root --> unmet_needs
-unmet_needs_unmet_needs_md["🧭 Unmet Needs & Future Possibilities"]
+unmet_needs_unmet_needs_md["Unmet Needs & Future Possibilities"]
 unmet_needs --> unmet_needs_unmet_needs_md
 hot_topics["Hot Topics"]
 root --> hot_topics

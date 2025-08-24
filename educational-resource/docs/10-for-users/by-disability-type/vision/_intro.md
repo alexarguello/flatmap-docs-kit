@@ -29,13 +29,13 @@ Welcome to this accessible and screen reader-friendly guide to understanding the
 
 ---
 
-## 🌟 What is Visual Impairment?
+## What is Visual Impairment? 🌟
 
 Visual impairment refers to a significant loss of vision that cannot be corrected fully with glasses, contact lenses, medication, or surgery. It includes both partial and complete blindness.
 
 ---
 
-## 🔍 Types of Visual Impairments
+## Types of Visual Impairments 🔍
 
 ### 1. **Low Vision**
 - **Definition**: Partial sight that interferes with daily activities.
@@ -74,7 +74,7 @@ Visual impairment refers to a significant loss of vision that cannot be correcte
 
 ---
 
-## 🧠 Causes of Visual Impairments
+## Causes of Visual Impairments 🧠
 
 - **Genetic disorders**
 - **Infections and trauma**
@@ -83,7 +83,7 @@ Visual impairment refers to a significant loss of vision that cannot be correcte
 
 ---
 
-## 🛠️ Assistive Technologies
+## Assistive Technologies 🛠️
 
 - Screen readers (e.g., JAWS, NVDA)
 - Braille displays
@@ -92,7 +92,7 @@ Visual impairment refers to a significant loss of vision that cannot be correcte
 
 ---
 
-## 💡 Final Thoughts
+## Final Thoughts 💡
 
 Visual impairments vary widely in cause and severity. With the right support and technology, individuals with visual impairments can lead independent and fulfilling lives.
 

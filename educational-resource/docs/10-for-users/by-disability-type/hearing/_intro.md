@@ -13,7 +13,7 @@ eta: 2024-12-06
 ---
 
 
-# 👂 Hearing Disabilities
+# Hearing Disabilities 👂
 
 
 ## Medical Definition

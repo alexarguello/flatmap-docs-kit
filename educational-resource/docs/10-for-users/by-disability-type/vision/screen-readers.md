@@ -36,19 +36,21 @@ Screen readers are essential tools for millions of users. Whether you’re a dev
 - **Linux:** Try [Orca](https://help.gnome.org/users/orca/stable/)
 - **Windows Built-in:** [Narrator](https://support.microsoft.com/en-us/windows/get-started-with-narrator-3e3e2b8a-ec8c-4e1c-9b1c-5c6e1a5c7b2e)
 
-> 💡 **Tip:** Most screen readers can be started with a keyboard shortcut. For example, press `Ctrl+Alt+N` to launch NVDA on Windows (if installed).
+:::tip
+Most screen readers can be started with a keyboard shortcut. For example, press `Ctrl+Alt+N` to launch NVDA on Windows (if installed).
+:::
 
 ## Feature Comparison
 
-| Screen Reader | Platform         | Price      | Braille | Scripting | OCR/Image | Community |
-|--------------|------------------|------------|---------|-----------|-----------|-----------|
-| JAWS         | Windows          | Paid       | Yes     | Advanced  | Yes       | Large     |
-| NVDA         | Windows          | Free       | Yes     | Add-ons   | Yes       | Large     |
-| VoiceOver    | macOS/iOS        | Free       | Yes     | Limited   | Yes       | Apple     |
-| Narrator     | Windows          | Free       | Yes     | Limited   | Yes       | Microsoft |
-| Orca         | Linux            | Free       | Yes     | Add-ons   | No        | Open      |
+| Screen Reader | Platform  | Price | Braille | Scripting | OCR/Image | Community |
+|---------------|-----------|-------|---------|-----------|-----------|-----------|
+| JAWS          | Windows   | Paid  | Yes     | Advanced  | Yes       | Large     |
+| NVDA          | Windows   | Free  | Yes     | Add-ons   | Yes       | Large     |
+| VoiceOver     | macOS/iOS | Free  | Yes     | Limited   | Yes       | Apple     |
+| Narrator      | Windows   | Free  | Yes     | Limited   | Yes       | Microsoft |
+| Orca          | Linux     | Free  | Yes     | Add-ons   | No        | Open      |
 
-## 🔍 Highlights & Gaps
+## Highlights & Gaps 🔍
 
 - **JAWS:** Most feature-rich, but expensive and has a learning curve.
 - **NVDA:** Free, open-source, highly capable, strong add-on ecosystem.
@@ -60,7 +62,7 @@ Screen readers are essential tools for millions of users. Whether you’re a dev
 The future of screen readers is in AI-driven context, smarter navigation, and making these tools more affordable and intuitive.
 :::
 
-## 🌐 Learn More & Get Involved
+## Learn More & Get Involved 🌐
 
 - [WebAIM: Screen Reader Survey Results](https://webaim.org/projects/screenreadersurvey8/)
 - [NVDA Community Add-ons](https://addons.nvda-project.org/)
@@ -68,7 +70,7 @@ The future of screen readers is in AI-driven context, smarter navigation, and ma
 - [Freedom Scientific Training](https://www.freedomscientific.com/training/)
 - [Orca Documentation](https://help.gnome.org/users/orca/stable/)
 
-## 🤝 Community & Support
+## Community & Support 🤝
 
 - [r/Blind on Reddit](https://www.reddit.com/r/Blind/)
 - [NVDA Users Email List](https://nvda.groups.io/g/nvda)

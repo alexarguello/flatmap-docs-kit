@@ -19,7 +19,7 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2024-12-06
 ---
 
-# 👵 Aging and Dexterity Impairments 
+# Aging and Dexterity Impairments 👵
 
 ## Medical Definition
 Dexterity impairments involve reduced fine motor skills, often due to aging or neurological conditions.

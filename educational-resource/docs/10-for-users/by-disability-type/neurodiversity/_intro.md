@@ -18,7 +18,7 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2024-12-06
 ---
 
-# 🧬 Neurodiversity
+# Neurodiversity 🧬
 
 ## Medical Definition
 Neurodiversity refers to natural variations in brain function and behavior, often associated with developmental conditions.
