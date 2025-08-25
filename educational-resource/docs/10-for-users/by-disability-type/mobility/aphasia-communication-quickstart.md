@@ -114,17 +114,17 @@ Asking these questions can help you and your clinical team find the best solutio
 - Keep a daily log of what communication strategies work best.
 
 ## Useful Links
-- [American Stroke Association](https://www.stroke.org)
-- [National Aphasia Association](https://www.aphasia.org)
-- [Cboard](https://cboard.io)
-- [Google Look to Speak](https://play.google.com/store/apps/details?id=com.google.android.accessibility.accessibilitytools.looktospeak)
-- [Live Transcribe](https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe)
-- [Proloquo2Go](https://www.assistiveware.com/products/proloquo2go)
-- [Avaz AAC](https://www.avazapp.com)
-- [CoughDrop](https://www.mycoughdrop.com)
-- [Voiceitt](https://www.voiceitt.com)
-- [Tobii Dynavox](https://www.tobiidynavox.com)
-- [Balabolka](https://www.cross-plus-a.com/balabolka.htm)
+- American Stroke Association — https://www.stroke.org
+- National Aphasia Association — https://www.aphasia.org
+- Cboard — https://cboard.io
+- Google Look to Speak — https://play.google.com/store/apps/details?id=com.google.android.accessibility.accessibilitytools.looktospeak
+- Live Transcribe — https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe
+- Proloquo2Go — https://www.assistiveware.com/products/proloquo2go
+- Avaz AAC — https://www.avazapp.com
+- CoughDrop — https://www.mycoughdrop.com
+- Voiceitt — https://www.voiceitt.com
+- Tobii Dynavox — https://www.tobiidynavox.com
+- Balabolka — https://www.cross-plus-a.com/balabolka.htm
 
 ---
 
