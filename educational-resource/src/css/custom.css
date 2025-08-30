@@ -140,6 +140,19 @@
   line-height: 1.5;
 }
 
+/* Ensures that .pagebreak elements create page breaks when printing */
+@media print {
+  .pagebreak {
+    page-break-after: always; /* Older, widely supported */
+    break-after: page;        /* Modern, preferred */
+    display: block;
+    height: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+  }
+}
+
 /* === HOT TOPICS: WORD CLOUD === */
 
 .hot-topics {
