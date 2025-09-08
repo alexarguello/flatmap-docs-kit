@@ -20,6 +20,7 @@ const cards = [
     link: '/docs/resources',
     bgClass: 'card-bg-green',
   },
+/*
   {
     title: 'Tools & Resources',
     emoji: '🛠️',
@@ -36,12 +37,13 @@ const cards = [
     link: '/docs/case-studies',
     bgClass: 'card-bg-yellow',
   },
+*/
   {
     title: 'Learning Paths',
     emoji: '🧑‍🎓',
     headline: 'Start your accessibility journey',
     description: 'Follow curated learning paths for beginners and advanced practitioners to master accessibility.',
-    link: '/docs/learning-paths',
+    link: '/docs/resources/learning-paths',
     bgClass: 'card-bg-red',
   },
     {

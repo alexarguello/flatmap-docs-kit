@@ -28,6 +28,7 @@ Caring for someone with aphasia after a stroke can feel overwhelming, but you ar
   - **Dysarthria:** Slurred or weak speech due to muscle weakness.
 - Aphasia does not affect intelligence. Your loved one is still themselves and can learn new ways to communicate.
 
+
 ## Immediate Communication Strategies
 - **Yes/No Gestures:**
   - Agree on simple signals (thumbs up/down, head nod/shake, eye movements) for yes/no answers. Practice these together so everyone understands.
