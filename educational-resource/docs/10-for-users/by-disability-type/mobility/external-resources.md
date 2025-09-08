@@ -19,7 +19,8 @@ eta: 2024-12-06
 ---
 
 #### External Resources
-- [United Spinal Association](https://unitedspinal.org/)
-- [Christopher & Dana Reeve Foundation](https://www.christopherreeve.org/)
-- [AbilityNet](https://abilitynet.org.uk/)
-- [Microsoft Accessibility: Mobility](https://www.microsoft.com/en-us/accessibility/)
+- United Spinal Association - https://unitedspinal.org/
+- Christopher & Dana Reeve Foundation - https://www.christopherreeve.org/
+- AbilityNet - https://abilitynet.org.uk/
+- Microsoft Accessibility: Mobility - https://www.microsoft.com/en-us/accessibility/
+- 
