@@ -1,5 +1,5 @@
 ---
-title: Accessible API Design for Java Developers
+title: Accessible API Design for Developers
 sidebar_position: 1
 hide_title: true
 level: intermediate
@@ -17,7 +17,7 @@ author: ["Alexandra Arguello Saenz (https://github.com/alexarguello)"]
 eta: 2025-12-31
 ---
 
-# Accessible API Design for Java Developers
+# Accessible API Design for Developers
 
 Accessibility in software is often associated with user interfaces, but it is equally important in API and schema design. Accessible APIs improve usability for developers using assistive technologies, enhance code readability, and support better tooling integration. This guide outlines key strategies Java developers can adopt to make their APIs more inclusive.
 

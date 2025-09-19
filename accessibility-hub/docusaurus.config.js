@@ -12,13 +12,13 @@ const config = {
     v4: true,
   },
 
-  url: 'https://lizeraes.github.io',
-  baseUrl: '/flatmap-docs-kit/',
+  url: 'https://alexarguello.github.io',
+  baseUrl: '/accessibility-hub/',
 
   trailingSlash: true,
 
-  organizationName: 'lizeraes',
-  projectName: 'flatmap-docs-kit',
+  organizationName: 'alexarguello',
+  projectName: 'accessibility-hub',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

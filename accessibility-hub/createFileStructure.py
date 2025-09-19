@@ -2,7 +2,7 @@ import os
 import re
 
 # Path to the Markdown file containing the TOC
-MARKDOWN_FILE = "../educational-resource/plan.md"
+MARKDOWN_FILE = "/plan.md"
 
 # Root directory where folders will be created (change as needed)
 ROOT_DIR = "./generated_structure"

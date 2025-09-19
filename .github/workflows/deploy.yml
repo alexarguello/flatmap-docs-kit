@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./educational-resource
+        working-directory: ./accessibility-hub
 
     steps:
       - name: Checkout code
@@ -39,5 +39,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./educational-resource/build
+          publish_dir: ./accessibility-hub/build
           force_orphan: true
