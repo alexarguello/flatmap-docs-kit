@@ -333,6 +333,7 @@ def extract_contrib_guide():
             break
     section = lines[start:end] if end else lines[start:]
     # Write to output file with Docusaurus frontmatter
+    os.makedirs(os.path.dirname(CONTRIB_GUIDE_OUTPUT_PATH), exist_ok=True)
     with open(CONTRIB_GUIDE_OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write("---\ntitle: Contributor Guide for New Articles\nsidebar_label: New Article Guide\nhide_title: false\n---\n\n")
         f.writelines(section)
@@ -340,6 +341,7 @@ def extract_contrib_guide():
 
 def walk_docs():
     clean_contribute_folder()
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     extract_contrib_guide()
     
     # Import collaboration page creation function
@@ -538,6 +540,7 @@ def walk_docs():
         needs_review_table=needs_review_table,
         recently_published_table=recently_published_table
     )
+    os.makedirs(os.path.dirname(DASHBOARD_OUTPUT_PATH), exist_ok=True)
     with open(DASHBOARD_OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(dashboard_content)
     print(f"✅ Dashboard written: {DASHBOARD_OUTPUT_PATH}")
