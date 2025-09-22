@@ -347,7 +347,6 @@ def walk_docs():
     # Import collaboration page creation function
     try:
         import sys
-        import os
         sys.path.append(os.path.dirname(__file__))
         from generate_collaborate_pages import create_collaboration_page, get_author_info, create_location_breadcrumb, create_discussion_link, get_suggested_contributions, load_style_config
     except ImportError as e:
