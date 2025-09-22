@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
   Move leading emojis in Markdown headings (H1–H6) to the end of the heading line.
-  - Processes all .md files under educational-resource/docs
+  - Processes all .md files under accessibility-hub/docs
   - Only affects headings that begin with one or more emoji clusters
   - Preserves other content and formatting
 */
@@ -10,7 +10,7 @@ import fs from 'fs';
 import path from 'path';
 
 const ROOT = process.cwd();
-const DOCS_DIR = path.resolve(ROOT, 'educational-resource', 'docs');
+const DOCS_DIR = path.resolve(ROOT, 'accessibility-hub', 'docs');
 
 // Regex to match Markdown headings (allow up to 3 leading spaces per CommonMark)
 const headingLineRE = /^(\s{0,3}#{1,6}\s+)(.*)$/u;

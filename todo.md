@@ -1,6 +1,6 @@
 # Project TODO List
 
-A centralized list of tasks and ideas for the educational-resource project.
+A centralized list of tasks and ideas for the accessibility-hub project.
 
 ## 🚀 Features & Enhancements
 
@@ -19,4 +19,4 @@ A centralized list of tasks and ideas for the educational-resource project.
 
 ## ⚙️ Project Management & Contribution
 
-- [ ] **Implement "Report an Issue" Link**: Integrate the "report an issue" functionality into the documentation, directing users to the [GitHub issues page](https://github.com/alexarguello/educational-resource/issues).
+- [ ] **Implement "Report an Issue" Link**: Integrate the "report an issue" functionality into the documentation, directing users to the [GitHub issues page](https://github.com/alexarguello/accessibility-hub/issues).

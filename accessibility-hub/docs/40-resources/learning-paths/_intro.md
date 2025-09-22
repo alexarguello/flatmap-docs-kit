@@ -20,7 +20,7 @@ eta: 2024-12-06
 
 Welcome to your guide for starting and advancing your accessibility journey. Whether you're looking for a quick-start plan, formal courses, certifications, or community connections, these resources will help you build and validate your skills.
 
-This section is designed to be a living document. If you find a broken link or have a resource to add, please [open an issue or submit a pull request](https://github.com/alexarguello/educational-resource/issues)!
+This section is designed to be a living document. If you find a broken link or have a resource to add, please [open an issue or submit a pull request](https://github.com/alexarguello/accessibility-hub/issues)!
 
 ### Role-Based Learning Paths
 

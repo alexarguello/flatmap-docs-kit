@@ -290,8 +290,8 @@ def create_contribution_page(md_path, rel_path, frontmatter):
                 sibling_articles.append(f"- {link}{status_text}")
         sibling_articles_md = "\n".join(sibling_articles) or "_No other articles in this folder yet._"
 
-    # Fix GitHub edit link to include educational-resource prefix and make it clickable in instructions
-    file_edit_link = f"{get_repository_link_from_config()}/edit/main/educational-resource/docs/{rel_path_folder}/{filename}"
+    # Fix GitHub edit link to include accessibility-hub prefix and make it clickable in instructions
+    file_edit_link = f"{get_repository_link_from_config()}/edit/main/accessibility-hub/docs/{rel_path_folder}/{filename}"
 
     template = load_template()
     content = template.format(

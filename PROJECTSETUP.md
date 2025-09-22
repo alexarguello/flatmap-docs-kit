@@ -59,9 +59,9 @@ taskkill /pid 99999 /F
    ```
 
 2. **Update `.github/workflows/deploy.yml`**:
-   If you changed the name of `educational-resource`folder, make sure to update
+   If you changed the name of `accessibility-hub` folder, make sure to update
    ```yaml
-   publish_dir: ./educational-resource/build
+   publish_dir: ./accessibility-hub/build
    ``` 
 
 3. **Push changes**
@@ -163,7 +163,7 @@ When you're done setting up:
 
 1. **Delete this README**
     Because it is aimed at the maintainer, not the actual resource users or contributors
-2. **Replace with [`educational-resource/README.md`](README.md)**
+2. **Replace with [`accessibility-hub/README.md`](README.md)**
    - This currently contains usage and contribution guidelines for an actually published resource
    - Update it to fit your resource and target audience
 
