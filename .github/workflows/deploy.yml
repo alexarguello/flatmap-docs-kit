@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run generate-mermaids.py
+      - name: Run content generators
         run: |
           python3 flatmap-tools/generate_mermaids.py
           python3 flatmap-tools/generate_contribute_dashboard.py

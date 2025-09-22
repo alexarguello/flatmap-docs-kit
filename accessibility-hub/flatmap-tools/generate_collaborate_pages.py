@@ -234,5 +234,15 @@ def walk_docs():
     print(f"📊 Found {len(collaboration_articles)} articles open for collaboration")
     return collaboration_articles
 
+
 if __name__ == "__main__":
-    walk_docs() 
+    try:
+        articles = walk_docs()
+        if not articles:
+            print("No articles open for collaboration. Exiting successfully.")
+        import sys
+        sys.exit(0)
+    except Exception as e:
+        print(f"❌ Error generating collaboration pages: {e}")
+        import sys
+        sys.exit(1) 
